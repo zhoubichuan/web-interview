@@ -70,7 +70,7 @@
 
 ### [13.事件委托（提高性能）](./3.javascript/13.md)
 
-### [14. js 的 new 操作符做了什么](./3.javascript/14md)
+### [14. js 的 new 操作符做了什么](./3.javascript/14.md)
 
 ### [15.改变函数内部 this 指针的指向（bind,apply,call）](./3.javascript/15.md)
 
