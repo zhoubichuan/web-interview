@@ -112,7 +112,7 @@
 
 ### [34. js 的阻塞特性](./3.javascript/34.md)
 
-### [35. meta 元素可提供有关页面的元信息，比如针对搜索引擎和更新频度的描述和关键词](./3.javascript/35.md)
+### [35. meta 元素可提供有关页面的元信息](./3.javascript/35.md)
 
 ### [36.splice 和 slice；map 和 forEach、filter、reduce 的区别](./3.javascript/36.md)
 
@@ -141,6 +141,16 @@
 ### [10. 谈谈 vue 和 react 组件化的思想](./4.前端框架/1.vue/10.md)
 
 ### [11.vue 的依赖手机和 watch 原理](./4.前端框架/1.vue/11.md)
+
+### [12.Vue 与 Angular 以及 React 的区别？](./4.前端框架/1.vue/12.md)
+
+### [13.vue 路由的钩子函数](./4.前端框架/1.vue/13.md)
+
+### [14.vuex 是什么？怎么使用？哪种功能场景使用](./4.前端框架/1.vue/14.md)
+
+### [15.Vue 组件间的参数传递](./4.前端框架/1.vue/15.md)
+
+### [16.Vue 的路由实现：hash 模式 和 history 模式](./4.前端框架/1.vue/16.md)
 
 ## [`2、react`](./4.前端框架/2.react)
 
@@ -264,7 +274,7 @@
 
 ### [4.函数防抖](./11.手写代码/4.md)
 
-### [5.实现一个函数 clone,可以对 javascirpt 中的 5 种主要的数据类型（包含 number，string，object，array，boolean）进行复制](./11.手写代码/5.md)
+### [5.实现一个函数 clone](./11.手写代码/5.md)
 
 ### [6.实现一个简单的 promise](./11.手写代码/6.md)
 
