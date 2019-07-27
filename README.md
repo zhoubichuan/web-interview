@@ -116,6 +116,14 @@
 
 ### [36.splice 和 slice；map 和 forEach、filter、reduce 的区别](./3.javascript/36.md)
 
+### [37.JavaScript 的数据类型](./3.javascript/37.md)
+
+### [38.介绍下 Set、Map、WeakSet 和 WeakMap 的区别](./3.javascript/38.md)
+
+### [38.请指出 document load 和 document ready 的区别](./3.javascript/39.md)
+
+### [40.模块化](./3.javascript/40.md)
+
 # [`四、前端框架`](./4.前端框架)
 
 ## [`1、vue`](./4.前端框架/1.vue)
@@ -136,7 +144,7 @@
 
 ### [8. vue 的 spa 如何优化加载速度](./4.前端框架/1.vue/8.md)
 
-### [9. 模块化](./4.前端框架/1.vue/9.md)
+### [9. 写 React/Vue 项目时为什么要在组件里面写 key,其作用是什么](./4.前端框架/1.vue/9.md)
 
 ### [10. 谈谈 vue 和 react 组件化的思想](./4.前端框架/1.vue/10.md)
 
