@@ -42,11 +42,11 @@
 
 ### [16.使用 css 实现一个持续的动画效果](./2.css/16.使用css实现一个持续的动画效果.md)
 
-### [17.CSS 中 link 和@import 的区别是](./2.css/17.CSS 中 link 和@import 的区别是.md)
+### [17.CSS 中 link 和@import 的区别是](./2.css/17.CSS中link和@import的区别是.md)
 
 ### [18.transition 和 animation 的区别](./2.css/18.transition和animation的区别.md)
 
-### [19.什么是 FOUC（无样式内容闪烁？你如何来避免 FOUC](./2.css/19.什么是 FOUC（无样式内容闪烁？你如何来避免 FOUC.md)
+### [19.什么是 FOUC（无样式内容闪烁？你如何来避免 FOUC](./2.css/19.什么是FOUC（无样式内容闪烁你如何来避免FOUC.md)
 
 ### [20.介绍下 BFC](./2.css/20.介绍下BFC.md)
 
@@ -62,7 +62,7 @@
 
 ### [5.什么是作用域](./3.javascript/5.作用域.md)
 
-### [6.js 自定义事件实现](./3.javascript/6.js 自定义事件实现.md)
+### [6.js 自定义事件实现](./3.javascript/6.js自定义事件实现.md)
 
 ### [7.什么是原型链](./3.javascript/7.原型.md)
 
@@ -80,7 +80,7 @@
 
 ### [14. js 的 new 操作符做了什么](./3.javascript/14.new.md)
 
-### [15.js 异步加载的方式](./3.javascript/15.js 异步加载的方式.md)
+### [15.js 异步加载的方式](./3.javascript/15.js异步加载的方式.md)
 
 ### [16.拷贝](./3.javascript/16.拷贝.md)
 
@@ -124,7 +124,7 @@
 
 ### [36.splice 和 slice；map 和 forEach、filter、reduce 的区别](./3.javascript/36.数组方法的区别.md)
 
-### [37.移动端 300ms 延迟](./3.javascript/37.移动端 300ms 延迟.md)
+### [37.移动端 300ms 延迟](./3.javascript/37.移动端300ms延迟.md)
 
 ### [38.介绍下 Set、Map、WeakSet 和 WeakMap 的区别](./3.javascript/38.Set,Map,WeakSet和WeakMap的区别.md)
 
