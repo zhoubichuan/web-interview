@@ -2,14 +2,14 @@
 
 可以对 javascirpt 中的 5 种主要的数据类型（包含 number，string，object，array，boolean）进行复制
 
-```
-Object.prototype.clone= function(){
-    //对象的深拷贝 获取对应的构造函数 [] 或者{}
-    var newObject=this.constructor===Array?[]:{}
-    //遍历对象的
-    for(let a in this){
-        newObject[a]=typeof this[a]==='object'?this[a].clone():this[a]
-    }
-    return newObject
-}
+```js
+Object.prototype.clone = function() {
+  //对象的深拷贝 获取对应的构造函数 [] 或者{}
+  var newObject = this.constructor === Array ? [] : {};
+  //遍历对象的
+  for (let a in this) {
+    newObject[a] = typeof this[a] === "object" ? this[a].clone() : this[a];
+  }
+  return newObject;
+};
 ```
