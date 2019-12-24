@@ -1,15 +1,20 @@
 {
-  "name": "blog.bigqianduan.top",
+  "name": "interview",
   "version": "1.0.0",
-  "description": "A blog of 前端一锅煮 use VuePress",
+  "description": "",
   "main": "index.js",
-  "author": "chenjianmin <129300400@qq.com>",
+  "author": "zhoubichaun@icloud.com",
+  "hommepage": "https://github.com/zhoubichuan/Web-Interview/",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "build": "vuepress build src",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "os": "^0.1.1",

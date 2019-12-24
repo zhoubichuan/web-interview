@@ -17,82 +17,8 @@ meta:
         </div>
     </div>
 </template>
-
-<style lang="less">
-    .page_index{
-        .home{
-            .hero{
-                img{
-                    max-height: 120px;
-                    border-radius: 100%;
-                    overflow: hidden;
-                }
-                h1{
-                    font-size: 2.2rem;
-                }
-                .description{
-                    font-size: 1.4rem;
-                }
-                .action-button{
-                    padding: 0.6rem 1.2rem;
-                }
-            }
-        }
-
-        .large-header {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center center;
-            z-index: 1;
-        }
-
-        .add_info {
-            position: absolute;
-            color: #f9f1e9;
-            text-align: center;
-            top: 50%;
-            left: 50%;
-            transform: translate3d(-50%, -50%, 0);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 719px) {
-            .add_info{
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 419px) {
-            .home{
-                .hero{
-                    img{
-                        max-height: 100px;
-                        border-radius: 100%;
-                        overflow: hidden;
-                    }
-                    h1{
-                        font-size: 1.2rem;
-                    }
-                    .description{
-                        font-size: 1rem;
-                    }
-                    .action-button{
-                        padding: 0.2rem 0.6rem;
-                    }
-                }
-            }
-            .add_info{
-                font-size: 0.9rem;
-            }
-        }
-    }
-</style>
-
 <script>
-import data from './data.json'
+// import data from './data.json'
     export default {
         data() {
             return {
@@ -222,4 +148,5 @@ import data from './data.json'
             }
         }
     }
+
 </script>

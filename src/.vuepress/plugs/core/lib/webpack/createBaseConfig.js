@@ -138,12 +138,12 @@ module.exports = function createBaseConfig ({
       .loader(require.resolve('@vuepress/markdown-loader'))
       .options({ sourceDir, markdown })
 
-  config.module
-    .rule('pug')
-    .test(/\.pug$/)
-    .use('pug-plain-loader')
-      .loader('pug-plain-loader')
-      .end()
+  // config.module
+  //   .rule('pug')
+  //   .test(/\.pug$/)
+  //   .use('pug-plain-loader')
+  //     .loader('pug-plain-loader')
+  //     .end()
 
   if (!siteConfig.evergreen) {
     const libDir = path.join(__dirname, '..')
