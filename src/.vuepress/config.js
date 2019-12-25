@@ -67,12 +67,16 @@ module.exports = {
             text: '服务端相关知识点',
             link: '/page/service/'
           },
+          {
+            text: '大厂面试题',
+            link: '/page/article/'
+          },
         ],
         sidebar: { // 文档侧边栏 跳转到不同页面
           '/page/base/': genSidebarConfig('基础部分'),
           '/page/frame/': genSidebarConfig2('框架部分'),
           '/page/service/': genSidebarConfig3('服务端相关知识点'),
-          '/page/subject/': genSidebarConfig4('大厂面试题'),
+          '/page/article/': genSidebarConfig4('大厂面试题'),
         }
       }
     }
@@ -82,7 +86,7 @@ module.exports = {
 function genSidebarConfig(title) {
   return [{
     title,
-    collapsable: false, // 让一个组永远都是展开状态
+    collapsable: true, // 让一个组永远都是展开状态
     children: [
       '',
       'CSS',
@@ -94,7 +98,7 @@ function genSidebarConfig(title) {
 function genSidebarConfig2(title) {
   return [{
     title,
-    collapsable: false, // 让一个组永远都是展开状态
+    collapsable: true, // 让一个组永远都是展开状态
     children: [
       '',
       'React',
@@ -107,7 +111,7 @@ function genSidebarConfig2(title) {
 function genSidebarConfig3(title) {
   return [{
     title,
-    collapsable: false, // 让一个组永远都是展开状态
+    collapsable: true, // 让一个组永远都是展开状态
     children: [
       '',
       'express',
@@ -120,9 +124,27 @@ function genSidebarConfig3(title) {
 function genSidebarConfig4(title) {
   return [{
     title,
-    collapsable: false, // 让一个组永远都是展开状态
+    collapsable: true, // 让一个组永远都是展开状态
     children: [
       '',
+      // '2',
+      // '3',
+      // '4',
+      // '5',
+      // '6',
+      // '7',
+      // '8',
+      // '9',
+      // '10',
+      // '11',
+      // '12',
+      // '13',
+      // '14',
+      // '15',
+      // '16',
+      // '17',
+      // '18',
+      // '19',
     ]
   }]
 }
