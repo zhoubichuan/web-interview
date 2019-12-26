@@ -10,25 +10,9 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "bash deploy.sh"
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1",
-    "less": "^3.8.1",
-    "less-loader": "^4.1.0",
-    "os": "^0.1.1",
-    "pug": "^2.0.3",
-    "pug-plain-loader": "^1.0.0",
     "vuepress": "^0.14.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitee.com/cjm0/vuepress.git"
-  },
-  "keywords": [
-    "blog",
-    "vuepress",
-    "qianduan"
-  ]
+  }
 }

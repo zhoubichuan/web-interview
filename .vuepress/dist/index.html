@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端面试题精选</title>
+    <meta name="description" content="">
+    <link rel="icon" href="">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="msapplication-TileColor" content="#000000">
+    <meta name="keywords" content="前端面试题,前端学习,前端笔记">
+    <link rel="preload" href="/assets/css/0.styles.1d62a147.css" as="style"><link rel="preload" href="/assets/js/app.b6b59290.js" as="script"><link rel="preload" href="/assets/js/2.7c9ec0fc.js" as="script"><link rel="preload" href="/assets/js/5.e76d72ba.js" as="script"><link rel="prefetch" href="/assets/js/10.87681134.js"><link rel="prefetch" href="/assets/js/11.63e05b75.js"><link rel="prefetch" href="/assets/js/12.7c8bc94d.js"><link rel="prefetch" href="/assets/js/13.dfdb6285.js"><link rel="prefetch" href="/assets/js/14.7b7de5d1.js"><link rel="prefetch" href="/assets/js/15.06051ea1.js"><link rel="prefetch" href="/assets/js/16.74dc7b9e.js"><link rel="prefetch" href="/assets/js/17.ffca86db.js"><link rel="prefetch" href="/assets/js/18.98c624bc.js"><link rel="prefetch" href="/assets/js/19.73f8eb3d.js"><link rel="prefetch" href="/assets/js/20.c5994c61.js"><link rel="prefetch" href="/assets/js/21.7acdffb3.js"><link rel="prefetch" href="/assets/js/22.93c75a79.js"><link rel="prefetch" href="/assets/js/23.edd50749.js"><link rel="prefetch" href="/assets/js/24.147c69e7.js"><link rel="prefetch" href="/assets/js/25.f986ddd4.js"><link rel="prefetch" href="/assets/js/26.f04befb9.js"><link rel="prefetch" href="/assets/js/27.c99bf4fd.js"><link rel="prefetch" href="/assets/js/28.f85ecd11.js"><link rel="prefetch" href="/assets/js/29.5d111f94.js"><link rel="prefetch" href="/assets/js/3.d7beb2be.js"><link rel="prefetch" href="/assets/js/30.885faeac.js"><link rel="prefetch" href="/assets/js/31.66c683a5.js"><link rel="prefetch" href="/assets/js/32.21a72ca3.js"><link rel="prefetch" href="/assets/js/33.90108020.js"><link rel="prefetch" href="/assets/js/34.95d86ecc.js"><link rel="prefetch" href="/assets/js/35.84c42e03.js"><link rel="prefetch" href="/assets/js/36.074f4124.js"><link rel="prefetch" href="/assets/js/4.c07633a7.js"><link rel="prefetch" href="/assets/js/6.5eec1286.js"><link rel="prefetch" href="/assets/js/7.444f6673.js"><link rel="prefetch" href="/assets/js/8.4b200f79.js"><link rel="prefetch" href="/assets/js/9.8e09849b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1d62a147.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar page_index"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-exact-active router-link-active"><!----> <span class="site-name">前端面试题精选</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/page/base/" class="nav-link">基础部分</a></div><div class="nav-item"><a href="/page/frame/" class="nav-link">框架部分</a></div><div class="nav-item"><a href="/page/service/" class="nav-link">服务端相关知识点</a></div><div class="nav-item"><a href="/page/article/" class="nav-link">大厂面试题</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/page/base/" class="nav-link">基础部分</a></div><div class="nav-item"><a href="/page/frame/" class="nav-link">框架部分</a></div><div class="nav-item"><a href="/page/service/" class="nav-link">服务端相关知识点</a></div><div class="nav-item"><a href="/page/article/" class="nav-link">大厂面试题</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="cont"><div id="large-header" class="large-header"></div></div> <script>
+// import data from './data.json'
+    export default {
+        data() {
+            return {
+                dataList:data
+            }
+        },
+        mounted() {
+            this.animationFrame()
+            this.init()
+        },
+        methods: {
+            animationFrame() {
+                var lastTime = 0;
+                var vendors = ['ms', 'moz', 'webkit', 'o'];
+                for(var x = 0; x &lt; vendors.length &amp;&amp; !window.requestAnimationFrame; ++x) {
+                    window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+                    window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                        || window[vendors[x]+'CancelRequestAnimationFrame'];
+                }
+&lt;pre&gt;&lt;code&gt;            if (!window.requestAnimationFrame) {
+                window.requestAnimationFrame = function(callback, element) {
+                    var currTime = new Date().getTime();
+                    var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                    var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+                        timeToCall);
+                    lastTime = currTime + timeToCall;
+                    return id;
+                };
+            }
+
+            if (!window.cancelAnimationFrame) {
+                window.cancelAnimationFrame = function(id) {
+                    clearTimeout(id);
+                };
+            }
+        },
+        init() {
+            var width, height, largeHeader, canvas, ctx, circles, target, animateHeader = true;
+
+            // Main
+            initHeader();
+            addListeners();
+
+            function initHeader() {
+                width = window.innerWidth;
+                height = document.documentElement.clientHeight / 2
+                // height = window.innerHeight / 2;
+                target = {x: 0, y: height};
+
+                largeHeader = document.getElementById('large-header');
+                largeHeader.style.height = height+'px';
+
+                canvas = document.getElementById('cvs');
+                canvas.width = width;
+                canvas.height = height;
+                ctx = canvas.getContext('2d');
+
+                // create particles
+                circles = [];
+                for(var x = 0; x &amp;lt; width*0.5; x++) {
+                    var c = new Circle();
+                    circles.push(c);
+                }
+                animate();
+            }
+
+            // Event handling
+            function addListeners() {
+                window.addEventListener('scroll', scrollCheck);
+                window.addEventListener('resize', resize);
+            }
+
+            function scrollCheck() {
+                if(document.body.scrollTop &amp;gt; height) animateHeader = false;
+                else animateHeader = true;
+            }
+
+            function resize() {
+                width = window.innerWidth;
+                height = document.documentElement.clientHeight / 2;
+                largeHeader.style.height = height+'px';
+                canvas.width = width;
+                canvas.height = height;
+            }
+
+            function animate() {
+                if(animateHeader) {
+                    ctx.clearRect(0,0,width,height);
+                    for(var i in circles) {
+                        circles[i].draw();
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+
+            // Canvas manipulation
+            function Circle() {
+                var _this = this;
+
+                // constructor
+                (function() {
+                    _this.pos = {};
+                    init();
+                })();
+
+                function init() {
+                    _this.pos.x = Math.random()*width;
+                    _this.pos.y = height+Math.random()*100;
+                    _this.alpha = 0.1+Math.random()*0.3;
+                    _this.scale = 0.1+Math.random()*0.3;
+                    _this.velocity = Math.random();
+                }
+
+                this.draw = function() {
+                    if(_this.alpha &amp;lt;= 0) {
+                        init();
+                    }
+                    _this.pos.y -= _this.velocity;
+                    _this.alpha -= 0.0005;
+                    ctx.beginPath();
+                    ctx.arc(_this.pos.x, _this.pos.y, _this.scale*10, 0, 2 * Math.PI, false);
+                    ctx.fillStyle = 'rgba(255,255,255,'+ _this.alpha+')';
+                    ctx.fill();
+                };
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</script></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2019-12-24 23:00:17</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b6b59290.js" defer></script><script src="/assets/js/2.7c9ec0fc.js" defer></script><script src="/assets/js/5.e76d72ba.js" defer></script>
+  </body>
+</html>
