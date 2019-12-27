@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
+    "src:build": "vuepress build src",
     "deploy": "bash deploy.sh"
   },
   "devDependencies": {
