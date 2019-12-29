@@ -7,19 +7,16 @@ set -e
 npm run src:build
 
 # 进入生成的文件夹
-cd .vuepress/dist
+cd dist
 
-# 如果是发布到自定义域名
-# echo 'www.example.com' > CNAME
 
 git init
 git add -A
 git commit -m 'deploy'
 
-# 如果发布到 https://zhoubichuan.github.io
-# git push -f git@github.com:zhoubichuan/zhoubichuan.github.io.git master
-
-# 如果发布到 https://zhoubichuan.github.io/Web-Interview
-git push -f git@github.com:zhoubichuan/Web-Interview.git master:gh-pages
+git remote add origin https://github.com/zhoubichuan/Web-Interview.git
+git pull origin gh-pages
+git push -u origin gh-pages
+git push origin gh-pages 
 
 cd -
