@@ -9,13 +9,10 @@ meta:
 
 # 三、JavaScript相关面试题
 
-## 1.this 指向
+## 1.this 指向的几种情况
 
-函数作为对象的方法被调用时：
-
-this 指向该对象
-
-```
+- 函数作为对象的方法被调用时：this 指向该对象
+```js
 var obj={
     fn:function(){
         console.log(this)
@@ -24,20 +21,16 @@ var obj={
 obj.fn()
 ```
 
-函数作为普通函数被调用时：
-
-this 指向 window
-
-```
+- 函数作为普通函数被调用时：this 指向 window
+```js
 function fn(){
     console.log(this)
 }
 fn()
 ```
 
-函数作为构造器被调用时：this 指向返回的这个对象
-
-```
+- 函数作为构造器被调用时：this 指向返回的这个对象
+```js
 function Fn(){
     this._fn=function(){
         console.log(this)
@@ -46,12 +39,8 @@ function Fn(){
 var fn = new Fn()
 fn._fn()
 ```
-
-this 的隐式丢失：
-
-this 指向 window
-
-```
+- this 的隐式丢失：this 指向 window
+```js
 var obj={
     fn:function(){
         console.log(this)
@@ -60,28 +49,25 @@ var obj={
 var fn=obj.fn
 fn()
 ```
-自执行函数执行的时候this指向window
-```
+- 自执行函数执行的时候：this指向window
+```js
 (function(){
     console.log(this)
 })()
 ```
-
-箭头函数:
-
-箭头函数的 this 绑定看的是 this 所在函数定义在哪个对象下，就绑定哪个对象；如果有嵌套的情况，则 this 绑定到最近的一层对象上，this 的指向固定化，并不是因为箭头函数内部有绑定 this 的机制，实际原因是箭头函数根本没有自己的 this,导致内部的 this 就是外层代码块的 this。正是因为它没有 this，所以也就不能用作构造函数；
+- 箭头函数:
+箭头函数的 this 绑定看的是 this 所在函数定义在哪个对象下，就绑定哪个对象；如果有嵌套的情况，则 this 绑定到最近的一层对象上，this 的指向固定化，并不是因为箭头函数内部有绑定 this 的机制，实际原因是箭头函数根本没有自己的 this,导致内部的 this 就是外层代码块的 this。正是因为它没有 this，所以也就不能用作构造函数
 
 
-## 2.怎么改变 this 指向呢
-
+## 2.改变 this 指向的几种方式
 * 1.使用箭头函数
 * 2.在函数内部使用 that = this
 * 3.使用 apply,call,bind
 * 4.new 实例化一个对象
 
 ## 3.documen.write 和 innerHTML 的区别
-document.write只能重绘整个页面
-innerHTML可以重绘页面的一部分
+- document.write只能重绘整个页面
+- innerHTML可以重绘页面的一部分
 
 ## 4. 什么是闭包
 
@@ -89,7 +75,7 @@ innerHTML可以重绘页面的一部分
 - 作用域链向上查找，把外围的作用域中的变量值存储在内存中而不是在函数调用执行完毕后销毁，设计私用的方法和变量，避免全局变量的污染
 - 嵌套函数的本质是将函数内部和外部连接起来，有点事可以读取函数内部的变量，让这些变量的值始终保持在内存中，不会再函数被调用之后自动清除
 
-### 闭包的缺陷
+## 5. 闭包的缺陷
 - 常驻内存会增大内存的使用量
 - 使用不当会造成内存泄漏
 - 如果不是因为某些特殊的任务而需要使用闭包，在没有必要的情况下，在其他函数总创建函数是不明智的，因为闭包对脚本性能具有负面影响，包括处理速度和内存消耗。
@@ -123,9 +109,7 @@ innerHTML可以重绘页面的一部分
     - 一个看不见的对象，存在若干个属性和变量，它被调用的时候创建的。函数被调用查看this指向object,object就是上下文（只有被调用的时候创建）
 
 ## 作用域链
-
 当代码在一个环境中执行时，会创建变量对象的一个作用域链
-
 ```
 var name = "Tom"
 function say(){
@@ -327,8 +311,9 @@ var child= new Child()
 console.log(child.getChildName())
 ```
 ## JavaScript的数据类型
-基本数据类型：Number、String、Boolean、Undefined、Null、Symbol
-引用数据类型：Object、Array、Function、RegExp、Date、Error
+- 基本数据类型：Number、String、Boolean、Undefined、Null、Symbol
+- 引用数据类型：Object、Array、Function、RegExp、Date、Error
+
 ## 9.数据类型的判断
 - tyoeof
 - instaceof
@@ -619,18 +604,12 @@ huawei.com 与 consumenr.huawei.com
 * 防止并发加载资源过多会阻塞 js 的加载，影响网站的正常使用
 * 原理：首先将页面上的图片的 src 属性设置为空字符串，而图片的真路径则设置带 data-original 属性中；当页面滚动的时候去监听 scroll 事件，在 scroll 事件的回调中，判断我们的懒加载的图片是否进入可视区域；如果图片在可视区域将图片的 src 属性设置为 data-original 的值，这样就可以实现延迟加载。
 ## 19. 函数的节流和防抖
-
-### 函数的节流（类似地铁）
-
-节流是连续触发事件的过程以一定的时间间隔执行函数。节流会稀释你的执行频率，比如每间隔 1 秒钟，只会执行一次函数，无论这 1s 内触发了多少次事件
-
-### 函数的防抖（类似公交）
-
-短时间内多次触发同一事件，只执行最后一次，或者在开始时执行，中间不执行。
+- 函数的节流：节流是连续触发事件的过程以一定的时间间隔执行函数。节流会稀释你的执行频率，比如每间隔 1 秒钟，只会执行一次函数，无论这 1s 内触发了多少次事件
+- 函数的防抖：短时间内多次触发同一事件，只执行最后一次，或者在开始时执行，中间不执行。
 
 都为解决高频率事件而来，scroll mosewheel
 mosemover touchmove onesize
-## 20. 将类数组 arguments 转换为数组的方法
+## 20. 类数组转换为数组的方法
 
 * Array.apply(null,arguments)
 - [...arguments]

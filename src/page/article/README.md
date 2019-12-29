@@ -12,10 +12,16 @@ meta:
 
 ## 1.使用过的 koa2 中间件
 
-- koa-router
-- koa-session
-- koa-logger
-- koa-json
+- koa-router:koa.js 为了保持自身的精简，并没有像 Express.js 自带了路由功能，因此 koa-router 做了很好的补充，koa-router 提供了全面的路由功能，比如类似 Express 的 app.get/post/put 的写法，URL 命名参数，路由命名，支持加载多个中间件，嵌套路由等。
+- koa-bodyparser:koa.js 并没有内置 Request Body 的解析器，当我们需要接线请求体时需要加载额外的中间件，官方提供的 koa-bodyparser 是个不错的选择，支持 x-wwww-form-urlencoded,application/json 等格式的请求体，但不支持 form-data 的请求体，需要借助 formidable 这个库，也可以直接使用 koa-body 或 koa-better-body
+- koa-views：koa-views 对需要进行视图模板的渲染应用是个不可缺少的中间件，支持 ejs,nunjucks 等众多模板引擎
+- koa-static：node.js 除了处理动态请求，也可以用做类似 nginx 的静态文件服务，在本地开放式特别方便，可以用于加载前端文件或者后端 fake 数据，可结合 koa-compress 和 koa-mount 使用
+- koa-session：http 是无状态协议，为了保持用户状态，我们一般使用 session 会话，koa-session 提供了这样的功能，既支持将会话信息存储在本地 cookie，也支持存储在如 redis，mongodb 这样的外部存储设备
+- koa-jwt：随着网站前后端分离方案的流行，越来越多的网站从 session base 转为使用 token base，jwt(json web tokens)作为一个开放的标准被很多网站采用，koa-jwt 这个中间件使用 jwt 认证 http 请求
+- koa-helmet：网站安全得到越来越多的重视，helmet 通过增加如 Strict-Transport-Security,X-Frame-Options 等 HTTP 头提高 Express 应用程序的安全性，koa-helmet 为 koa 程序提供了类似的功能，参考 Node.js 安全清单
+- koa-compress:当响应体比较大时，我们一般会启用类似 Gzip 的压缩技术减少传输内容，koa-compress 提供了这样的功能，可以根据需要进行灵活的配置。
+- koa-logger：koa-loagger 提供了输出请求日志的功能，包括请求的 url，状态码，响应时间，响应体大小等信息，对于调试和跟踪应用程序特别有帮助，koa-bunyan-loagger 提供了更丰富的功能。
+- koa-convert:对于比较老的使用 gennerate 函数的 koa 中间件，官方提供了一个灵活的工具可以将他们转为基于 Promsie 的中间件供 koa2 使用，同样可以将新的基于 Promise 的中间件转为旧式的 Generate 中间件。
 
 ## 2.koa-body 原理
 
@@ -25,7 +31,7 @@ meta:
 
 ## 5.介绍 pm2
 
-pm2 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动重启、负载均衡。
+PM2 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动启动、负载均衡等，而且使用非常简单
 
 ## 6.master 挂了的话 pm2 怎么处理
 
