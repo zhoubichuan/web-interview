@@ -41,7 +41,6 @@ module.exports = {
   ],
   port: 3009,
   dest: '.vuepress/dist', // 指定 vuepress build 的输出目录
-  ga: 'undefined', // 提供一个 Google Analytics ID 来使 GA 生效
   serviceWorker: false, // pwa
 
   // 主题配置
@@ -56,15 +55,15 @@ module.exports = {
         nav: [
           // 顶部导航栏
           {
-            text: '基础部分',
+            text: '前端基础面试题',
             link: '/page/base/'
           },
           {
-            text: '框架部分',
+            text: '前端框架面试题',
             link: '/page/frame/'
           },
           {
-            text: '服务端相关知识点',
+            text: 'node相关面试题',
             link: '/page/service/'
           },
           {
@@ -74,72 +73,183 @@ module.exports = {
         ],
         sidebar: {
           // 文档侧边栏 跳转到不同页面
-          '/page/base/': genSidebarConfig('基础部分'),
-          '/page/frame/': genSidebarConfig2('框架部分'),
-          '/page/service/': genSidebarConfig3('服务端相关知识点'),
-          '/page/article/': genSidebarConfig4('大厂面试题')
+          '/page/base/': [{
+              title: '一、标签及样式',
+              collapsable: false,
+              children: ['', 'CSS']
+            },
+            {
+              title: '二、JavaScript',
+              collapsable: false,
+              children: ['JavaScript']
+            }
+          ],
+          '/page/frame/': [{
+              title: '一、Vue',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: ['']
+            },
+            {
+              title: '二、React',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: ['React']
+            },
+            {
+              title: '三、Angular',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: ['Angular']
+            },
+            {
+              title: '四、小程序',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: ['小程序']
+            },
+          ],
+          '/page/service/': [{
+              title: '一、node',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: ['', ]
+            },
+            {
+              title: '二、express',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: ['express']
+            },
+            {
+              title: '三、koa',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: ['koa']
+            },
+            {
+              title: '四、egg',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: ['egg']
+            },
+          ],
+          '/page/article/': [{
+              title: '阿里巴巴',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                '',
+                'elem',
+                'mogujie',
+              ]
+            },
+            {
+              title: 'baobaoshu',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'baobaoshu',
+              ]
+            },
+            {
+              title: '滴滴',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'didi',
+              ]
+            },
+            {
+              title: 'duiba',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'duiba',
+              ]
+            },
+            {
+              title: 'haifendian',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'haifendian',
+              ]
+            },
+            {
+              title: '海风教育',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'haifengjiaoyu',
+              ]
+            },
+            {
+              title: '海康威视',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'haikangweishi',
+              ]
+            },
+            {
+              title: '沪江',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'hujiang',
+              ]
+            },
+            {
+              title: '酷家乐',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'kujiale',
+              ]
+            },
+            {
+              title: '寺库',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'siku',
+              ]
+            },
+            {
+              title: '头条',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'toutiao',
+              ]
+            },
+            {
+              title: '挖财',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'wacai',
+              ]
+            },
+            {
+              title: '网易',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'wangyi',
+              ]
+            },
+            {
+              title: 'weiyi',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'weiyi',
+              ]
+            },
+            {
+              title: 'xiecheng',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'xiecheng',
+              ]
+            },
+            {
+              title: '喜马拉雅',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'ximalaya',
+              ]
+            },
+            {
+              title: '有赞',
+              collapsable: false, // 让一个组永远都是展开状态
+              children: [
+                'youzan',
+              ]
+            },
+          ]
         }
       }
     }
   }
-}
-
-function genSidebarConfig(title) {
-  return [
-    {
-      title,
-      collapsable: true, // 让一个组永远都是展开状态
-      children: ['', 'CSS', 'JavaScript']
-    }
-  ]
-}
-
-function genSidebarConfig2(title) {
-  return [
-    {
-      title,
-      collapsable: true, // 让一个组永远都是展开状态
-      children: ['', 'React', 'Angular', '小程序']
-    }
-  ]
-}
-
-function genSidebarConfig3(title) {
-  return [
-    {
-      title,
-      collapsable: true, // 让一个组永远都是展开状态
-      children: ['', 'express', 'koa', 'egg']
-    }
-  ]
-}
-
-function genSidebarConfig4(title) {
-  return [
-    {
-      title,
-      collapsable: true, // 让一个组永远都是展开状态
-      children: [
-        ''
-        // '2',
-        // '3',
-        // '4',
-        // '5',
-        // '6',
-        // '7',
-        // '8',
-        // '9',
-        // '10',
-        // '11',
-        // '12',
-        // '13',
-        // '14',
-        // '15',
-        // '16',
-        // '17',
-        // '18',
-        // '19',
-      ]
-    }
-  ]
 }

@@ -8,7 +8,7 @@ meta:
     content: vuepress,最新技术文档,vuepress语法,markdown语法
 ---
 
-# 二、CSS 相关面试题
+<!-- # 二、CSS 相关面试题 -->
 
 ## 1.css 盒模型
 
@@ -16,40 +16,40 @@ meta:
 - box-sizing: border-box,inherit,content-box
 - 标准盒模型：box-sizing: content-box
 
-```
+```html
 <div class="box">
-    盒子的高度=content
+  盒子的高度=content
 </div>
 ```
 
-```
-.box{
-    width:100px;
-    height:100px;
-    background-color:red;
-    padding:10px;
-    border:10px solid gray;
-    color:green;
+```css
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  padding: 10px;
+  border: 10px solid gray;
+  color: green;
 }
 ```
 
 - 怪异盒模型：box-sizing: border-box,元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制
 
-```
+```html
 <div class="box">
-    盒子的高度=border+paddig+content
+  盒子的高度=border+paddig+content
 </div>
 ```
 
-```
-.box{
-    box-sizing: border-box;
-    width:100px;
-    height:100px;
-    background-color:red;
-    padding:10px;
-    border:10px solid gray;
-    color:green;
+```css
+.box {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  padding: 10px;
+  border: 10px solid gray;
+  color: green;
 }
 ```
 
@@ -118,11 +118,12 @@ meta:
   4.  父级元素设置 overflow：hidden;
       5..clearfix:使用内容生成的方式清除浮动:
 
-```
-.clearfix:after{//:after选择器向选定的元素之后插入内容
-    content:"";//生成内容为空
-    display:block;//块级元素显示
-    clear:both;//清除前面的元素
+```css
+.clearfix:after {
+  //:after选择器向选定的元素之后插入内容
+  content: ''; //生成内容为空
+  display: block; //块级元素显示
+  clear: both; //清除前面的元素
 }
 ```
 
