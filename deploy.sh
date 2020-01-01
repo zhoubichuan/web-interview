@@ -18,13 +18,7 @@ cd dist
 
 git init
 git add -A
-git commit -m 'deploy'
-
-git remote add origin https://github.com/zhoubichuan/Web-Interview.git
-git checkout origin/gh-pages
-git checkout -b gh-pages
-git pull origin gh-pages
-git push -u origin gh-pages
-git push origin gh-pages 
+git commit -m 'gh-pages'
+git push -f https://github.com/zhoubichuan/Web-Interview.git
 
 cd -
