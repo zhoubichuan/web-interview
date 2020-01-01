@@ -6,7 +6,6 @@ set -e
 git init
 git add -A
 git commit -m 'master'
-git remote add origin https://github.com/zhoubichuan/Web-Interview.git
 git pull origin master
 git push -u origin master
 git push origin master
