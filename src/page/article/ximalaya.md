@@ -32,6 +32,10 @@ rejected
 
 ## 5.React 的生命周期
 
+- 挂载卸载过程：constructor、componentWillMount、componentDidMount、componentWillUnmount
+- 更新过程：componentWillReceiveProps、shouldComponentUpdate、componentWillUpdate、componentDidUpdate、render
+- 新增生命周期：getDerivedStateFromProps、getSnapshotBeforeUpdate
+
 ## 6.componentWillReceiveProps 的触发条件是什么
 
 ## 7.React16.3 对生命周期的改变
@@ -89,7 +93,16 @@ rejected
 
 ## 1.前后端通信使用什么方案
 
+- ajax
+- EventSource
+- websocket
+- navigator.sendBeacon
+- 服务端渲染
+- web socket
+
 ## 1.RESTful 常用的 Method
+
+- post get delete put
 
 ## 1.介绍下跨域
 

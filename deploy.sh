@@ -19,6 +19,9 @@ cd dist
 git init
 git add -A
 git commit -m 'gh-pages'
-git push -f https://github.com/zhoubichuan/Web-Interview.git gh-page
+git branch gh-pages
+git checkout gh-pages
+git pull origin gh-pages
+git push -f https://github.com/zhoubichuan/Web-Interview.git
 
 cd -
