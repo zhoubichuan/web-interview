@@ -134,14 +134,14 @@ say() //hi, Tom
 - 函数的原型链对象constructor默认指向函数本身，原型对象除了有原型属性外，为了实现继承，还有一个原型链指针__proto__；该指针是指向上一层的原型对象，而上一层的原型对象的结构依然类似；因此可以利用__proto__一直指向object的原型对象上，而object原型对象用object.prototype=null表示原型链顶端。如此形成了js的原型链继承。同时所有的js对象都有object的基本方法。
 
 ## 8. 类的创建和继承
-- 原型链继承
-- 构造函数继承
-- 组合继承
-- 原型式继承
-- 寄生式继承
-- 寄生组合继承
-- 混合继承
-- es6继承
+- 1.原型链继承
+- 2.构造函数继承
+- 3.组合继承
+- 4.原型式继承
+- 5.寄生式继承
+- 6.寄生组合继承
+- 7.混合继承
+- 8.es6继承
 
 ### 1·原型链继承
 ```js
@@ -311,18 +311,17 @@ var child= new Child()
 console.log(child.getChildName())
 ```
 ## JavaScript的数据类型
-- 基本数据类型：Number、String、Boolean、Undefined、Null、Symbol
-- 引用数据类型：Object、Array、Function、RegExp、Date、Error
+- 基本数据类型： Number、String、Boolean、Undefine、null、Symbol
+- 引用数据类型： Object、Function
 
 ## 9.数据类型的判断
-- tyoeof
-- instaceof
-- toString
-- hasOwnProperty
-- isProperty
-- constructor
+- 1.typeof
+- 2.instanceof
+- 3.toString
+- 4.hasOwnProperty
+- 5.isProperty
+- 6.constructor
 ### typeof
-
 - 只能判断基本数据类型：Number String undefined ,null,symbol Boolean;
 - null 返回 object
 - 对于引用数据类型除了 function 都返回 object
