@@ -11,20 +11,41 @@ meta:
 # 兑吧
 
 ## 1.localStorage 和 cookie 有什么区别
+存储大小
+locationStorage 5m
+cookie 5k
+生成
+locationStorage 客户端生成 
+cookie 一般是服务端生成
+生命周期
+locationStorage 永久除非主动删除
+cookie 设置的失效时间
+都遵循同源策略
 
 ## 2.CSS 选择器有哪些
+常见的有标签、类、id、*、子代
 
 ## 3.盒子模型，以及标准情况和 IE 下的区别
+标准盒模型 margin padding在盒子外面
+怪异盒模型 margin 在盒子外面 padding在盒子里面
 
 ## 4.如何实现高度自适应
+height：100vh
 
 ## 5.prototype 和——proto——区别
+prototype函数的原型
+__proto__对象的原型
 
 ## 6.\_construct 是什么
 
 ## 7.new 是怎么实现的
-
+function new(fn){
+  var o = new Object()
+  o.__proto__=fn.prototype
+  return fn.call(o)
+}
 ## 8.promise 的精髓，以及优缺点
+解决了回调函数回调地狱的问题，链式写法比较方便
 
 ## 9.如何实现 H5 手机端的适配
 
@@ -32,7 +53,7 @@ meta:
 
 ## 11.em 和 px 的区别
 
-## 12.React 声明周期
+## 12.React 生命周期
 
 ## 13.如何去除 url 中的#号
 
@@ -55,6 +76,46 @@ meta:
 ## 22.介绍 koa2
 
 ## 23.Promise 如何实现的
+class Promise(excutor){
+  constructor(){
+    this.status = pendding
+    this.reosve = null
+    this.reject = null
+    this.onresolveCallbacks = []
+    this.onrejectCallbacks = []
+    let resolve=value=>{
+      this.status=resolved
+      this.resolve=value
+      this.onresolvedCallbacks.forEach(fn=>fn())
+    }
+    let reject=value=>{
+      this.status=rejected
+      this.reject=value
+      this.onrejectedCallbacks.forEach(fn=>fn())
+    }
+    try{
+      excutor(resolve,reject)
+    }catch(err){
+      reject(err)
+    }
+  }
+  then(onfullfild,onfullreject){
+    if(this.status ==resoved){
+      onfullfild(this.resolve)
+    }
+    if(this.status == reject){
+      onfullreject(this.reject)
+    }
+    if(this.status == 'pending'){
+      this.reolvedCallback.push(()=>{
+        onfullfild(this.resolved)
+      })
+      this.rejectCallback.push(()=>{
+        onfullreject(this.reject)
+      })
+    }
+  }
+}
 
 ## 24.异步请求，低版本 fetch 如何低版本适配
 
