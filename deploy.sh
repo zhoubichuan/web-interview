@@ -21,6 +21,6 @@ git checkout --orphan gh-pages
 git add .
 git commit -m 'gh-pages'
 git remote add origin https://github.com/zhoubichuan/Web-Interview.git
-git push origin gh-pages
+git push -f origin gh-pages
 
 cd -
