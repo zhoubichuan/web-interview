@@ -19,6 +19,32 @@ meta:
 ## 4.call、apply、bind 的区别
 
 ## 5.防抖和节流的区别
+```
+function throttle(fn,wait){
+  var timer
+  return function(){
+    var context = this
+    var args = arguments
+    if(!timer){
+      timer = setTimeout(()=>{
+        timer =null
+        fn.apply(this,args)
+      },wait)
+    }
+  }
+}
+function debounce(){
+  var timer
+  return function(){
+    var context =this
+    var args = arguments
+    clearTimerout(timer)
+    timer = setTimeout(()=>{
+      fn.apply(context,args)
+    },wait)
+  }
+}
+```
 
 ## 6.介绍各种异步方案
 
@@ -37,6 +63,8 @@ meta:
 ## 13.介绍 css，xsrf
 
 ## 14.http 缓存控制
+1.强制缓存 ：命中就会从本地获取缓存资源，没有命中就会判断是否命中协商缓存 expires、cache-control
+2.协商缓存：如果命中，服务器将请求返回但是不会返回资源，而是告诉客户端直接从缓存中获取 last-modified、if-modified-since、etag、if-none-match
 
 ## 15.项目中如何应用数据结构
 
@@ -45,6 +73,7 @@ meta:
 ## 17.如何做工程上的优化
 
 ## 18.shouldComponentUpdate 是为了解决什么问题
+提高性能
 
 ## 19.如何解决 props 层级过深的问题
 

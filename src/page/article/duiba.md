@@ -11,28 +11,50 @@ meta:
 # 兑吧
 
 ## 1.localStorage 和 cookie 有什么区别
+存储大小
+locationStorage 5m
+cookie 5k
+生成
+locationStorage 客户端生成 
+cookie 一般是服务端生成
+生命周期
+locationStorage 永久除非主动删除
+cookie 设置的失效时间
+都遵循同源策略
 
 ## 2.CSS 选择器有哪些
+常见的有标签、类、id、*、子代
 
 ## 3.盒子模型，以及标准情况和 IE 下的区别
+标准盒模型 margin padding在盒子外面
+怪异盒模型 margin 在盒子外面 padding在盒子里面
 
 ## 4.如何实现高度自适应
+height：100vh
 
 ## 5.prototype 和——proto——区别
+prototype函数的原型
+__proto__对象的原型
 
 ## 6.\_construct 是什么
 
 ## 7.new 是怎么实现的
-
+function new(fn){
+  var o = new Object()
+  o.__proto__=fn.prototype
+  return fn.call(o)
+}
 ## 8.promise 的精髓，以及优缺点
+解决了回调函数回调地狱的问题，链式写法比较方便
 
 ## 9.如何实现 H5 手机端的适配
+使用rem布局
 
 ## 10.rem、flex 的区别（root em）
 
 ## 11.em 和 px 的区别
 
-## 12.React 声明周期
+## 12.React 生命周期
 
 ## 13.如何去除 url 中的#号
 
@@ -45,6 +67,9 @@ meta:
 ## 17.如何实现分模块打包（多入口）
 
 ## 18.前端性能优化（1js css；2 图片；3 缓存预加载； 4 SSR； 5 多域名加载；6 负载均衡）
+减少请求次数：懒加载、精灵图、合并请求、缓存
+减少请求体积：压缩、公共方法组件
+cdn、多域名
 
 ## 19.并发请求资源数上限（6 个）
 
@@ -55,16 +80,58 @@ meta:
 ## 22.介绍 koa2
 
 ## 23.Promise 如何实现的
+class Promise(excutor){
+  constructor(){
+    this.status = pendding
+    this.reosve = null
+    this.reject = null
+    this.onresolveCallbacks = []
+    this.onrejectCallbacks = []
+    let resolve=value=>{
+      this.status=resolved
+      this.resolve=value
+      this.onresolvedCallbacks.forEach(fn=>fn())
+    }
+    let reject=value=>{
+      this.status=rejected
+      this.reject=value
+      this.onrejectedCallbacks.forEach(fn=>fn())
+    }
+    try{
+      excutor(resolve,reject)
+    }catch(err){
+      reject(err)
+    }
+  }
+  then(onfullfild,onfullreject){
+    if(this.status ==resoved){
+      onfullfild(this.resolve)
+    }
+    if(this.status == reject){
+      onfullreject(this.reject)
+    }
+    if(this.status == 'pending'){
+      this.reolvedCallback.push(()=>{
+        onfullfild(this.resolved)
+      })
+      this.rejectCallback.push(()=>{
+        onfullreject(this.reject)
+      })
+    }
+  }
+}
 
 ## 24.异步请求，低版本 fetch 如何低版本适配
 
 ## 25.ajax 如何处理跨域
+corse配置请求头，需要后端配置修改白名单
 
 ## 26.CORS 如何设置
 
 ## 27.jsonp 为什么不支持 post 方法
 
 ## 28.介绍同源策略
+协议、端口、域名相同的资源可以互相访问
 
 ## 29.React 使用过的一些组件
 
@@ -75,3 +142,7 @@ meta:
 ## 32.介绍原型链
 
 ## 33.如何继承
+1.原型链继承
+2.寄生继承
+3.寄生组合继承
+4.es6继承
