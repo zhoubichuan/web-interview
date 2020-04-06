@@ -23,7 +23,7 @@ git checkout --orphan gh-pages
 git add .
 git commit -m 'gh-pages'
 git pull origin gh-pages
-git push origin gh-pages
+git push -f origin gh-pages
 
 # 5.返回初始目录
 cd -
