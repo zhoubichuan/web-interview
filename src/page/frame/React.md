@@ -52,7 +52,7 @@ meta:
 
 - 父组件通过 props 给子组件传递数据，子组件则是通过调用父组件给它的函数给父组件传递数据
 
-## 8. 为什么虚拟 DOM 会提高性能
+## 7. 为什么虚拟 DOM 会提高性能
 
 - 虚拟 DOM 相当于在 js 和真实 DOM 中间加了一个缓存，利用 dom diff 算法避免了没有必要的 dom 操作，从而提高性能
 - 具体实现步骤：
@@ -60,25 +60,25 @@ meta:
   - 当状态变更的时候，重新构建一颗树的对象树，然后用新的和旧的树进行对比，记录两颗树的差异
   - 把所记录的差异应用到步骤 1 所构建的真正的 DOM 树上，视图就更新了
 
-## 9. diff 算法
+## 8. diff 算法
 
 - 1.把树形结构按照层级分解，只比较同级元素
 - 2.给列表结构的每个单元添加 key 属性，方便比较，在实际代码中，会对新旧两棵树进行一个深度优先遍历，这样每个节点都会有一个标记
 - 3.在深度优先遍历的时候，每遍历到一个节点就把该节点和新的树进行对比，如果有差异的话就记录到一个对象里面。Virtual DOM 算法主要实现上面步骤的三个函数：element,diff,path.然后就可以实际的进行使用。react 只会匹配相同的 class 的 component（这里的 class 指的是组件的名字）。合并操作，调用 component 的 setState 方法的时候，React 将其标记为 dirty 到每一个时间循环，React 检查所有标记 dirty 的 component 重新绘制
 - 4.选择性子树渲染。可以重写 shouldComponentUpdate 提高 diff 性能
 
-## 12. react 性能优化是在哪个周期
+## 9. react 性能优化是在哪个周期
 
 - shouldComponentUpdate 这个方法用来判断是否需要调用 render 方法重新描绘 dom，因为 dom 的描绘非常消耗性能
 - 如果我们在 shouldComponentUpdate 方法中能够写出更优化的 dom diff 算法，可以极大提高性能
 
-## 13.react 怎么划分业务组件和技术组件
+## 10.react 怎么划分业务组件和技术组件
 
 - 根据组件的职责通常把组件分为 UI 组件和容器组件
 - UI 组件负责 UI 的呈现，容器组件负责管理数据和逻辑
 - 两者通过 React-redux 提供 connect 方法联系起来
 
-## 14. setState
+## 11. setState
 
 - setState 通过一队列机制实现 state 更新，当执行 setState 时，会将需要更新的 state 往后放入状态队列
 - 那么该 state 将不会被放入状态队列中。当下次调用 setState 并对状态队列进行合并时，就会忽略之前修改的 state，造成不可预知的错误
