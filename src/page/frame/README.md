@@ -33,12 +33,31 @@ meta:
 
 ## 4. 生命周期函数
 
-- new Vue(创建一个 Vue 对象)-->init event（vue 内部初始化事件）-->beforeCreate-->observer Ddata(开始监听 data 对象的数据变化)-->created()-->compile(编译模板，把 data 里面的数据和模板生成 html)-->beforeMount（还没生成 html 到元素上）-->mounted(挂载完成，也就是模板中的 html 渲染到 html 页面中)-->beforeUpdate(Virtual Dom) -->updated-->beforeDestory-->destoryed
+vue 初始化到渲染的过程
+
+- 1.new Vue
+- 2.init --> initEvent --> beforeCreate --> initData（observer...） -->created
+- 3.\$mount--> beforeMount
+- 4.render
+- 5.compiler
+- 6.vnode
+- 7.path
+- 9.dom --> mounted
+
+组件更新
+
+- initData(dep)
+- watch(dep)
+- render(dep)
+
+- beforeUpdate --> virtual dom --> updated
+
+<!-- - new Vue(创建一个 Vue 对象)->init event（vue 内部初始化事件）->beforeCreate->observer Ddata(开始监听 data 对象的数据变化)->created()->compile(编译模板，把 data 里面的数据和模板生成 html)->beforeMount（还没生成 html 到元素上）->mounted(挂载完成，也就是模板中的 html 渲染到 html 页面中)->beforeUpdate(Virtual Dom) ->updated->beforeDestory->destoryed
 - 1.ajax 请求最好放在 created 里面，页面可以访问到 this 了
 - 2.关于 dom 的操作要法国在 mounted 里面，在 mounted 前面还没有生成 dom
 - 3.每次进入/离开组件都做一些事情，用什么钩子函数
   - 不缓存：进入的时候可以用 created 和 mounted 钩子，离开的时候可以使用 beforeDestory(可以访问 this)和 destoryed
-  - 缓存：缓存了组建之后，再次进入组建不会触发 beforeCreated，created,beforeMount,mounted,如果你像每次进入组建都做一些事情的话，你可以放在 activated 进入缓存组件的钩子中
+  - 缓存：缓存了组建之后，再次进入组建不会触发 beforeCreated，created,beforeMount,mounted,如果你像每次进入组建都做一些事情的话，你可以放在 activated 进入缓存组件的钩子中 -->
 
 ## 5. keep-alive
 
