@@ -17,11 +17,10 @@ cd dist
 
 
 git init
-git add -A
+git checkout --orphan gh-pages
+git add .
 git commit -m 'gh-pages'
-git branch gh-pages
-git checkout gh-pages
-git pull origin gh-pages
-git push -f https://github.com/zhoubichuan/Web-Interview.git
+git remote add origin https://github.com/zhoubichuan/Web-Interview.git
+git push origin gh-pages
 
 cd -
