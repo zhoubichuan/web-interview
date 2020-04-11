@@ -53,6 +53,52 @@ module.exports = {
         editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [
+          text: '前端基础',
+          items: [{
+              text: '一、HTML',
+              link: '/driver/',
+            },
+            {
+              text: '二、CSS',
+              link: '/components/',
+            },
+            {
+              text: '三、JS基础',
+              link: '/principle/',
+            },
+            {
+              text: '四、JS面向对象',
+              link: '/compile/',
+            },
+            {
+              text: '五、V8引擎机制',
+              link: '/extend/',
+            },
+            {
+              text: '六、渲染机制',
+              link: '/router/',
+            },
+            {
+              text: '七、浏览器缓存',
+              link: '/vuex/',
+            },
+            {
+              text: '八、排序算法',
+              link: '/compile/',
+            },
+            {
+              text: '九、设计模式',
+              link: '/extend/',
+            },
+            {
+              text: '十、前端安全',
+              link: '/router/',
+            },
+            {
+              text: '十一、网络相关',
+              link: '/vuex/',
+            },
+          ],
           // 顶部导航栏
           {
             text: '前端基础面试题',
