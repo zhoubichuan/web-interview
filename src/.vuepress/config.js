@@ -52,53 +52,54 @@ module.exports = {
         docsBranch: 'master', // 假如文档放在一个特定的分支下
         editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
-        nav: [
-          text: '前端基础',
-          items: [{
-              text: '一、HTML',
-              link: '/driver/',
-            },
-            {
-              text: '二、CSS',
-              link: '/components/',
-            },
-            {
-              text: '三、JS基础',
-              link: '/principle/',
-            },
-            {
-              text: '四、JS面向对象',
-              link: '/compile/',
-            },
-            {
-              text: '五、V8引擎机制',
-              link: '/extend/',
-            },
-            {
-              text: '六、渲染机制',
-              link: '/router/',
-            },
-            {
-              text: '七、浏览器缓存',
-              link: '/vuex/',
-            },
-            {
-              text: '八、排序算法',
-              link: '/compile/',
-            },
-            {
-              text: '九、设计模式',
-              link: '/extend/',
-            },
-            {
-              text: '十、前端安全',
-              link: '/router/',
-            },
-            {
-              text: '十一、网络相关',
-              link: '/vuex/',
-            },
-          ],
+        nav: [{
+            text: '前端基础',
+            items: [{
+                text: '一、HTML',
+                link: '/base/html',
+              },
+              {
+                text: '二、CSS',
+                link: '/base/css',
+              },
+              {
+                text: '三、JS基础',
+                link: '/base/js',
+              },
+              {
+                text: '四、JS面向对象',
+                link: '/base/obj',
+              },
+              {
+                text: '五、V8引擎机制',
+                link: '/base/v8',
+              },
+              {
+                text: '六、渲染机制',
+                link: '/base/render',
+              },
+              {
+                text: '七、浏览器缓存',
+                link: '/base/cache',
+              },
+              {
+                text: '八、排序算法',
+                link: '/base/calc',
+              },
+              {
+                text: '九、设计模式',
+                link: '/base/design',
+              },
+              {
+                text: '十、前端安全',
+                link: '/base/safe',
+              },
+              {
+                text: '十一、网络相关',
+                link: '/base/network',
+              },
+            ],
+          },
           // 顶部导航栏
           {
             text: '前端基础面试题',
@@ -118,6 +119,61 @@ module.exports = {
           }
         ],
         sidebar: {
+          '/base/': [{
+              title: '一、HTML',
+              collapsable: false,
+              children: ['html']
+            },
+            {
+              title: '二、CSS',
+              collapsable: false,
+              children: ['css']
+            },
+            {
+              title: '三、JS基础',
+              collapsable: false,
+              children: ['js']
+            },
+            {
+              title: '四、JS面向对象',
+              collapsable: false,
+              children: ['obj']
+            },
+            {
+              title: '五、V8引擎机制',
+              collapsable: false,
+              children: ['v8']
+            },
+            {
+              title: '六、渲染机制',
+              collapsable: false,
+              children: ['render']
+            },
+            {
+              title: '七、浏览器缓存',
+              collapsable: false,
+              children: ['cache']
+            },
+            {
+              title: '八、排序算法',
+              collapsable: false,
+              children: ['calc']
+            },
+            {
+              title: '九、设计模式',
+              collapsable: false,
+              children: ['design']
+            },
+            {
+              title: '十、前端安全',
+              collapsable: false,
+              children: ['safe']
+            }, {
+              title: '十一、网络相关',
+              collapsable: false,
+              children: ['network']
+            },
+          ],
           // 文档侧边栏 跳转到不同页面
           '/page/base/': [{
               title: '一、标签及样式',

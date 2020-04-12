@@ -8,31 +8,38 @@ meta:
     content: vuepress,最新技术文档,vuepress主题
 ---
 
-# node相关知识点
+# node 相关知识点
 
 ## 1. 状态码
+
 1xx:临时响应并需要请求者继续执行操作
+
 - 100：请求者应当继续提出请求。
-2xx 成功处理了请求状态
+  2xx 成功处理了请求状态
 - 200 服务器已经成功处理请求，并提供了请求的网页
 - 201 用户新建或修改数据成功
 - 202 一个请求已经进入后台
 - 204 用户删除成功
 
 3xx 每次请求使用的重定向不要超过 5 次
+
 - 301:永久性转移
 - 302：暂时性转移
+
 * 304 网页上请求没有更新，节省宽带和开销
 
 4xx 表示请求可能出错，妨碍了服务器的处理
+
 - 400 服务器不理解请求的语法
 - 401 用户没有权限（用户名，密码输入错误）
 - 403 用户得到授权（401 相反），但是访问被禁止
 - 404 服务器找不到请求的网页
 
 5xx 表示服务器在处理请求的时候发生内部错误
+
 - 500 服务器遇到错误，无法完成请求
 - 503 服务器目前无法使用（超载或停机维护）
+
 ## 2. 304 的缓存原理
 
 添加 Etag 标签。last-modified 304 网页上次请求没有更新，节省宽带和开销
@@ -50,6 +57,7 @@ meta:
     - 2.如果每次扫描内容都生成 Etag 比较，显然要比直接比较修改时间慢的多
   * Etag 是被请求变量的实体值（文件的索引节大小和最后修改的时间的 hash 值）
   * Etag 的值服务器端对文件的索引节，大小和最后的修改的事件进行 hash 后得到
+
 ## 3.get/post 的区别
 
 ### 数据
@@ -67,6 +75,7 @@ get 需要 request.queryString 来获取变量的值，而 post 方式通过 req
 ### 安全
 
 get 的方法提交数据，会带来安全问题，比如登录一个页面，通过 get 方式提交数据，用户名和密码就会出现在 url 上
+
 ## 4.http 协议的理解
 
 - 1.超文本的传输协议，是用于从万维网服务器超文本传输到本地资源的传输协议
@@ -88,10 +97,12 @@ get 的方法提交数据，会带来安全问题，比如登录一个页面，�
   - 消息报头，用来说明客户端要使用的一些附加信息
   - 空行，消息报头后面的空行是必须的
   - 响应正文，服务器返回给客户端的文本信息
+
 ## 5.http 和 https
 
-* https：是以安全为目标的 http 通道，简单讲是 http 的安全版本，通过 ssl 加密
-* http：超文本传输协议。是一个客户端和服务器请求和应答的标准（tcp）,使浏览器更加高效，使网络传输减少
+- https：是以安全为目标的 http 通道，简单讲是 http 的安全版本，通过 ssl 加密
+- http：超文本传输协议。是一个客户端和服务器请求和应答的标准（tcp）,使浏览器更加高效，使网络传输减少
+
 ## 6.http1.0 和 http2.0 的区别
 
 ### 长连接：
@@ -121,15 +132,17 @@ http1.0 没有 host 域
 ### 4.服务器推送：
 
 我们对支持 http2.0 的 web server 请求数据的时候，服务器会顺便把一些客户端需要的资源一起推送到客户端，免得客户端再次创建连接发送请求到服务器端获取，这种方式非常适合加载静态资源
+
 ## web 缓存
 
 1。web 缓存就是存在于客户端与服务器之间的一个副本，当你发出第一个请求后，缓存根据请求保存输出内容副本
 
 2.缓存的好处
 
-* 1.减少不必要的请求
-* 2.降低服务器的压力，减少服务器的消耗
-* 3.降低网络延迟，加快页面打开速度（直接读取浏览器的数据）
+- 1.减少不必要的请求
+- 2.降低服务器的压力，减少服务器的消耗
+- 3.降低网络延迟，加快页面打开速度（直接读取浏览器的数据）
+
 ## 10.CommonJS 中的 require/exports 和 ES6 中的 import/export 区别？
 
 CommonJS 模块的重要特性是加载时执行，即脚本代码在 require 的时候，就会全部执行。一旦出现某个模块被”循环加载”，就只输出已经执行的部分，还未执行的部分不会输出。
@@ -138,9 +151,10 @@ ES6 模块是动态引用，如果使用 import 从一个模块加载变量，�
 
 import/export 最终都是编译为 require/exports 来执行的。
 
-CommonJS 规范规定，每个模块内部， module 变量代表当前模块。这个变量是一个对象，它的 exports 属性（即module.exports ）是对外的接口。加载某个模块，其实是加载该模块的 module.exports 属性。
+CommonJS 规范规定，每个模块内部， module 变量代表当前模块。这个变量是一个对象，它的 exports 属性（即 module.exports ）是对外的接口。加载某个模块，其实是加载该模块的 module.exports 属性。
 
 export 命令规定的是对外的接口，必须与模块内部的变量建立一一对应关系。
+
 ## 9.cdn（内容分发网络）
 
 CDN 是一种部署策略，根据不同的地区部署类似 nginx 这种服务服务，会缓存静态资源。前端在项目优化的时候，习惯在讲台资源上加上一个 hash 值，每次更新的时候去改变这个 hash，hash 值变化的时候，服务会去重新取资源
@@ -156,14 +170,16 @@ CDN 是一种部署策略，根据不同的地区部署类似 nginx 这种服务
 ### 3.基本原理：
 
 广泛采用各种缓存服务器，将这些缓存服务器分布到用户访问相对的地区或者网络中。当用户访问网络时利用全局负载技术奖用户的访问指向距离最近的缓存服务器，有缓存服务器直接响应用户的请求（全局负载技术）
+
 ## 10.tcp 三次握手
 
 客户端和服务端都需要确认各自可收发
 
-* 客户端 c 发起请求连接服务器端 s 确认，服务器端也发起连接确认客户端的确认
-* 第一次握手：客户端发送一个请求连接，服务端只能确认自己可以接受客户端发送的报文段
-* 第二次握手：服务端向客户端发送一个连接，确认客户端收到自己发送的报文段
-* 第三次握手：服务器端确认客户端收到了自己发送的报文段
+- 客户端 c 发起请求连接服务器端 s 确认，服务器端也发起连接确认客户端的确认
+- 第一次握手：客户端发送一个请求连接，服务端只能确认自己可以接受客户端发送的报文段
+- 第二次握手：服务端向客户端发送一个连接，确认客户端收到自己发送的报文段
+- 第三次握手：服务器端确认客户端收到了自己发送的报文段
+
 ## 11.从输入 url 到获取页面的完整过程
 
 - 1.查询 dns（域名解析）查询浏览器缓存，获取域名对应的 ip 地址
@@ -173,23 +189,26 @@ CDN 是一种部署策略，根据不同的地区部署类似 nginx 这种服务
 - 5.浏览器与服务器断开 tcp 连接（四次挥手）
 - 6.浏览器拿到完整的 html 页面代码开始解析和渲染，如果遇到外部的 css 或者 js,图片和上面一样的步骤
 - 7.浏览器根据拿到的资源对页面进行渲染，把一个完整的页面呈现出来
+
 ## 12.浏览器渲染原理及流程
 
-* dom --> cssom -->render-->layout -->print
-* 流程：解析 html 以及构建 dom 树 -->构建 render 树 -->布局 render 树 -->绘制 render 树
-* 概念：
-  * 1.构建 dom 树：渲染引擎解析 html 文档，首先将标签转换为 dom 树中的 dom node（包括 js 生成的标签）生成内容树
-  * 2.构建渲染树：解析对应的 css 样式文件信息（包括 js 生成的样式和外部的 css）
-  * 3.布局渲染树：从根节点递归调用，计算每一个元素的大小，位置等。给出每个节点所在的屏幕的精准位置
-  * 4.绘制渲染树：遍历渲染树，使用 ui 后端层来绘制每一个节点
-  * 重绘：当盒子的位置，大小以及其他属性，例如颜色，字体大小等的确定下来之后，浏览器便把这些颜色都按照各自的特性绘制一遍，将内容呈现在页面上，触发重绘的条件：改变元素的外观属性，如：color，background-color；重绘是指一个元素外观的改变所触发的浏览器行为，浏览器会根据元素的新属性重新绘制，使元素呈现出新的外观注意：table 及其内部元素需要多次计算才能确定好其在渲染树中节点的属性值，比同等元素要多花时间，要尽量避免使用 table 布局
-  * 重排：（重构/回流/reflow）：当渲染树中的一部分（或者全部）因为元素的规模尺寸，布局，影藏等改变而需要重新构建，这就是回流；每个页面都需要一次回流，就是页面第一次渲染的时候重排一定会影响重绘，但是重绘不一定会影响重排
+- dom --> cssom -->render-->layout -->print
+- 流程：解析 html 以及构建 dom 树 -->构建 render 树 -->布局 render 树 -->绘制 render 树
+- 概念：
+  - 1.构建 dom 树：渲染引擎解析 html 文档，首先将标签转换为 dom 树中的 dom node（包括 js 生成的标签）生成内容树
+  - 2.构建渲染树：解析对应的 css 样式文件信息（包括 js 生成的样式和外部的 css）
+  - 3.布局渲染树：从根节点递归调用，计算每一个元素的大小，位置等。给出每个节点所在的屏幕的精准位置
+  - 4.绘制渲染树：遍历渲染树，使用 ui 后端层来绘制每一个节点
+  - 重绘：当盒子的位置，大小以及其他属性，例如颜色，字体大小等的确定下来之后，浏览器便把这些颜色都按照各自的特性绘制一遍，将内容呈现在页面上，触发重绘的条件：改变元素的外观属性，如：color，background-color；重绘是指一个元素外观的改变所触发的浏览器行为，浏览器会根据元素的新属性重新绘制，使元素呈现出新的外观注意：table 及其内部元素需要多次计算才能确定好其在渲染树中节点的属性值，比同等元素要多花时间，要尽量避免使用 table 布局
+  - 重排：（重构/回流/reflow）：当渲染树中的一部分（或者全部）因为元素的规模尺寸，布局，影藏等改变而需要重新构建，这就是回流；每个页面都需要一次回流，就是页面第一次渲染的时候重排一定会影响重绘，但是重绘不一定会影响重排
+
 ## 13.为什么 css 妨碍顶部而 js 写在后面
 
 - 1.浏览器预先加载 css 后，可以不必等待 html 加载完毕就可以渲染到页面了
 - 2.其实 html 渲染并不会等到完全加载完再渲染页面，而是一遍解析 dom 一遍渲染
 - 3.js 写在尾部，主要是因为 js 主要扮演事件处理的功能，一方面很多操作是在页面渲染后才执行的。另一方面可以节省加载时间，使页面能够更快加载，提高用户的良好体验
 - 4.但是随着 js 技术的发展，js 也开始承担页面渲染的工作，比如我们的 ui 其实可以分别对待，把渲染页面的 js 放到前面，时间处理的 js 放到后面
+
 ## 14.存储方式与传输方式
 
 ## 1.indexDB：
@@ -280,49 +299,51 @@ cookie 相似，区别是它是为了更大容量存储设计的。Cookie 都会
 浏览器的支持除了 UserData 其实就是 web storage。
 
 sessionStorage 都具有相同的操作方法，例如 removeItem 等
+
 ## 线程与进程的区别
 
-
-一个程序至少有一个进程,一个进程至少有一个线程. 
-线程的划分尺度小于进程，使得多线程程序的并发性高。 
-另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。 
-线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。 
+一个程序至少有一个进程,一个进程至少有一个线程.
+线程的划分尺度小于进程，使得多线程程序的并发性高。
+另外，进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。
+线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。
 从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别
-## 对Node的优点和缺点提出了自己的看法
 
-*（优点）因为Node是基于事件驱动和无阻塞的，所以非常适合处理并发请求，
-  因此构建在Node上的代理服务器相比其他技术实现（如Ruby）的服务器表现要好得多。
-  此外，与Node代理服务器交互的客户端代码是由javascript语言编写的，
-  因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。
- 
-*（缺点）Node是一个相对新的开源项目，所以不太稳定，它总是一直在变，
-  而且缺少足够多的第三方库支持。看起来，就像是Ruby/Rails当年的样子
+## 对 Node 的优点和缺点提出了自己的看法
+
+\*（优点）因为 Node 是基于事件驱动和无阻塞的，所以非常适合处理并发请求，
+因此构建在 Node 上的代理服务器相比其他技术实现（如 Ruby）的服务器表现要好得多。
+此外，与 Node 代理服务器交互的客户端代码是由 javascript 语言编写的，
+因此客户端和服务器端都用同一种语言编写，这是非常美妙的事情。
+
+\*（缺点）Node 是一个相对新的开源项目，所以不太稳定，它总是一直在变，
+而且缺少足够多的第三方库支持。看起来，就像是 Ruby/Rails 当年的样子
 网站重构的理解？
-网站重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。也就是说是在不改变UI的情况下，对网站进行优化，在扩展的同时保持一致的UI。
- 
+网站重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。也就是说是在不改变 UI 的情况下，对网站进行优化，在扩展的同时保持一致的 UI。
+
 对于传统的网站来说重构通常是：
- 
-表格(table)布局改为DIV+CSS
-使网站前端兼容于现代浏览器(针对于不合规范的CSS、如对IE6有效的)
+
+表格(table)布局改为 DIV+CSS
+使网站前端兼容于现代浏览器(针对于不合规范的 CSS、如对 IE6 有效的)
 对于移动平台的优化
-针对于SEO进行优化
+针对于 SEO 进行优化
 深层次的网站重构应该考虑的方面
- 
+
 减少代码间的耦合
 让代码保持弹性
 严格按规范编写代码
-设计可扩展的API
-代替旧有的框架、语言(如VB)
+设计可扩展的 API
+代替旧有的框架、语言(如 VB)
 增强用户体验
 通常来说对于速度的优化也包含在重构中
- 
-压缩JS、CSS、image等前端资源(通常是由服务器来解决)
-程序的性能优化(如数据读写)
-采用CDN来加速资源加载
-对于JS DOM的优化
-HTTP服务器的文件缓存
 
-如何获取UA？
+压缩 JS、CSS、image 等前端资源(通常是由服务器来解决)
+程序的性能优化(如数据读写)
+采用 CDN 来加速资源加载
+对于 JS DOM 的优化
+HTTP 服务器的文件缓存
+
+如何获取 UA？
+
 <script> 
     function whatBrowser() {  
         document.Browser.Name.value=navigator.appName;  
@@ -349,26 +370,27 @@ Expires: Thu, 01 Dec 1994 16:00:00 GMT （必须是 GMT 格式）
 4.Expires 指定的时间可以是相对文件的最后访问时间(Atime)或者修改时间(MTime),而 max-age 相对对的是文档的请求时间(Atime)
 
 如果值为 no-cache,那么每次都会访问服务器。如果值为 max-age,则在过期之前不会重复访问服务器
+
 ## js 操作获取和设置 cookie
 
 //创建 cookie
 
 ```js
 function setCookie(name, value, expires, path, domain, secure) {
-  var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+  var cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value)
   if (expires instanceof Date) {
-    cookieText += "; expires=" + expires;
+    cookieText += '; expires=' + expires
   }
   if (path) {
-    cookieText += "; expires=" + expires;
+    cookieText += '; expires=' + expires
   }
   if (domain) {
-    cookieText += "; domain=" + domain;
+    cookieText += '; domain=' + domain
   }
   if (secure) {
-    cookieText += "; secure";
+    cookieText += '; secure'
   }
-  document.cookie = cookieText;
+  document.cookie = cookieText
 }
 ```
 
@@ -376,32 +398,34 @@ function setCookie(name, value, expires, path, domain, secure) {
 
 ```js
 function getCookie(name) {
-  var cookieName = encodeURIComponent(name) + "=";
-  var cookieStart = document.cookie.indexOf(cookieName);
-  var cookieValue = null;
+  var cookieName = encodeURIComponent(name) + '='
+  var cookieStart = document.cookie.indexOf(cookieName)
+  var cookieValue = null
   if (cookieStart > -1) {
-    var cookieEnd = document.cookie.indexOf(";", cookieStart);
+    var cookieEnd = document.cookie.indexOf(';', cookieStart)
     if (cookieEnd == -1) {
-      cookieEnd = document.cookie.length;
+      cookieEnd = document.cookie.length
     }
   }
 }
 ```
-## 1、为什么用Nodejs,它有哪些优缺点？
+
+## 1、为什么用 Nodejs,它有哪些优缺点？
 
 优点：
 事件驱动，通过闭包很容易实现客户端的生命活期。
 不用担心多线程，锁，并行计算的问题
-V8引擎速度非常快
+V8 引擎速度非常快
 对于游戏来说，写一遍游戏逻辑代码，前端后端通用
 缺点：
-nodejs更新很快，可能会出现版本兼容
-nodejs还不算成熟，还没有大制作
-nodejs不像其他的服务器，对于不同的链接，不支持进程和线程操作
+nodejs 更新很快，可能会出现版本兼容
+nodejs 还不算成熟，还没有大制作
+nodejs 不像其他的服务器，对于不同的链接，不支持进程和线程操作
 
-## 使用NPM有哪些好处？
+## 使用 NPM 有哪些好处？
 
-通过NPM，你可以安装和管理项目的依赖，并且能够指明依赖项的具体版本号。对于Node应用开发而言，你可以通过package.json文件来管理项目信息，配置脚本，以及指明依赖的具体版本
+通过 NPM，你可以安装和管理项目的依赖，并且能够指明依赖项的具体版本号。对于 Node 应用开发而言，你可以通过 package.json 文件来管理项目信息，配置脚本，以及指明依赖的具体版本
+
 ## Node 事件循环，js 事件循环差异
 
 Node.js 的事件循环分为 6 个阶段
@@ -438,15 +462,15 @@ Node.js 中，microtask 在事件循环的各个阶段之间执行
 
 ## 3.移动端的性能优化
 
-* 1.首屏加载和按需加载，懒加载
-* 2.资源预加载
-* 3.图片压缩处理，使用 base64 内嵌图片
-* 4.合理缓存 dom 对象
-* 5.使用 touchstart 代替 click（click 300 毫秒延迟）
-* 6.利用 transform：translateZ(0)，开启硬件 GPU 加速
-* 7.不滥用 web 字体，不滥用 float(布局计算消耗性能)，减少 font-size 声明
-* 8.使用 viewport 固定屏幕渲染，加速首页渲染内容
-* 9.尽量使用事件代理，避免直接事件绑定
+- 1.首屏加载和按需加载，懒加载
+- 2.资源预加载
+- 3.图片压缩处理，使用 base64 内嵌图片
+- 4.合理缓存 dom 对象
+- 5.使用 touchstart 代替 click（click 300 毫秒延迟）
+- 6.利用 transform：translateZ(0)，开启硬件 GPU 加速
+- 7.不滥用 web 字体，不滥用 float(布局计算消耗性能)，减少 font-size 声明
+- 8.使用 viewport 固定屏幕渲染，加速首页渲染内容
+- 9.尽量使用事件代理，避免直接事件绑定
 
 ## 7.网站性能优化
 
@@ -490,7 +514,7 @@ Node.js 中，microtask 在事件循环的各个阶段之间执行
 - 优化 loader 的文件搜索范围，将 babel 编译过的文件缓存起来
 
 ```js
-loader: "babel-loader?cacheDirectory=true";
+loader: 'babel-loader?cacheDirectory=true'
 ```
 
 #### 2.happyPack:将 loader 的同步执行转换为并行的
@@ -571,6 +595,7 @@ loader: "babel-loader?cacheDirectory=true";
 - 在解析文件递归的过程中根据文件类型和 loader 配置找出合适的 loader 用来对文件进行转换。
 - 递归完后得到每个文件的最终结果，根据 entry 配置生成代码块 chunk。
 - 输出所有 chunk 到文件系统。
+
 ## 前端安全问题
 
 ### 1.XSS：将代码注入网页中
@@ -610,6 +635,7 @@ loader: "babel-loader?cacheDirectory=true";
 xss 跨站脚本攻击，主要是前端层面的，用户在输入层面插入攻击脚本，改变页面的显示，或则窃取网站 cookie，预防方法：不相信用户的所有操作，对用户输入进行一个转义，不允许 js 对 cookie 的读写
 
 csrf 跨站请求伪造，以你的名义，发送恶意请求，通过 cookie 加参数等形式过滤
+
 ## 8.常见的 web 安全及防护原理
 
 ### 1.sql 注入原理：
@@ -631,8 +657,8 @@ csrf 跨站请求伪造，以你的名义，发送恶意请求，通过 cookie �
 
 ## 1. 观察者模式
 
-* 在软件开发设计找那个是一个对象（subject）,维护一系列依赖他的对象（observer）,当任何状态发生改变自动通知他们。强依赖关系
-* 简答理解：数据发生改变是，对应的处理函数酒瓯会自动执行。一个 subjet，用来维护 observers，为某些 event 来通知（notify）观察者
+- 在软件开发设计找那个是一个对象（subject）,维护一系列依赖他的对象（observer）,当任何状态发生改变自动通知他们。强依赖关系
+- 简答理解：数据发生改变是，对应的处理函数酒瓯会自动执行。一个 subjet，用来维护 observers，为某些 event 来通知（notify）观察者
 
 ## 2.发布-订阅者和观察者模式的区别
 
@@ -659,40 +685,40 @@ csrf 跨站请求伪造，以你的名义，发送恶意请求，通过 cookie �
 ```js
 // 队列
 function Queue() {
-  var items = [];
+  var items = []
   this.enqueue = function(element) {
     //向队列尾部添加一个新的项
-    items.push(element);
-  };
+    items.push(element)
+  }
   this.dequeue = function() {
     // 移除队列的第一项，并返回被移除的元素
-    return items.shift();
-  };
+    return items.shift()
+  }
   this.front = function() {
     // 返回队列的第一个元素
-    return items[0];
-  };
+    return items[0]
+  }
   this.isEmpty = function() {
     //检查队列中是否有元素，返回true或false
-    return items.length == 0;
-  };
+    return items.length == 0
+  }
   this.size = function() {
-    return items.length;
-  };
+    return items.length
+  }
   this.print = function() {
-    console.log(items.toString());
-  };
+    console.log(items.toString())
+  }
 }
 
 // 使用Queue类
-var queue = new Queue();
-console.log(queue.isEmpty());
-queue.enqueue("John");
-queue.enqueue("Jack");
-queue.enqueue("Camial");
-queue.print();
-queue.dequeue();
-queue.print();
+var queue = new Queue()
+console.log(queue.isEmpty())
+queue.enqueue('John')
+queue.enqueue('Jack')
+queue.enqueue('Camial')
+queue.print()
+queue.dequeue()
+queue.print()
 
 //优先队列
 
@@ -700,37 +726,37 @@ queue.print();
 // 2.用入列操作添加元素，然后按照优先级移除他们。
 
 function priorityQueue() {
-  var items = [];
+  var items = []
   function QueueElement(element, priority) {
-    this.element = element;
-    this.priority = priority;
+    this.element = element
+    this.priority = priority
   }
   this.enqueue = function(element, priority) {
-    var queueElement = new QueueElement(element, priority);
+    var queueElement = new QueueElement(element, priority)
 
     if (this.isEmpty()) {
-      items.push(queueElement);
+      items.push(queueElement)
     } else {
-      var added = false;
+      var added = false
       for (var i = 0; i < items.length; i++) {
         if (queueElement.priority < items[i].priority) {
-          items.splice(i, 0, queueElement);
-          added = true;
-          break;
+          items.splice(i, 0, queueElement)
+          added = true
+          break
         }
       }
       if (!added) {
-        items.push(queueElement);
+        items.push(queueElement)
       }
     }
-  };
+  }
 }
 
-var priorityQueue = new priorityQueue();
-priorityQueue.enqueue("john", 2);
-priorityQueue.enqueue("jack", 1);
-priorityQueue.enqueue("camila", 1);
-priorityQueue.print();
+var priorityQueue = new priorityQueue()
+priorityQueue.enqueue('john', 2)
+priorityQueue.enqueue('jack', 1)
+priorityQueue.enqueue('camila', 1)
+priorityQueue.print()
 ```
 
 ## 2. 红黑树（解决二叉树依次插入多个节点时的线性排列）
@@ -754,78 +780,78 @@ priorityQueue.print();
 ```js
 //栈  先进先出
 function Stack() {
-  var items = [];
+  var items = []
   this.push = function(element) {
     //添加一个(或几个)新元素到栈顶
-    items.push(element);
-  };
+    items.push(element)
+  }
   this.pop = function() {
     //移除栈顶元素，同时返回被删除的元素
-    return items.pop();
-  };
+    return items.pop()
+  }
   this.peek = function() {
     //返回栈顶元素，不对栈做任何修改
-    return items[items.length - 1];
-  };
+    return items[items.length - 1]
+  }
   this.isEmpty = function() {
     //如果栈里没有任何元素就返回true
-    return items.length == 0;
-  };
+    return items.length == 0
+  }
   this.clear = function() {
     //移除栈里的所有元素
-    return (items = []);
-  };
+    return (items = [])
+  }
   this.size = function() {
     //返回栈里的元素个数
-    return items.length;
-  };
+    return items.length
+  }
   this.print = function() {
-    console.log(items.toString());
-  };
+    console.log(items.toString())
+  }
 }
 // 使用Stack类
-var stack = new Stack();
-console.log(stack.isEmpty());
-stack.push(5);
-stack.push(8);
-console.log(stack.peek());
-console.log(stack.isEmpty());
+var stack = new Stack()
+console.log(stack.isEmpty())
+stack.push(5)
+stack.push(8)
+console.log(stack.peek())
+console.log(stack.isEmpty())
 
 //栈的运用
 //  1. 从十进制到二进制   十进制数字和二进制整除（二进制满二进一），知道结果为0
 function divideBy2(decNumber) {
   var remStack = new Stack(),
     rem,
-    binaryString = "";
+    binaryString = ''
   while (decNumber > 0) {
-    rem = Math.floor(decNumber % 2);
-    remStack.push(rem);
-    decNumber = Math.floor(decNumber / 2);
+    rem = Math.floor(decNumber % 2)
+    remStack.push(rem)
+    decNumber = Math.floor(decNumber / 2)
   }
   while (!remStack.isEmpty()) {
-    binaryString += remStack.pop().toString();
+    binaryString += remStack.pop().toString()
   }
-  return binaryString;
+  return binaryString
 }
-console.log(divideBy2(233));
+console.log(divideBy2(233))
 
 // 十进制转换成任意进制的基数为参数
 function baseConverter(decNumber, base) {
   var remStack = new Stack(),
     rem,
-    baseString = "",
-    digits = "0123456789ABCDEF";
+    baseString = '',
+    digits = '0123456789ABCDEF'
   while (decNumber > 0) {
-    rem = Math.floor(decNumber % base);
-    remStack.push(rem);
-    decNumber = Math.floor(decNumber / base);
+    rem = Math.floor(decNumber % base)
+    remStack.push(rem)
+    decNumber = Math.floor(decNumber / base)
   }
   while (!remStack.isEmpty()) {
-    baseString += digits[remStack.pop()];
+    baseString += digits[remStack.pop()]
   }
-  return baseString;
+  return baseString
 }
-console.log(baseConverter(100345, 2));
+console.log(baseConverter(100345, 2))
 ```
 
 ## 4. 十大排序
@@ -886,8 +912,9 @@ console.log(baseConverter(100345, 2));
       left.push(arr[i])
     } else {
       right.push(arr[i])
-    }}
+    }
     return quickSort(left).concat([pivot], quickSort(right))
+    }
     ```
 
 }
@@ -901,20 +928,20 @@ console.log(baseConverter(100345, 2));
 
 ## 5. 数组去重
 
-* 1.双重循环
-* 2.indexOf
-* 3.数组排序去重 最快
+- 1.双重循环
+- 2.indexOf
+- 3.数组排序去重 最快
 
 ## 6. 字符串
 
-* 判断回文子符串：（递归的思想）
-  * 1.字符串分割，倒转，聚合
+- 判断回文子符串：（递归的思想）
+  - 1.字符串分割，倒转，聚合
 
 ```
 [...obj].reverse().join('')
 ```
 
-* 2.字符串头部和尾部，逐次向中间检查
+- 2.字符串头部和尾部，逐次向中间检查
 
 ```
 function isPalindrome(line){
@@ -923,11 +950,12 @@ function isPalindrome(line){
         if(line.chartAt(i) !==line.chartAt(j)){
             return false
         }
-    }  
+    }
 }
 ```
 
-* 3.递归
+- 3.递归
+
 ## 7. 二分查找（有序数组的查找）
 
 - 二分查找可以解决已排序数组的查找问题，即只要数组中包含 T（要查找的值），那么通过不断的缩小包含 T 的数据范文，就可以找到最终要找到的数
@@ -935,7 +963,7 @@ function isPalindrome(line){
 - 2.将数组的中间项与 T 进行比较，如果 T 比数组的中间项小，则到数组的前半部分继续查找，反之，则到数组的后半部分查找
 - 3.就这样，每次查找都可以排除一半元素，相当于范围缩小一半，这样反复比较，反复缩小范围，最终会在数组中找到 T
 
-````
+```
 function binarySearch(data,dest,start,end){
     var end= end||data.length-1
     var start= start||0
@@ -948,6 +976,4 @@ function binarySearch(data,dest,start,end){
         return data[m]
     }
 }
-````
-
-
+```
