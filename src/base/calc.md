@@ -12,9 +12,61 @@ meta:
 
 ## 1.手写冒泡排序
 
+```js
+function bubbleSort(data) {
+  for (let pre = 0; pre < data.length - 1; pre++) {
+    for (let next = pre + 1; next < datalength; next++) {
+      let preData = data[pre]
+      let nextData = data[next]
+      if (preData > nextData) {
+        data[pre] = nextData
+        data[next] = preData
+      }
+    }
+  }
+  return data
+}
+```
+
 ## 2.如何优化一个冒泡排序
 
+```js
+function bubbleSort(data) {
+  let finish = false
+  for (let pre = 0; pre < data.length - 1; pre++) {
+    for (let next = pre + 1; next < datalength; next++) {
+      let preData = data[pre]
+      let nextData = data[next]
+      if (preData > nextData) {
+        finish = false
+        data[pre] = nextData
+        data[next] = preData
+      }
+      if (finish) {
+        break
+      } else {
+        finish = true
+      }
+    }
+  }
+  return data
+}
+```
+
 ## 3.手写快速排序
+
+```js
+function quickSort(data) {
+  let left = []
+  let right = []
+  let point = (data.length / 2) | 0
+  let pointData = data.splice(point, 1)[0]
+  for (let i = 0; i < data.length; i++) {
+    data[i] > pointData ? left.push(data[i]) : right.push(data[i])
+  }
+  return [...quickSort(left), pointData, ...quickSort(right)]
+}
+```
 
 ## 4.如何优化一个快速排序
 
