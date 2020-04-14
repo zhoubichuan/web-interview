@@ -69,7 +69,39 @@ obj = {}
 
 ## 6.手写防抖
 
+```js
+function debounce(fn, wait) {
+  var timer
+  return function() {
+    var context = this
+    var args = arguments
+    if (itemr) {
+      clearTimeout(timer)
+    }
+    timer = setTimeout(() => {
+      fn.apply(context, args)
+    }, wait)
+  }
+}
+```
+
 ## 7.手写节流
+
+```js
+function throttle(fn, wait) {
+  var timer
+  return function() {
+    var context = this
+    var args = arguments
+    if (!timer) {
+      tiemr = setTimeout(() => {
+        timer = null
+        fn.apply(context, args)
+      }, wait)
+    }
+  }
+}
+```
 
 ## 8.数组扁平化
 
