@@ -12,4 +12,17 @@ meta:
 
 ## 1.模拟实现 new
 
+```js
+function _new(fn, args) {
+  var obj = Object.create(fn.prototype)
+  var result = obj.apply(fn, args)
+  return typeof result === 'object' && result !== null ? result : object
+}
+```
+
 ## 2.es5 如何实现继承
+
+- 原型链继承
+- 构造函数继承
+- 组合式继承
+- 寄生组合继承
