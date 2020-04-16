@@ -75,9 +75,18 @@ function debounce(fn, wait) {
   return function() {
     var context = this
     var args = arguments
-    if (itemr) {
-      clearTimeout(timer)
-    }
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      fn.apply(context, args)
+    }, wait)
+  }
+}
+function debounce2(fn, wait) {
+  var timer
+  return function() {
+    var context = this
+    var args = arguments
+    tiemr && clearTimeout(timer)
     timer = setTimeout(() => {
       fn.apply(context, args)
     }, wait)
@@ -88,16 +97,16 @@ function debounce(fn, wait) {
 ## 7.手写节流
 
 ```js
-function throttle(fn, wait) {
+function (fn,wait){
   var timer
-  return function() {
+  return function(){
     var context = this
     var args = arguments
-    if (!timer) {
-      tiemr = setTimeout(() => {
+    if(itemr){
+      tiemr = setTimeout(()=>{
         timer = null
-        fn.apply(context, args)
-      }, wait)
+        fn.apply(context,args)
+      },wait)
     }
   }
 }
@@ -105,4 +114,12 @@ function throttle(fn, wait) {
 
 ## 8.数组扁平化
 
+```
+
+```
+
 ## 9.手写 promise
+
+```
+
+```
