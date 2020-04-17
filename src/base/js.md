@@ -81,34 +81,24 @@ function debounce(fn, wait) {
     }, wait)
   }
 }
-function debounce2(fn, wait) {
-  var timer
-  return function() {
-    var context = this
-    var args = arguments
-    tiemr && clearTimeout(timer)
-    timer = setTimeout(() => {
-      fn.apply(context, args)
-    }, wait)
-  }
-}
 ```
 
 ## 7.手写节流
 
 ```js
-function (fn,wait){
+function throttle(fn,wait){
   var timer
   return function(){
     var context = this
     var args = arguments
-    if(itemr){
-      tiemr = setTimeout(()=>{
+    if(!timer){
+      timer = setTimeout(()=>{
         timer = null
         fn.apply(context,args)
       },wait)
     }
   }
+}
 }
 ```
 
@@ -120,6 +110,37 @@ function (fn,wait){
 
 ## 9.手写 promise
 
-```
-
+```js
+class Promse {
+  constructor(exector) {
+    this.status = 'pending'
+    this.onResolveCallback = []
+    this.onRerejctCallback = []
+    let res = (resolved) => {
+      this.status = 'resolved'
+      this.reoslve = resolved
+      this.onResolveCallback.forEach((item) => item())
+    }
+    let rej = (rejected) => {
+      this.status = 'rejected'
+      this.rejected = rejected
+      this.onRejectCallback.forEach((item) => item())
+    }
+    try {
+      exector(res, rej)
+    } catch (e) {}
+  }
+  then(resolvedCallback, rejectedCallback) {
+    if (this.status === 'pendding') {
+      this.onResolveCallback.push(() => this.resolve)
+      this.onRejectedCallback.push(() => this.rejected)
+    }
+    if (this.status === 'resolved') {
+      resolvedCallback(this.resolved)
+    }
+    if (this.status === 'rejected') {
+      rejectedCallback(this.rejected)
+    }
+  }
+}
 ```

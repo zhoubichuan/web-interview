@@ -13,18 +13,18 @@ meta:
 ## 1.手写冒泡排序
 
 ```js
-function bubbleSort(data) {
-  for (let pre = 0; pre < data.length - 1; pre++) {
-    for (let next = pre + 1; next < datalength; next++) {
-      let preData = data[pre]
-      let nextData = data[next]
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      let preData = arr[i]
+      let nextData = arr[j]
       if (preData > nextData) {
-        data[pre] = nextData
-        data[next] = preData
+        arr[i] = nextData
+        arr[j] = preData
       }
     }
   }
-  return data
+  return arr
 }
 ```
 
