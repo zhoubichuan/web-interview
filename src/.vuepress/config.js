@@ -176,16 +176,10 @@ module.exports = {
           ],
           // 文档侧边栏 跳转到不同页面
           '/page/base/': [{
-              title: '一、标签及样式',
-              collapsable: false,
-              children: ['', 'CSS']
-            },
-            {
-              title: '二、JavaScript',
-              collapsable: false,
-              children: ['JavaScript']
-            }
-          ],
+            title: '一、标签及样式',
+            collapsable: false,
+            children: ['', 'CSS']
+          }],
           '/page/frame/': [{
               title: '一、Vue',
               collapsable: false, // 让一个组永远都是展开状态
