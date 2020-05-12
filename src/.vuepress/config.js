@@ -100,14 +100,21 @@ module.exports = {
               },
             ],
           },
-          // 顶部导航栏
           {
-            text: '前端基础面试题',
-            link: '/page/base/'
-          },
-          {
-            text: '前端框架面试题',
-            link: '/page/frame/'
+            text: '前端框架',
+            items: [{
+              text: '一、Vue',
+              link: '/frame/Vue',
+            }, {
+              text: '二、React',
+              link: '/frame/React',
+            }, {
+              text: '三、Angular',
+              link: '/frame/Angular',
+            }, {
+              text: '四、小程序',
+              link: '/frame/小程序',
+            }]
           },
           {
             text: 'node相关面试题',
@@ -173,6 +180,27 @@ module.exports = {
               collapsable: false,
               children: ['network']
             },
+          ],
+          '/frame/': [{
+              title: '一、Vue',
+              collapsable: false,
+              children: ['Vue']
+            },
+            {
+              title: '二、React',
+              collapsable: false,
+              children: ['React']
+            },
+            {
+              title: '三、Angular',
+              collapsable: false,
+              children: ['Angular']
+            },
+            {
+              title: '四、小程序',
+              collapsable: false,
+              children: ['小程序']
+            }
           ],
           // 文档侧边栏 跳转到不同页面
           '/page/base/': [{
