@@ -54,6 +54,7 @@ module.exports = {
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [{
             text: '前端基础',
+            link: '/base/html',
             items: [{
                 text: '一、HTML',
                 link: '/base/html',
@@ -102,6 +103,7 @@ module.exports = {
           },
           {
             text: '前端框架',
+            link: '/frame/Vue',
             items: [{
               text: '一、Vue',
               link: '/frame/Vue',
@@ -117,8 +119,21 @@ module.exports = {
             }]
           },
           {
-            text: 'node相关面试题',
-            link: '/page/service/'
+            text: 'node后端',
+            link: '/service/node',
+            items: [{
+              text: '一、Node',
+              link: '/service/node',
+            }, {
+              text: '二、Express',
+              link: '/service/express',
+            }, {
+              text: '三、Koa',
+              link: '/service/koa',
+            }, {
+              text: '四、Egg',
+              link: '/service/egg',
+            }]
           },
           {
             text: '大厂面试题',
@@ -202,54 +217,33 @@ module.exports = {
               children: ['小程序']
             }
           ],
+          '/service/': [{
+              title: '一、node',
+              collapsable: false,
+              children: ['node']
+            },
+            {
+              title: '二、express',
+              collapsable: false,
+              children: ['express']
+            },
+            {
+              title: '三、koa',
+              collapsable: false,
+              children: ['koa']
+            },
+            {
+              title: '四、egg',
+              collapsable: false,
+              children: ['egg']
+            }
+          ],
           // 文档侧边栏 跳转到不同页面
           '/page/base/': [{
             title: '一、标签及样式',
             collapsable: false,
             children: ['', 'CSS']
           }],
-          '/page/frame/': [{
-              title: '一、Vue',
-              collapsable: false, // 让一个组永远都是展开状态
-              children: ['']
-            },
-            {
-              title: '二、React',
-              collapsable: false, // 让一个组永远都是展开状态
-              children: ['React']
-            },
-            {
-              title: '三、Angular',
-              collapsable: false, // 让一个组永远都是展开状态
-              children: ['Angular']
-            },
-            {
-              title: '四、小程序',
-              collapsable: false, // 让一个组永远都是展开状态
-              children: ['小程序']
-            },
-          ],
-          '/page/service/': [{
-              title: '一、node',
-              collapsable: false, // 让一个组永远都是展开状态
-              children: ['', ]
-            },
-            {
-              title: '二、express',
-              collapsable: false, // 让一个组永远都是展开状态
-              children: ['express']
-            },
-            {
-              title: '三、koa',
-              collapsable: false, // 让一个组永远都是展开状态
-              children: ['koa']
-            },
-            {
-              title: '四、egg',
-              collapsable: false, // 让一个组永远都是展开状态
-              children: ['egg']
-            },
-          ],
           '/page/article/': [{
               title: '阿里巴巴',
               collapsable: false, // 让一个组永远都是展开状态
