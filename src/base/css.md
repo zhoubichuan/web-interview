@@ -12,9 +12,13 @@ meta:
 
 ## 1.清除浮动的方法
 
-- 设置高度
-- 伪元素
-- display:inline-block
+- 1.添加新元素 clear:both
+- 2.添加伪元素 clear:both
+- 3.触发父元素 BFC
+  - float:left
+  - overflow:hidden
+  - position:absolute
+  - dispaly:inline-block
 
 ## 2.flex 布局
 
@@ -33,11 +37,28 @@ meta:
 
 ## 3.BFC
 
+块级格式上下文，一个隔离的独立容器，不受外界干扰或干扰外界
+
 ## 4.如何触发 BFC
+
+- float 不为 none
+- overflow 的值不为 visible
+- position 为 absolute 或 fixed
+- display 的值为 inline-block 或 table-cell 或 table-caption 或 grid
 
 ## 5.BFC 的渲染规则是什么
 
+- BFC 是页面上的一个隔离的独立容器，不受外界干扰或干扰外界
+- 计算 BFC 的高度时，浮动子元素也参与计算（内部有浮动元素也不会发生高度塌陷）
+- BFC 的区域不会与 float 的元素区域重叠
+- BFC 内部的元素会在垂直方向上放置
+- BFC 内部两个相邻元素的 margin 会发生重叠
+
 ## 6.BFC 的应用场景
+
+- 清除浮动
+- 避免某元素被浮动元素覆盖
+- 阻止外边距重叠
 
 ## 1.css 盒模型
 

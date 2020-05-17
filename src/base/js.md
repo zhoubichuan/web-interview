@@ -8,7 +8,7 @@ meta:
     content: vuepress,最新技术文档,vuepress语法,markdown语法
 ---
 
-# js 基础
+# 1.es6 相关
 
 ## 1.如何在 es5 环境下实现 let
 
@@ -60,6 +60,8 @@ _const('obj',{a,1})
 obj.b = 2
 obj = {}
 ```
+
+# 2.手写代码
 
 ## 3.手写 call
 

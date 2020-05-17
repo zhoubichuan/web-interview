@@ -45,14 +45,16 @@ meta:
 - 设置 Cache-Control
 
   - HTTP/1.1 新增字段，Cache-Control 可以通过`max-age`字段来设置过期时间，例如`Cache-Control:max-age=3600`除此之外 Cache-Control 还能设置`private/no-cache`等多种字段
-    > 协商缓存（需要向服务器询问缓存释放已经过期）
+
+> 协商缓存（需要向服务器询问缓存释放已经过期）
 
 - Last-Modified
   - 即最后修改时间，浏览器第一次请求资源时，服务器会在响应头上加上`Last-Modified`,当浏览器再次请求该资源时，浏览器会在请求头中带上`If-Modified-Since`字段，字段的值就是之前服务器返回的最后修改时间，服务器对比这两个时间，若相同则返回 304，否则返回新资源，并更新`Last-Modified`
 - ETag
 
   - HTTP/1.1 新增字段，表示文件唯一标识，只要文件内容改动，ETag 就会重新计算。缓存流程和 Last-Modified 一样：服务器发送 ETag 字段-->浏览器再次请求时发送 If-None-Match-->如果 ETag 值不匹配，说明文件已经改变，返回新资源并更新 ETag，若匹配则返回 304
-    > 两者对比
+
+> 两者对比
 
 - ETag 比 Last-Modified 更准确：如果我们打开文件但并没有修改，Last-Modified 也会改变，并且 Last-Modified 的单位时间为一秒，如果一秒内修改完了文件，那么还是会命中缓存
 - 如果什么缓存策略都没有设置，那么浏览器会取响应头中的 Date 减去 Last-Modified 值得 10%作为缓存时间
