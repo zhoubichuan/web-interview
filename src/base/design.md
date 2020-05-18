@@ -47,12 +47,12 @@ class User {
 }
 class UserFactory {
   static createUser(name, auth) {
-    if (auth === 'admin') new User(name, 1)
-    if (auth === 'user') new User(name, 2)
+    if (auth === "admin") new User(name, 1)
+    if (auth === "user") new User(name, 2)
   }
 }
-const admin = UserFactory.createUser('asdf', '1212')
-const user = UserFactory.createUser('asdfas', '23423')
+const admin = UserFactory.createUser("asdf", "1212")
+const user = UserFactory.createUser("asdfas", "23423")
 ```
 
 ## 4.观察者模式
@@ -107,7 +107,7 @@ man.name
 ```js
 class Adaptee {
   test() {
-    return '旧接口'
+    return "旧接口"
   }
 }
 class Target {
@@ -129,19 +129,219 @@ console.log(target.test())
 
 ```js
 const idol = {
-  name: '1212',
+  name: "1212",
   phone: 1000,
-  price: 100000
+  price: 100000,
 }
 const agent = new Proxy(idol, {
   get: function(target) {
-    return '经纪人电话1000'
+    return "经纪人电话1000"
   },
   set: function(target, key, value) {
-    if (key === 'price') {
-      if (value < target.price) throw new Error('报价过低')
+    if (key === "price") {
+      if (value < target.price) throw new Error("报价过低")
       target.price = value
     }
-  }
+  },
 })
+```
+
+## 7. 什么是原型链
+
+- 对于 object 来说，可以通过**proto**找到一个原型对象，在该对象中定义了很多函数让我们来使用
+- 原型链是一种机制，指的是 javascript 每个对象包括原型对象都有一个内置**proto**属性指向创建它的函数对象的原型对象，即 prototype 属性
+- 函数的原型链对象 constructor 默认指向函数本身，原型对象除了有原型属性外，为了实现继承，还有一个原型链指针**proto**；该指针是指向上一层的原型对象，而上一层的原型对象的结构依然类似；因此可以利用**proto**一直指向 object 的原型对象上，而 object 原型对象用 object.prototype=null 表示原型链顶端。如此形成了 js 的原型链继承。同时所有的 js 对象都有 object 的基本方法。
+
+## 8. 类的创建和继承
+
+- 1.原型链继承
+- 2.构造函数继承
+- 3.组合继承
+- 4.原型式继承
+- 5.寄生式继承
+- 6.寄生组合继承
+- 7.混合继承
+- 8.es6 继承
+
+### 1·原型链继承
+
+```js
+function Parent() {
+  this.parentName = "parent"
+}
+Parent.portotype.getParentName = function() {
+  return this.parentName + 1
+}
+function Child() {
+  this.name = "child"
+}
+Child.prototype = new Parent()
+Child.prototype.getChildName = function() {
+  return this.name + 1
+}
+var child = new Child()
+console.log(child.getParentName())
+```
+
+### 2.构造函数继承
+
+```js
+function Parent() {
+  this.parentName = "parent"
+}
+Parent.prototype.getParentName = function() {
+  return this.parentName + 1
+}
+function Child() {
+  this.name = "child"
+  Parent.call(this)
+}
+Child.prototype.getChildName = function() {
+  return this.name + 1
+}
+var child = new Child()
+console.log(child.parentName)
+```
+
+### 3.组合继承
+
+```js
+function Parent() {
+  this.parentName = "parent"
+}
+Parent.prototype.getParentName = function() {
+  return this.parentName + 1
+}
+function Child() {
+  this.name = "child"
+  Parent.call(this)
+}
+Child.prototype = new Parent()
+Child.prototype.getChildName = function() {
+  return this.name + 1
+}
+var child = new Child()
+console.log(child.getParentName())
+console.log(child.parentName)
+```
+
+### 4.原型式继承
+
+```js
+function Parent() {
+  this.parentName = "parent"
+}
+Parent.prototype.getParentName = function() {
+  return this.parentName + 1
+}
+function object(obj) {
+  function F() {}
+  F.prototype = obj
+  return new F()
+}
+var child = object(new Parent())
+child.childName = "child"
+child.getChildName = function() {
+  this.childName + 1
+}
+console.log(child.getChildName())
+```
+
+### 5.寄生式继承
+
+```js
+function Parent() {
+  this.parentName = "parent"
+}
+Parent.portotype.getParentName = function() {
+  return this.parentName + 1
+}
+function createAnother(original) {
+  var clone = Object(original)
+  clone.childName = "child"
+  clone.getChildName = function() {
+    return this.childName + 1
+  }
+  return clone
+}
+var child = createAnother(new Parent())
+child.prototype = new Parent()
+console.log(child.parentName)
+```
+
+### 6.寄生组合继承
+
+```js
+function inheritPrototype(c, p) {
+  var prototype = Object.create(p.ptototype)
+  prototype.constructor = c
+  c.prototype = prototype
+}
+function Parent() {
+  this.parentName = "parent"
+}
+Parent.prototype.getParentName = function() {
+  return this.parentName + 1
+}
+function Child() {
+  this.childName = "child"
+  Parent.call(this)
+}
+inheritPrototype(Child, Parent)
+Child.prototype.getChildName = function() {
+  return this.childName + 1
+}
+var child = new Child()
+console.log(child.parentName)
+console.log(child.getParentName())
+```
+
+### 7.混合式继承
+
+```js
+function Parent() {
+  this.parentName = "parent"
+}
+Parent.portotype.getParentName = function() {
+  return this.parentName + 1
+}
+function Child() {
+  this.name = "child"
+}
+Child.prototype.getChildName = function() {
+  return this.name + 1
+}
+function MyClass() {
+  Parent.call(this)
+  Child.call(this)
+}
+MyClass.prototype = Object.create(Parent.prototype)
+Object.assign(MyClass.prototype, Child.prototype)
+MyClass.prototype.constructor = MyClass
+var child = new MyClass()
+console.log(child.getParentName())
+```
+
+### 8.es6 中继承
+
+```js
+class Parent {
+  constructor() {
+    this.parentName = "parent"
+  }
+  getParentName() {
+    return this.parentName + 1
+  }
+}
+class Child extends Parent {
+  constructor() {
+    super()
+    this.childName = "child"
+  }
+  getChildName() {
+    return this.childName + 1
+  }
+}
+var child = new Child()
+console.log(child.getChildName())
 ```

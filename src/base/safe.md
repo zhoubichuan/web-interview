@@ -31,3 +31,57 @@ meta:
 - 输入检查
 - 设置 httpOnly
 - 开启 CSP
+
+## 17. 跨域
+
+### 什么是跨域
+
+- 同源策略：协议，端口，域名要相同
+- 由于浏览器同源策略，凡是发送请求 url 的协议、域名、端口三者之间任意一种与当前页面地址不同即为跨域。
+
+协议不同：
+http 与 https
+
+端口不同：
+localhost:8080 与 localhost:3000
+
+域名不同：
+huawei.com 与 consumenr.huawei.com
+
+### 跨域的十种方式
+
+- 1.降级浏览器（跨域是浏览器把请求的信息屏蔽了）
+- 2.jsonp：只能发送 get 请求，利用 script 标签可以跨域的特性，前端动态创建 script 元素，里面放上请求的内容和自定义函数，后台拿到对应的地址，将参数和函数解析出来，拼装结果，返回给前端页面，前端通过函数名执行回调函数拿到后端传回的结果。
+- 3.cors:后端通过设置请求头允许跨域访问
+- 4.node 中间件：proxy-middlewire 做代理服务器（与前端同源），将后端的结果拿回来，返回给前端
+- 5.nginx：配置代理服务将后端请转发给前端
+- 6.websockit:是 HTML5 一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是 server push 技术的一种很好的实现。
+- 7.postmessage:h5 跨域方法 frame.contentWindow.postMessage,e.data;e.data,e.source.postMesage
+- 8.localhost.hash:c 页面动态创建 b 页面，请求里面有参数，b 页面 window.parent.parent.location.hash=location.hash,a 通过 location.hash 拿到参数
+- 9.document.name：proxy 一个空的代理页面，被访问的页面动态切换 iframe 页面域名，name 没有消失，frame.contentWindow.name,window.name
+- 10.document.domain:主域名相同，docuemnt.domain 强制设置主域，freame.contentWindow,window.parent
+
+## 18. 图片的懒加载和预加载
+
+### 预加载：
+
+提前加载图片，当用户需要查看时可以直接从本地缓存中渲染
+
+为什么要使用预加载：在网页加载之前，对一些主要内容进行加载，减少等待时间，给用户提供更好的体验；否则，如歌一个页面的内容过于庞大，会出现留白。
+
+- 解决留白的方法：
+  - 1.  预加载
+  - 2.  使用 svg 占位图片，将一些结构快速搭建起来，等请求的数据来了之后，替换当前的占位符
+- 实现预加载的方法：
+  - 1.  使用 html 标签
+  - 2.  使用 Image 标签
+  - 3.  使用 XMLHTTPRequest 对象，但会精细控制预加载过程；
+
+### 懒加载：
+
+客户端优化，减少 http 请求和延迟请求数量
+
+- 提升用户体验
+- 减少无效资源的加载
+- 防止并发加载资源过多会阻塞 js 的加载，影响网站的正常使用
+- 原理：首先将页面上的图片的 src 属性设置为空字符串，而图片的真路径则设置带 data-original 属性中；当页面滚动的时候去监听 scroll 事件，在 scroll 事件的回调中，判断我们的懒加载的图片是否进入可视区域；如果图片在可视区域将图片的 src 属性设置为 data-original 的值，这样就可以实现延迟加载。

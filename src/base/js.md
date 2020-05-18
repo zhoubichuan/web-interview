@@ -8,9 +8,9 @@ meta:
     content: vuepress,最新技术文档,vuepress语法,markdown语法
 ---
 
-# 1.es6 相关
+## 1.手写与实现
 
-## 1.如何在 es5 环境下实现 let
+### 1.实现 let
 
 babel 在 let 定义的变量前加了道下划线，避免在块级作用域外访问到该变量，除了了对变量名的转换，我们也可以通过只执行函数来模拟块级作用域
 
@@ -23,7 +23,7 @@ babel 在 let 定义的变量前加了道下划线，避免在块级作用域外
 console.log(i)
 ```
 
-## 2.如何在 ES5 环境下实现 const
+### 2.const
 
 实现 const 的关键在于 Object.defineProperty()这个 API，这个 API 用于在一个对象上增加或修改属性，通过配置属性描述符，可以精确的控制属性的行为。Object.defienProperty()接受三个参数：
 
@@ -61,15 +61,13 @@ obj.b = 2
 obj = {}
 ```
 
-# 2.手写代码
+### 3.手写 call
 
-## 3.手写 call
+### 4.手写 apply
 
-## 4.手写 apply
+### 5.手写 bind
 
-## 5.手写 bind
-
-## 6.手写防抖
+### 6.手写防抖
 
 ```js
 function debounce(fn, wait) {
@@ -85,7 +83,7 @@ function debounce(fn, wait) {
 }
 ```
 
-## 7.手写节流
+### 7.手写节流
 
 ```js
 function throttle(fn,wait){
@@ -325,206 +323,6 @@ say() //hi, Tom
 - createEvent,设置事件类型，是 html 事件还是鼠标事件
 - initEvent 事件初始化，事件名称，是否允许冒泡，是否阻止自定义事件
 - dispatchEvent 触发事件
-
-## 7. 什么是原型链
-
-- 对于 object 来说，可以通过**proto**找到一个原型对象，在该对象中定义了很多函数让我们来使用
-- 原型链是一种机制，指的是 javascript 每个对象包括原型对象都有一个内置**proto**属性指向创建它的函数对象的原型对象，即 prototype 属性
-- 函数的原型链对象 constructor 默认指向函数本身，原型对象除了有原型属性外，为了实现继承，还有一个原型链指针**proto**；该指针是指向上一层的原型对象，而上一层的原型对象的结构依然类似；因此可以利用**proto**一直指向 object 的原型对象上，而 object 原型对象用 object.prototype=null 表示原型链顶端。如此形成了 js 的原型链继承。同时所有的 js 对象都有 object 的基本方法。
-
-## 8. 类的创建和继承
-
-- 1.原型链继承
-- 2.构造函数继承
-- 3.组合继承
-- 4.原型式继承
-- 5.寄生式继承
-- 6.寄生组合继承
-- 7.混合继承
-- 8.es6 继承
-
-### 1·原型链继承
-
-```js
-function Parent() {
-  this.parentName = "parent"
-}
-Parent.portotype.getParentName = function() {
-  return this.parentName + 1
-}
-function Child() {
-  this.name = "child"
-}
-Child.prototype = new Parent()
-Child.prototype.getChildName = function() {
-  return this.name + 1
-}
-var child = new Child()
-console.log(child.getParentName())
-```
-
-### 2.构造函数继承
-
-```js
-function Parent() {
-  this.parentName = "parent"
-}
-Parent.prototype.getParentName = function() {
-  return this.parentName + 1
-}
-function Child() {
-  this.name = "child"
-  Parent.call(this)
-}
-Child.prototype.getChildName = function() {
-  return this.name + 1
-}
-var child = new Child()
-console.log(child.parentName)
-```
-
-### 3.组合继承
-
-```js
-function Parent() {
-  this.parentName = "parent"
-}
-Parent.prototype.getParentName = function() {
-  return this.parentName + 1
-}
-function Child() {
-  this.name = "child"
-  Parent.call(this)
-}
-Child.prototype = new Parent()
-Child.prototype.getChildName = function() {
-  return this.name + 1
-}
-var child = new Child()
-console.log(child.getParentName())
-console.log(child.parentName)
-```
-
-### 4.原型式继承
-
-```js
-function Parent() {
-  this.parentName = "parent"
-}
-Parent.prototype.getParentName = function() {
-  return this.parentName + 1
-}
-function object(obj) {
-  function F() {}
-  F.prototype = obj
-  return new F()
-}
-var child = object(new Parent())
-child.childName = "child"
-child.getChildName = function() {
-  this.childName + 1
-}
-console.log(child.getChildName())
-```
-
-### 5.寄生式继承
-
-```js
-function Parent() {
-  this.parentName = "parent"
-}
-Parent.portotype.getParentName = function() {
-  return this.parentName + 1
-}
-function createAnother(original) {
-  var clone = Object(original)
-  clone.childName = "child"
-  clone.getChildName = function() {
-    return this.childName + 1
-  }
-  return clone
-}
-var child = createAnother(new Parent())
-child.prototype = new Parent()
-console.log(child.parentName)
-```
-
-### 6.寄生组合继承
-
-```js
-function inheritPrototype(c, p) {
-  var prototype = Object.create(p.ptototype)
-  prototype.constructor = c
-  c.prototype = prototype
-}
-function Parent() {
-  this.parentName = "parent"
-}
-Parent.prototype.getParentName = function() {
-  return this.parentName + 1
-}
-function Child() {
-  this.childName = "child"
-  Parent.call(this)
-}
-inheritPrototype(Child, Parent)
-Child.prototype.getChildName = function() {
-  return this.childName + 1
-}
-var child = new Child()
-console.log(child.parentName)
-console.log(child.getParentName())
-```
-
-### 7.混合式继承
-
-```js
-function Parent() {
-  this.parentName = "parent"
-}
-Parent.portotype.getParentName = function() {
-  return this.parentName + 1
-}
-function Child() {
-  this.name = "child"
-}
-Child.prototype.getChildName = function() {
-  return this.name + 1
-}
-function MyClass() {
-  Parent.call(this)
-  Child.call(this)
-}
-MyClass.prototype = Object.create(Parent.prototype)
-Object.assign(MyClass.prototype, Child.prototype)
-MyClass.prototype.constructor = MyClass
-var child = new MyClass()
-console.log(child.getParentName())
-```
-
-### 8.es6 中继承
-
-```js
-class Parent {
-  constructor() {
-    this.parentName = "parent"
-  }
-  getParentName() {
-    return this.parentName + 1
-  }
-}
-class Child extends Parent {
-  constructor() {
-    super()
-    this.childName = "child"
-  }
-  getChildName() {
-    return this.childName + 1
-  }
-}
-var child = new Child()
-console.log(child.getChildName())
-```
 
 ## JavaScript 的数据类型
 
@@ -778,60 +576,6 @@ var obj2 = JSON.parse(JSON.stringify(obj))
 浅拷贝， ”Object.assign() 方法用于将所有可枚举的属性的值从一个或多个源对象复制到目标对象。它将返回目标对象
 深拷贝，JSON.parse()和 JSON.stringify()给了我们一个基本的解决办法。但是函数不能被正确处理
 
-## 17. 跨域
-
-### 什么是跨域
-
-- 同源策略：协议，端口，域名要相同
-- 由于浏览器同源策略，凡是发送请求 url 的协议、域名、端口三者之间任意一种与当前页面地址不同即为跨域。
-
-协议不同：
-http 与 https
-
-端口不同：
-localhost:8080 与 localhost:3000
-
-域名不同：
-huawei.com 与 consumenr.huawei.com
-
-### 跨域的十种方式
-
-- 1.降级浏览器（跨域是浏览器把请求的信息屏蔽了）
-- 2.jsonp：只能发送 get 请求，利用 script 标签可以跨域的特性，前端动态创建 script 元素，里面放上请求的内容和自定义函数，后台拿到对应的地址，将参数和函数解析出来，拼装结果，返回给前端页面，前端通过函数名执行回调函数拿到后端传回的结果。
-- 3.cors:后端通过设置请求头允许跨域访问
-- 4.node 中间件：proxy-middlewire 做代理服务器（与前端同源），将后端的结果拿回来，返回给前端
-- 5.nginx：配置代理服务将后端请转发给前端
-- 6.websockit:是 HTML5 一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是 server push 技术的一种很好的实现。
-- 7.postmessage:h5 跨域方法 frame.contentWindow.postMessage,e.data;e.data,e.source.postMesage
-- 8.localhost.hash:c 页面动态创建 b 页面，请求里面有参数，b 页面 window.parent.parent.location.hash=location.hash,a 通过 location.hash 拿到参数
-- 9.document.name：proxy 一个空的代理页面，被访问的页面动态切换 iframe 页面域名，name 没有消失，frame.contentWindow.name,window.name
-- 10.document.domain:主域名相同，docuemnt.domain 强制设置主域，freame.contentWindow,window.parent
-
-## 18. 图片的懒加载和预加载
-
-### 预加载：
-
-提前加载图片，当用户需要查看时可以直接从本地缓存中渲染
-
-为什么要使用预加载：在网页加载之前，对一些主要内容进行加载，减少等待时间，给用户提供更好的体验；否则，如歌一个页面的内容过于庞大，会出现留白。
-
-- 解决留白的方法：
-  - 1.  预加载
-  - 2.  使用 svg 占位图片，将一些结构快速搭建起来，等请求的数据来了之后，替换当前的占位符
-- 实现预加载的方法：
-  - 1.  使用 html 标签
-  - 2.  使用 Image 标签
-  - 3.  使用 XMLHTTPRequest 对象，但会精细控制预加载过程；
-
-### 懒加载：
-
-客户端优化，减少 http 请求和延迟请求数量
-
-- 提升用户体验
-- 减少无效资源的加载
-- 防止并发加载资源过多会阻塞 js 的加载，影响网站的正常使用
-- 原理：首先将页面上的图片的 src 属性设置为空字符串，而图片的真路径则设置带 data-original 属性中；当页面滚动的时候去监听 scroll 事件，在 scroll 事件的回调中，判断我们的懒加载的图片是否进入可视区域；如果图片在可视区域将图片的 src 属性设置为 data-original 的值，这样就可以实现延迟加载。
-
 ## 19. 函数的节流和防抖
 
 - 函数的节流：节流是连续触发事件的过程以一定的时间间隔执行函数。节流会稀释你的执行频率，比如每间隔 1 秒钟，只会执行一次函数，无论这 1s 内触发了多少次事件
@@ -854,25 +598,6 @@ mosemover touchmove onesize
 
 * 函数作为返回值传递
 
-## 重排和重绘
-
-- 部分渲染树（或者整个渲染树）需要重新分析并且节点尺寸需要重新计算。这被称为重排。注意这里至少会有一次重排-初始化页面布局。
-- 由于节点的几何属性发生改变或者由于样式发生改变，例如改变元素背景色时，屏幕上的部分内容需要更新。这样的更新被称为重绘。
-
-### 什么情况会触发重排和重绘
-
-添加、删除、更新 DOM 节点
-
-通过 display: none 隐藏一个 DOM 节点-触发重排和重绘
-
-通过 visibility: hidden 隐藏一个 DOM 节点-只触发重绘，因为没有几何变化
-
-移动或者给页面中的 DOM 节点添加动画
-
-添加一个样式表，调整样式属性
-
-用户行为，例如调整窗口大小，改变字号，或者滚动。
-
 ## 23. setTimeout 和 setInterval 机制
 
 因为 js 是单线程的。浏览器遇到 setTimeout 和 setInterval 会先执行完当前的代码块，在之前会把定时器推入浏览器的待执行事件队列里，等到浏览器执行完当前代码之后会看下事件队列有没有任务，有的话才执行定时器里的代码。
@@ -892,30 +617,6 @@ mosemover touchmove onesize
 块级作用域，函数内部使用 let 定义后，不会影响函数外部
 
 - let const 不会造成变量提升
-
-## 25. js 垃圾回收机制
-
-- 垃圾回收机制，执行环境负责管理代码执行过程中使用的内存。
-- 垃圾收集器会定期（周期性）找出那些不再继续使用的变量，然后释放其内存。但是这个过程不是实时的，因为其开销比较大，所以垃圾回收器会按照固定的时间间隔周期性的执行。
-
-### 标记清除：
-
-定义和用法：当变量进入环境是，将变量标记"进入环境"，当变量离开环境是，标记为："离开环境"。某一个时刻，垃圾回收器会过滤环境中的变量，以及被环境变量引用的变量，剩下的即使被视为准备回收的变量。
-
-### 引用计数
-
-定义和用法：引用计数是跟踪记录每个值被引用的计数为 0 时，被视为准备回收的对象。
-
-基本原理：就是变量的引用次数，被引用一次则加 1，当这个引用
-
-### js 的内存生命周期（变量的生命）
-
-1.  分配你所需要的空间 var a = 20
-2.  使用分配带的内存（读写）alert(a + 10)
-    r
-    js 的垃圾收集器每隔固定的时间就执行一次释放操作，通用的是通过标记清除的算法
-
-在局部作用域中，垃圾回收器很容易做出判断并回收，全局比较难，因此应避免全局变量
 
 ## 26. 渐进增强和优雅降级
 
@@ -1161,60 +862,6 @@ onload 事件的触发，表示页面包含图片等文件在内的所有元素�
   - 2.文件依赖
   - 3.模块的复用
   - 4.统一规范和开发方式
-
-## 浏览器缓存
-
-浏览器缓存分为强缓存和协商缓存。当客户端请求某个资源时，获取缓存的流程如下：
-
-先根据这个资源的一些 http header 判断它是否命中强缓存，如果命中，则直接从本地获取缓存资源，不会发请求到服务器；
-
-当强缓存没有命中时，客户端会发送请求到服务器，服务器通过另一些 request header 验证这个资源是否命中协商缓存，称为 http 再验证，如果命中，服务器将请求返回，但不返回资源，而是告诉客户端直接从缓存中获取，客户端收到返回后就会从缓存中获取资源；
-
-强缓存和协商缓存共同之处在于，如果命中缓存，服务器都不会返回资源；
-
-区别是，强缓存不会发送请求到服务器，但协商缓存会。
-
-当协商缓存也没命中时，服务器就会将资源发送回客户端。
-
-当 ctrl+f5 强制刷新网页时，直接从服务器加载，跳过强缓存和协商缓存；
-
-当 f5 刷新网页时，跳过强缓存，但是会检查协商缓存；
-
-### 强缓存
-
-Expires（该字段是 http1.0 时的规范，值为一个绝对时间的 GMT 格式的时间字符串，代表缓存资源的过期时间）
-
-Cache-Control:max-age（该字段是 http1.1 的规范，强缓存利用其 max-age 值来判断缓存资源的最大生命周期，它的值单位为秒）
-
-### 协商缓存
-
-Last-Modified（值为资源最后更新时间，随服务器 response 返回）
-
-If-Modified-Since（通过比较两个时间来判断资源在两次请求期间是否有过修改，如果没有修改，则命中协商缓存）
-
-ETag（表示资源内容的唯一标识，随服务器 response 返回）
-
-If-None-Match（服务器通过比较请求头部的 If-None-Match 与当前资源的 ETag 是否一致来判断资源是否在两次请求之间有过修改，如果没有修改，则命中协商缓存）
-Opera 会清理近期最少使用的 Firefox 会随机清理 4096 字节，为了兼容性，一般不能超过 IE 提供了一种存储可以持久化用户数据，叫做 IE5.0 就开始支持。每个数据最多 128K，每个域名下最多 1M。这个持久化数据放在缓存中，如果缓存没有清理，那么会一直存在。
-
-### 属性
-
-- value：如果用于保存用户登录态，应该将该值加密，不能使用明文的用户标识
-- http-only:不能通过 js 访问 cookie,减少 xss 攻击
-- secure:只能在协议为 https 的请求中携带
-- sname-site:规定浏览器不能再跨域请求中携带 cookie,减少 csrf 攻击
-
-### 优点：极高的扩展性和可用性
-
-1.通过良好的编程，控制保存在 cookie 中的 session 对象的大小。 2.通过加密和安全传输技术（SSL），减少 cookie 被破解的可能性。 3.只在 cookie 中存放不敏感数据，即使被盗也不会有重大损失。 4.控制 cookie 的生命期，使之不会永远有效。偷盗者很可能拿到一个过期的 cookie。
-
-### 缺点：
-
-1.`Cookie`数量和长度的限制。每个 domain 最多只能有 20 条 cookie，每个 cookie 长度不能超过 4KB，否则会被截掉。
-
-2.安全性问题。如果 cookie 被人拦截了，那人就可以取得所有的 session 信息。即使加密也与事无补，因为拦截者并不需要知道 cookie 的意义，他只要原样转发 cookie 就可以达到目的了。
-
-3.有些状态不可能保存在客户端。例如，为了防止重复提交表单，我们需要在服务器端保存一个计数器。如果我们把这个计数器保存在客户端，那么它起不到任何作用。
 
 ## DOM 操作——怎样添加、移除、移动、复制、创建和查找节点
 

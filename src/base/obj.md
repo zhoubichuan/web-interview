@@ -16,7 +16,7 @@ meta:
 function _new(fn, args) {
   var obj = Object.create(fn.prototype)
   var result = obj.apply(fn, args)
-  return typeof result === 'object' && result !== null ? result : object
+  return typeof result === "object" && result !== null ? result : object
 }
 ```
 
