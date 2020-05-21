@@ -50,10 +50,10 @@ huawei.com 与 consumenr.huawei.com
 
 ### 跨域的十种方式
 
-- 1.降级浏览器（跨域是浏览器把请求的信息屏蔽了）
-- 2.jsonp：只能发送 get 请求，利用 script 标签可以跨域的特性，前端动态创建 script 元素，里面放上请求的内容和自定义函数，后台拿到对应的地址，将参数和函数解析出来，拼装结果，返回给前端页面，前端通过函数名执行回调函数拿到后端传回的结果。
-- 3.cors:后端通过设置请求头允许跨域访问
-- 4.node 中间件：proxy-middlewire 做代理服务器（与前端同源），将后端的结果拿回来，返回给前端
+- 1.降级浏览器
+- 2.jsonp
+- 3.cors
+- 4.node 中间件：proxy-middlewire
 - 5.nginx：配置代理服务将后端请转发给前端
 - 6.websockit:是 HTML5 一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是 server push 技术的一种很好的实现。
 - 7.postmessage:h5 跨域方法 frame.contentWindow.postMessage,e.data;e.data,e.source.postMesage
