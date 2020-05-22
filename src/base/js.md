@@ -102,6 +102,248 @@ function throttle(fn,wait){
 }
 ```
 
+## 1.手动实现一个 bind（原理通过 call、apply）
+
+- 一句话概况
+  - 1.bind()返回一个新函数，并不会立即执行
+  - 2.bind 的第一个参数将作为他运行时的 this,之后的一系列参数将会在传递的实参前传入作为他的参数
+  - 3.bind 返回函数作为构造函数，就是可以 new 的，bind 时指定的 this 值就会消失，但传入的参数依然生效
+
+```
+Function.prototype.bind=function(){
+    var self=this
+    var context= [].shift.call(arguments)
+    var args=[].slice.call(arguments)
+    return function(){
+        return self.apply(contxt,[].concat.call(args,[].slice.call(arguments)))
+    }
+}
+```
+
+```
+Function.prototype._bind=function(){
+	var self=this
+	var context=[].shift.call(arguments)
+	var args=arguments
+	return function(){
+		self.call(context,...args,...arguments)
+	}
+}
+```
+
+## 2.ajax（异步的 javascript 和 xml）
+
+Ajax 是一种用于创建快速动态网页的技术。Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。
+
+传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面
+
+### AJAX 的工作原理：
+
+- 0 （未初始化）还没有调用 send()方法
+- 1 （载入）已调用 send()方法，正在发送请求
+- 2 （载入完成）send()方法执行完毕
+- 3 （交互）正在解析相应的内容
+- 4 （完成）响应内容解析完成，可以在客户端调用了
+
+### 优点：
+
+1.减轻服务器的负担,按需取数据,最大程度的减少冗余请求
+
+2.局部刷新页面,减少用户心理和实际的等待时间,带来更好的用户体验
+
+3.基于 xml 标准化,并被广泛支持,不需安装插件等,进一步促进页面和数据的分离
+
+### 劣势：
+
+1.AJAX 大量的使用了 javascript 和 ajax 引擎,这些取决于浏览器的支持.在编写的时候考虑对浏览器的兼容性.
+
+2.AJAX 只是局部刷新,所以页面的后退按钮是没有用的.
+
+3.对流媒体还有移动设备的支持不是太好等
+
+- 怎么解决呢：通过 location.hash 值来解决 ajax 过程中导致的浏览器前进后退按钮失效问题
+- 怎么解决以前被人们常遇到的重复加载问题。主要比较前后的 hash 值，看其是否相等，再判断是否触发 ajax
+
+```js
+let getDate = (method, url, content) = >
+new Promise((resolve, reject) = > {
+  let xhr = new XMLHttpRequest()
+  xhr.open(method, url)
+  xhr.send(content)
+  xhr.onreadystatechange = () = > {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      resolve(xhr.response)
+    }
+  }
+})
+```
+
+## js 实现简单的双向绑定：
+
+```html
+<body>
+  <div id="app">
+    <input type="text" id="txt" />
+    <p id="show"></p>
+  </div>
+</body>
+<script type="text/javascript">
+  var obj = {}
+  Object.defineProperty(obj, "txt", {
+    get: function() {
+      return obj
+    },
+    set: function(newValue) {
+      document.getElementById("txt").value = newValue
+      document.getElementById("show").innerHTML = newValue
+    },
+  })
+  document.addEventListener("keyup", function(e) {
+    obj.txt = e.target.value
+  })
+</script>
+```
+
+## 5.实现一个函数 clone
+
+可以对 javascirpt 中的 5 种主要的数据类型（包含 number，string，object，array，boolean）进行复制
+
+```js
+Object.prototype.clone = function() {
+  //对象的深拷贝 获取对应的构造函数 [] 或者{}
+  var newObject = this.constructor === Array ? [] : {}
+  //遍历对象的
+  for (let a in this) {
+    newObject[a] = typeof this[a] === "object" ? this[a].clone() : this[a]
+  }
+  return newObject
+}
+```
+
+## 6.实现一个简单的 promise
+
+```js
+class Promise {
+  constructor(executor) {
+    this.status = "pending"
+    this.value = undefined
+    this.reason = undefined
+    this.onResolvedCallbacks = []
+    this.onRejectedCallbacks = []
+    let resolve = (value) => {
+      if (this.status === "pending") {
+        this.status = "resolved"
+        this.value = value
+        this.onResolvedCallbacks.forEach((fn) => fn())
+      }
+    }
+    let reject = (reason) => {
+      if (this.status === "pending") {
+        this.status = "rejected"
+        this.reason = reason
+        this.onRejectedCallbacks.forEach((fn) => fn())
+      }
+    }
+    try {
+      executor(resolve, reject)
+    } catch (err) {
+      reject(err)
+    }
+  }
+  then(onFullFilled, onRejected) {
+    if (this.status == "resolved") {
+      onFullFilled(this.value)
+    }
+    if (this.status === "rejected") {
+      onRejected(this.reason)
+    }
+    if (this.status === "pending") {
+      this.onResolvedCallbacks.push(() => {
+        onFullFilled(this.value)
+      })
+      this.onRejectedCallbacks.push(() => {
+        onRejected(this.reason)
+      })
+    }
+  }
+}
+const p = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("hello world")
+  }, 100)
+})
+p.then(
+  (data) => {
+    console.log(data)
+  },
+  (error) => {
+    console.log(error)
+  }
+)
+```
+
+## 7.发布订阅模式（观察者模式）
+
+```js
+var event = {
+  clientListen: [],
+  trigger: function() {
+    for (var i = 0; i < this.clientListen.length; i++) {
+      var fn = this.clientListen[i]
+      fn.apply(this, arguments)
+    }
+  },
+  listen: function(fn) {
+    this.clientListen.push(fn)
+  },
+}
+event.listen(function(time) {
+  console.log("正式上班时间为：" + time)
+})
+event.trigger("2018/7")
+```
+
+## 8.手动写一个 node 服务器
+
+```js
+const http = require("http")
+const fs = requier("fs")
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    const indexFile = fs.createReadStream("./index.html")
+    res.writeHead(200, { "content-Type": "text/html;charset=utf-8" })
+    indexFile.pipe(res)
+  }
+})
+server.listen(3000)
+```
+
+```js
+function create() {
+  let obj = {}
+  let Con = [].shift.call(arguments)
+  obj.__proto__ = Con.prototype
+  let result = Con.apply(obj, arguments)
+  return result instanceof Object ? result : obj
+}
+```
+
+```js
+function myInstanceof(left, right) {
+  let prototype = right.prototype
+  left = left.__proto__
+  while (true) {
+    if (left === null || left === undefined) {
+      return false
+    }
+    if (prototype === left) {
+      return true
+      left = left.__proto__
+    }
+  }
+}
+```
+
 ## 8.数组扁平化
 
 - ES6 的 flat()
@@ -332,37 +574,19 @@ say() //hi, Tom
 ## 9.数据类型的判断
 
 - 1.typeof
+  - 只能判断基本数据类型：Number String undefined ,null,symbol Boolean;
+  - null 返回 object
+  - 对于引用数据类型除了 function 都返回 object
 - 2.instanceof
+  - 用来判断 A 是否是 B 的实列，返回值为 true 或 false,instanceof 检查的是原型
 - 3.toString
+  - 是 Obejct 的原型方法，对 Object 对象，直接调用 toString()就能返回[Object Object].而其他对象，则需要通过 call/apply 来调用才能返回正确的类型信息
 - 4.hasOwnProperty
+  - 方法返回一个布尔值，指示对象自身属性中是否具有指定的属性，该方法会忽略掉那些从原型上继承到的属性。
 - 5.isProperty
+  - 方法测试一个对象是否存在另一个对象的原型链上。
 - 6.constructor
-
-### typeof
-
-- 只能判断基本数据类型：Number String undefined ,null,symbol Boolean;
-- null 返回 object
-- 对于引用数据类型除了 function 都返回 object
-
-### instaceOf
-
-- 用来判断 A 是否是 B 的实列，返回值为 true 或 false,instanceof 检查的是原型
-
-### toString
-
-- 是 Obejct 的原型方法，对 Object 对象，直接调用 toString()就能返回[Object Object].而其他对象，则需要通过 call/apply 来调用才能返回正确的类型信息
-
-### hasOwnProperty
-
-- 方法返回一个布尔值，指示对象自身属性中是否具有指定的属性，该方法会忽略掉那些从原型上继承到的属性。
-
-### isProperty
-
-- 方法测试一个对象是否存在另一个对象的原型链上。
-
-### constructor
-
-- 返回创建该对象的函数，也就是我们常说的构造函数
+  - 返回创建该对象的函数，也就是我们常说的构造函数
 
 ### js 数组去重
 
@@ -929,245 +1153,3 @@ javascript 对象的几种创建方式
 
 - hash 模式只可以更改#后面的内容，history 模式可以通过 API 设置任意的同源 URL
 - history 模式可以通过 API 添加任意类型的数据到历史记录中，hash 模式只能更改哈希值，也就是字符串
-
-## 1.手动实现一个 bind（原理通过 call、apply）
-
-- 一句话概况
-  - 1.bind()返回一个新函数，并不会立即执行
-  - 2.bind 的第一个参数将作为他运行时的 this,之后的一系列参数将会在传递的实参前传入作为他的参数
-  - 3.bind 返回函数作为构造函数，就是可以 new 的，bind 时指定的 this 值就会消失，但传入的参数依然生效
-
-```
-Function.prototype.bind=function(){
-    var self=this
-    var context= [].shift.call(arguments)
-    var args=[].slice.call(arguments)
-    return function(){
-        return self.apply(contxt,[].concat.call(args,[].slice.call(arguments)))
-    }
-}
-```
-
-```
-Function.prototype._bind=function(){
-	var self=this
-	var context=[].shift.call(arguments)
-	var args=arguments
-	return function(){
-		self.call(context,...args,...arguments)
-	}
-}
-```
-
-## 2.ajax（异步的 javascript 和 xml）
-
-Ajax 是一种用于创建快速动态网页的技术。Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。
-
-传统的网页（不使用 Ajax）如果需要更新内容，必须重载整个网页页面
-
-### AJAX 的工作原理：
-
-- 0 （未初始化）还没有调用 send()方法
-- 1 （载入）已调用 send()方法，正在发送请求
-- 2 （载入完成）send()方法执行完毕
-- 3 （交互）正在解析相应的内容
-- 4 （完成）响应内容解析完成，可以在客户端调用了
-
-### 优点：
-
-1.减轻服务器的负担,按需取数据,最大程度的减少冗余请求
-
-2.局部刷新页面,减少用户心理和实际的等待时间,带来更好的用户体验
-
-3.基于 xml 标准化,并被广泛支持,不需安装插件等,进一步促进页面和数据的分离
-
-### 劣势：
-
-1.AJAX 大量的使用了 javascript 和 ajax 引擎,这些取决于浏览器的支持.在编写的时候考虑对浏览器的兼容性.
-
-2.AJAX 只是局部刷新,所以页面的后退按钮是没有用的.
-
-3.对流媒体还有移动设备的支持不是太好等
-
-- 怎么解决呢：通过 location.hash 值来解决 ajax 过程中导致的浏览器前进后退按钮失效问题
-- 怎么解决以前被人们常遇到的重复加载问题。主要比较前后的 hash 值，看其是否相等，再判断是否触发 ajax
-
-```js
-let getDate = (method, url, content) = >
-new Promise((resolve, reject) = > {
-  let xhr = new XMLHttpRequest()
-  xhr.open(method, url)
-  xhr.send(content)
-  xhr.onreadystatechange = () = > {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      resolve(xhr.response)
-    }
-  }
-})
-```
-
-## js 实现简单的双向绑定：
-
-```html
-<body>
-  <div id="app">
-    <input type="text" id="txt" />
-    <p id="show"></p>
-  </div>
-</body>
-<script type="text/javascript">
-  var obj = {}
-  Object.defineProperty(obj, "txt", {
-    get: function() {
-      return obj
-    },
-    set: function(newValue) {
-      document.getElementById("txt").value = newValue
-      document.getElementById("show").innerHTML = newValue
-    },
-  })
-  document.addEventListener("keyup", function(e) {
-    obj.txt = e.target.value
-  })
-</script>
-```
-
-## 5.实现一个函数 clone
-
-可以对 javascirpt 中的 5 种主要的数据类型（包含 number，string，object，array，boolean）进行复制
-
-```js
-Object.prototype.clone = function() {
-  //对象的深拷贝 获取对应的构造函数 [] 或者{}
-  var newObject = this.constructor === Array ? [] : {}
-  //遍历对象的
-  for (let a in this) {
-    newObject[a] = typeof this[a] === "object" ? this[a].clone() : this[a]
-  }
-  return newObject
-}
-```
-
-## 6.实现一个简单的 promise
-
-```js
-class Promise {
-  constructor(executor) {
-    this.status = "pending"
-    this.value = undefined
-    this.reason = undefined
-    this.onResolvedCallbacks = []
-    this.onRejectedCallbacks = []
-    let resolve = (value) => {
-      if (this.status === "pending") {
-        this.status = "resolved"
-        this.value = value
-        this.onResolvedCallbacks.forEach((fn) => fn())
-      }
-    }
-    let reject = (reason) => {
-      if (this.status === "pending") {
-        this.status = "rejected"
-        this.reason = reason
-        this.onRejectedCallbacks.forEach((fn) => fn())
-      }
-    }
-    try {
-      executor(resolve, reject)
-    } catch (err) {
-      reject(err)
-    }
-  }
-  then(onFullFilled, onRejected) {
-    if (this.status == "resolved") {
-      onFullFilled(this.value)
-    }
-    if (this.status === "rejected") {
-      onRejected(this.reason)
-    }
-    if (this.status === "pending") {
-      this.onResolvedCallbacks.push(() => {
-        onFullFilled(this.value)
-      })
-      this.onRejectedCallbacks.push(() => {
-        onRejected(this.reason)
-      })
-    }
-  }
-}
-const p = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("hello world")
-  }, 100)
-})
-p.then(
-  (data) => {
-    console.log(data)
-  },
-  (error) => {
-    console.log(error)
-  }
-)
-```
-
-## 7.发布订阅模式（观察者模式）
-
-```js
-var event = {
-  clientListen: [],
-  trigger: function() {
-    for (var i = 0; i < this.clientListen.length; i++) {
-      var fn = this.clientListen[i]
-      fn.apply(this, arguments)
-    }
-  },
-  listen: function(fn) {
-    this.clientListen.push(fn)
-  },
-}
-event.listen(function(time) {
-  console.log("正式上班时间为：" + time)
-})
-event.trigger("2018/7")
-```
-
-## 8.手动写一个 node 服务器
-
-```js
-const http = require("http")
-const fs = requier("fs")
-const server = http.createServer((req, res) => {
-  if (req.url === "/") {
-    const indexFile = fs.createReadStream("./index.html")
-    res.writeHead(200, { "content-Type": "text/html;charset=utf-8" })
-    indexFile.pipe(res)
-  }
-})
-server.listen(3000)
-```
-
-```js
-function create() {
-  let obj = {}
-  let Con = [].shift.call(arguments)
-  obj.__proto__ = Con.prototype
-  let result = Con.apply(obj, arguments)
-  return result instanceof Object ? result : obj
-}
-```
-
-```js
-function myInstanceof(left, right) {
-  let prototype = right.prototype
-  left = left.__proto__
-  while (true) {
-    if (left === null || left === undefined) {
-      return false
-    }
-    if (prototype === left) {
-      return true
-      left = left.__proto__
-    }
-  }
-}
-```
