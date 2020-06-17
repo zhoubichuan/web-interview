@@ -57,47 +57,47 @@ module.exports = {
             link: '/base/html',
             items: [{
                 text: '一、HTML',
-                link: '/base/html',
+                link: '/base/1.htm',
               },
               {
                 text: '二、CSS',
-                link: '/base/css',
+                link: '/base/2.css',
               },
               {
                 text: '三、JS基础',
-                link: '/base/js',
+                link: '/base/3.js',
               },
               {
                 text: '四、JS面向对象',
-                link: '/base/obj',
+                link: '/base/4.obj',
               },
               {
                 text: '五、V8引擎机制',
-                link: '/base/v8',
+                link: '/base/5.v8',
               },
               {
                 text: '六、渲染机制',
-                link: '/base/render',
+                link: '/base/6.render',
               },
               {
                 text: '七、浏览器缓存',
-                link: '/base/cache',
+                link: '/base/7.cache',
               },
               {
                 text: '八、排序算法',
-                link: '/base/calc',
+                link: '/base/8.calc',
               },
               {
                 text: '九、设计模式',
-                link: '/base/design',
+                link: '/base/9.design',
               },
               {
                 text: '十、前端安全',
-                link: '/base/safe',
+                link: '/base/10.safe',
               },
               {
                 text: '十一、网络相关',
-                link: '/base/network',
+                link: '/base/11.network',
               },
             ],
           },
@@ -106,16 +106,16 @@ module.exports = {
             link: '/frame/Vue',
             items: [{
               text: '一、Vue',
-              link: '/frame/Vue',
+              link: '/frame/1.Vue',
             }, {
               text: '二、React',
-              link: '/frame/React',
+              link: '/frame/2.React',
             }, {
               text: '三、Angular',
-              link: '/frame/Angular',
+              link: '/frame/3.Angular',
             }, {
               text: '四、小程序',
-              link: '/frame/小程序',
+              link: '/frame/4.小程序',
             }]
           },
           {
@@ -123,16 +123,16 @@ module.exports = {
             link: '/service/node',
             items: [{
               text: '一、Node',
-              link: '/service/node',
+              link: '/service/1.node',
             }, {
               text: '二、Express',
-              link: '/service/express',
+              link: '/service/2.express',
             }, {
               text: '三、Koa',
-              link: '/service/koa',
+              link: '/service/3.koa',
             }, {
               text: '四、Egg',
-              link: '/service/egg',
+              link: '/service/4.egg',
             }]
           },
           {
@@ -199,9 +199,9 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/base/': ['html', 'css', 'js', 'obj', 'v8', 'render', 'cache', 'calc', 'design', 'safe', 'network'],
-          '/frame/': ['Vue', 'React', 'Angular', '小程序'],
-          '/service/': ['node', 'express', 'koa', 'egg'],
+          '/base/': ['1.htm', '2.css', '3.js', '4.obj', '5.v8', '6.render', '7.cache', '8.calc', '9.design', '10.safe', '11.network'],
+          '/frame/': ['1.Vue', '2.React', '3.Angular', '4.小程序'],
+          '/service/': ['1.node', '2.express', '3.koa', '4.egg'],
           '/article/': ['阿里巴巴', '蘑菇街', '饿了么', '今日头条', '滴滴', '兑吧', '百分点', '海风教育', '海康威视', '沪江', '酷家乐', '寺库', '今日头条', '挖财', '网易', '微医', '携程', '喜马拉雅', '有赞']
         }
       }
