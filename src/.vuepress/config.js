@@ -190,11 +190,11 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/base/static': ['1.base'],
-          '/base/javascript': ['1.base', '2.es6', '3.async', '4.eventLoop', '5.safe', '6.performance', '7.monitor'],
-          '/base/vue': ['1.base'],
-          '/base/react': ['1.base'],
-          '/base/browser': ['1.base'],
+          '/base/static/': ['1.base'],
+          '/base/javascript/': ['1.base', '2.es6', '3.async', '4.eventLoop', '5.safe', '6.performance', '7.monitor'],
+          '/base/vue/': ['1.base'],
+          '/base/react/': ['1.base'],
+          '/base/browser/': ['1.base'],
           '/base/': ['1.htm', '2.css', '3.js', '4.obj', '5.v8', '6.render', '7.cache', '8.calc', '9.design', '10.safe', '11.network'],
           '/senior/javascript/': ['1.advanc', '2.design', '3.dataStructure', '4.algorithm'],
           '/senior/network/': ['1.UDP', '2.TCP', '3.HTTPandTLS', '4.HTTP2andHTTP3'],
