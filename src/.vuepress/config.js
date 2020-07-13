@@ -41,7 +41,7 @@ module.exports = {
   ],
   port: 3009,
   dest: 'dist', // 指定 vuepress build 的输出目录
-  serviceWorker: false, // pwa
+  serviceWorker: true, // pwa
 
   // 主题配置
   themeConfig: {

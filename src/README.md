@@ -3,7 +3,7 @@ lang: zh-CN
 home: true
 heroImage: ""
 actionText: 先睹为快 →
-actionLink: /base/1.htm
+actionLink: /base/static/1.base.html
 pageClass: page_index
 footer: 前端面试题
 meta:
