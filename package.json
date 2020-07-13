@@ -16,5 +16,8 @@
   },
   "devDependencies": {
     "vuepress": "^0.14.4"
+  },
+  "dependencies": {
+    "@hellowuxin/mindmap": "^1.7.3"
   }
 }

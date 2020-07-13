@@ -1,6 +1,6 @@
 module.exports = {
   // 基础配置
-  base: '/Web-Interview/', // 部署站点的基础路径
+  base: '/web-Interview/', // 部署站点的基础路径
   locales: {
     // 默认标题
     '/': {
@@ -53,70 +53,61 @@ module.exports = {
         editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [{
-            text: '前端基础',
-            link: '/base/html',
+            text: '基础面试题',
             items: [{
-                text: '一、HTML',
-                link: '/base/1.htm',
+                text: '一、CSS 常考面试题资料',
+                link: '/base/static/1.base',
               },
               {
-                text: '二、CSS',
-                link: '/base/2.css',
+                text: '二、JS 基础知识点',
+                link: '/base/javascript/1.base',
               },
               {
-                text: '三、JS基础',
-                link: '/base/3.js',
+                text: '三、Vue 常考基础知识点',
+                link: '/base/vue/1.base',
               },
               {
-                text: '四、JS面向对象',
-                link: '/base/4.obj',
+                text: '四、React 常考基础知识点',
+                link: '/base/react/1.base',
               },
               {
-                text: '五、V8引擎机制',
-                link: '/base/5.v8',
-              },
-              {
-                text: '六、渲染机制',
-                link: '/base/6.render',
-              },
-              {
-                text: '七、浏览器缓存',
-                link: '/base/7.cache',
-              },
-              {
-                text: '八、排序算法',
-                link: '/base/8.calc',
-              },
-              {
-                text: '九、设计模式',
-                link: '/base/9.design',
-              },
-              {
-                text: '十、前端安全',
-                link: '/base/10.safe',
-              },
-              {
-                text: '十一、网络相关',
-                link: '/base/11.network',
-              },
+                text: '四、浏览器基础知识点',
+                link: '/base/browser/1.base',
+              }
             ],
           },
           {
-            text: '前端框架',
-            link: '/frame/Vue',
+            text: '高级面试题',
             items: [{
-              text: '一、Vue',
-              link: '/frame/1.Vue',
-            }, {
-              text: '二、React',
-              link: '/frame/2.React',
-            }, {
-              text: '三、Angular',
-              link: '/frame/3.Angular',
-            }, {
-              text: '四、小程序',
-              link: '/frame/4.小程序',
-            }]
+                text: '一、JS 进阶知识点',
+                link: '/senior/javascript/1.advanc',
+              }, {
+                text: '二、网络相关',
+                link: '/senior/network/1.UDP',
+              }, {
+                text: '三、浏览器相关',
+                link: '/senior/browser/1.cache',
+              }, {
+                text: '四、Vue 常考进阶知识点',
+                link: '/senior/vue/1.advanc',
+              }, {
+                text: '五、React 常考进阶知识点',
+                link: '/senior/react/1.advanc',
+              },
+              {
+                text: '一、Vue',
+                link: '/senior/1.advanc',
+              }, {
+                text: '二、React',
+                link: '/senior/1.advanc',
+              }, {
+                text: '三、Angular',
+                link: '/senior/3.Angular',
+              }, {
+                text: '四、小程序',
+                link: '/frame/4.小程序',
+              }
+            ],
           },
           {
             text: 'node后端',
@@ -199,7 +190,17 @@ module.exports = {
           }
         ],
         sidebar: {
+          '/base/static': ['1.base'],
+          '/base/javascript': ['1.base', '2.es6', '3.async', '4.eventLoop', '5.safe', '6.performance', '7.monitor'],
+          '/base/vue': ['1.base'],
+          '/base/react': ['1.base'],
+          '/base/browser': ['1.base'],
           '/base/': ['1.htm', '2.css', '3.js', '4.obj', '5.v8', '6.render', '7.cache', '8.calc', '9.design', '10.safe', '11.network'],
+          '/senior/javascript/': ['1.advanc', '2.design', '3.dataStructure', '4.algorithm'],
+          '/senior/network/': ['1.UDP', '2.TCP', '3.HTTPandTLS', '4.HTTP2andHTTP3'],
+          '/senior/browser/': ['1.cache', '2.render'],
+          '/senior/vue/': ['1.advanc'],
+          '/senior/react/': ['1.advanc'],
           '/frame/': ['1.Vue', '2.React', '3.Angular', '4.小程序'],
           '/service/': ['1.node', '2.express', '3.koa', '4.egg'],
           '/article/': ['阿里巴巴', '蘑菇街', '饿了么', '今日头条', '滴滴', '兑吧', '百分点', '海风教育', '海康威视', '沪江', '酷家乐', '寺库', '挖财', '网易', '微医', '携程', '喜马拉雅', '有赞']
