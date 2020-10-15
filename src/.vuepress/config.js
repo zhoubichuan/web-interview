@@ -48,7 +48,7 @@ module.exports = {
   ],
   port: 3009,
   dest: 'dist', // 指定 vuepress build 的输出目录
-  serviceWorker: false, // pwa
+  serviceWorker: true, // pwa
 
   // 主题配置
   themeConfig: {
@@ -118,81 +118,81 @@ module.exports = {
           },
           {
             text: 'node后端',
-            link: '/service/node',
+            link: '/backEnd/node',
             items: [{
               text: '一、Node',
-              link: '/service/1.node',
+              link: '/backEnd/1.node',
             }, {
               text: '二、Express',
-              link: '/service/2.express',
+              link: '/backEnd/2.express',
             }, {
               text: '三、Koa',
-              link: '/service/3.koa',
+              link: '/backEnd/3.koa',
             }, {
               text: '四、Egg',
-              link: '/service/4.egg',
+              link: '/backEnd/4.egg',
             }]
           },
           {
             text: '大厂面试题',
-            link: '/article/',
+            link: '/largeFactories/',
             items: [{
               text: '阿里巴巴',
-              link: '/article/阿里巴巴',
+              link: '/largeFactories/阿里巴巴',
             }, {
               text: '饿了么',
-              link: '/article/饿了么',
+              link: '/largeFactories/饿了么',
             }, {
               text: '百分点',
-              link: '/article/百分点',
+              link: '/largeFactories/百分点',
             }, {
               text: '宝宝树',
-              link: '/article/宝宝树',
+              link: '/largeFactories/宝宝树',
             }, {
               text: '滴滴',
-              link: '/article/滴滴',
+              link: '/largeFactories/滴滴',
             }, {
               text: '兑吧',
-              link: '/article/兑吧',
+              link: '/largeFactories/兑吧',
             }, {
               text: '海风教育',
-              link: '/article/宝海风教育',
+              link: '/largeFactories/宝海风教育',
             }, {
               text: '海康威视',
-              link: '/article/海康威视',
+              link: '/largeFactories/海康威视',
             }, {
               text: '沪江',
-              link: '/article/沪江',
+              link: '/largeFactories/沪江',
             }, {
               text: '今日头条',
-              link: '/article/今日头条',
+              link: '/largeFactories/今日头条',
             }, {
               text: '酷家乐',
-              link: '/article/酷家乐',
+              link: '/largeFactories/酷家乐',
             }, {
               text: '蘑菇街',
-              link: '/article/蘑菇街',
+              link: '/largeFactories/蘑菇街',
             }, {
               text: '寺库',
-              link: '/article/寺库',
+              link: '/largeFactories/寺库',
             }, {
               text: '挖财',
-              link: '/article/挖财',
+              link: '/largeFactories/挖财',
             }, {
               text: '网易',
-              link: '/article/网易',
+              link: '/largeFactories/网易',
             }, {
               text: '微医',
-              link: '/article/微医',
+              link: '/largeFactories/微医',
             }, {
               text: '喜马拉雅',
-              link: '/article/喜马拉雅',
+              link: '/largeFactories/喜马拉雅',
             }, {
               text: '携程',
-              link: '/article/携程',
+              link: '/largeFactories/携程',
             }, {
               text: '有赞',
-              link: '/article/有赞',
+              link: '/largeFactories/有赞',
             }]
           }
         ],
@@ -209,8 +209,8 @@ module.exports = {
           '/senior/vue/': ['1.advanc'],
           '/senior/react/': ['1.advanc'],
           '/frame/': ['1.Vue', '2.React', '3.Angular', '4.小程序'],
-          '/service/': ['1.node', '2.express', '3.koa', '4.egg'],
-          '/article/': ['阿里巴巴', '蘑菇街', '饿了么', '今日头条', '滴滴', '兑吧', '百分点', '海风教育', '海康威视', '沪江', '酷家乐', '寺库', '挖财', '网易', '微医', '携程', '喜马拉雅', '有赞']
+          '/backEnd/': ['1.node', '2.express', '3.koa', '4.egg'],
+          '/largeFactories/': ['阿里巴巴', '蘑菇街', '饿了么', '今日头条', '滴滴', '兑吧', '百分点', '海风教育', '海康威视', '沪江', '酷家乐', '寺库', '挖财', '网易', '微医', '携程', '喜马拉雅', '有赞']
         }
       }
     }
