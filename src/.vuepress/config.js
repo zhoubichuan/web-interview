@@ -194,6 +194,10 @@ module.exports = {
               text: '有赞',
               link: '/largeFactories/有赞',
             }]
+          },
+          {
+            text: '面试题',
+            link: '/myInterview/20210131'
           }
         ],
         sidebar: {
