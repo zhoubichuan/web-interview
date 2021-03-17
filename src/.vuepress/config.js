@@ -78,7 +78,7 @@ module.exports = {
                 link: '/base/react/1.base',
               },
               {
-                text: '四、浏览器基础知识点',
+                text: '五、浏览器基础知识点',
                 link: '/base/browser/1.base',
               }
             ],
@@ -100,17 +100,7 @@ module.exports = {
               }, {
                 text: '五、React 常考进阶知识点',
                 link: '/senior/react/1.advanc',
-              },
-              {
-                text: '一、Vue',
-                link: '/senior/1.advanc',
-              }, {
-                text: '二、React',
-                link: '/senior/1.advanc',
-              }, {
-                text: '三、Angular',
-                link: '/senior/3.Angular',
-              }, {
+              },{
                 text: '四、小程序',
                 link: '/frame/4.小程序',
               }
