@@ -67,7 +67,7 @@ module.exports = {
             },
             {
               text: '二.CSS',
-              link: '/base/html/1.index',
+              link: '/base/css/1.index',
             },
             {
               text: '三.JavaScript',
