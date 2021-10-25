@@ -74,15 +74,15 @@ module.exports = {
               link: '/base/javascript/1.index',
             },
             {
-              text: '四.Vue',
+              text: '四.Vue基础',
               link: '/base/vue/1.index',
             },
             {
-              text: '五.React',
+              text: '五.React基础',
               link: '/base/react/1.index',
             },
             {
-              text: '六.浏览器基础知识点',
+              text: '六.浏览器基础',
               link: '/base/browser/1.base',
             }
           ],
@@ -90,38 +90,29 @@ module.exports = {
         {
           text: '高级面试题',
           items: [{
-            text: '一、JS 进阶知识点',
+            text: '一.JavaScript高级',
             link: '/senior/javascript/1.advanc',
           }, {
-            text: '二、网络相关',
+            text: '二.网络相关',
             link: '/senior/network/1.UDP',
           }, {
-            text: '三、浏览器相关',
+            text: '三.浏览器原理',
             link: '/senior/browser/1.cache',
           }, {
-            text: '四、Vue 常考进阶知识点',
+            text: '四.Vue原理',
             link: '/senior/vue/1.advanc',
           }, {
-            text: '五、React 常考进阶知识点',
+            text: '五.React原理',
             link: '/senior/react/1.advanc',
           },
-          {
-            text: '一、Vue',
-            link: '/senior/1.advanc',
-          }, {
-            text: '二、React',
-            link: '/senior/1.advanc',
-          }, {
-            text: '三、Angular',
-            link: '/senior/3.Angular',
-          }, {
+         {
             text: '四、小程序',
             link: '/frame/4.小程序',
           }
           ],
         },
         {
-          text: 'node后端',
+          text: '后端知识点',
           link: '/backEnd/node',
           items: [{
             text: '一、Node',
