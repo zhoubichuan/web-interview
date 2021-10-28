@@ -90,13 +90,13 @@ module.exports = {
         {
           text: '高级面试题',
           items: [{
-            text: '一.JavaScript高级',
+            text: '一.JavaScript',
             link: '/senior/javascript/1.advanc',
           }, {
-            text: '二.网络相关',
+            text: '二.网络',
             link: '/senior/network/1.UDP',
           }, {
-            text: '三.浏览器原理',
+            text: '三.浏览器',
             link: '/senior/browser/1.cache',
           }, {
             text: '四.Vue原理',
