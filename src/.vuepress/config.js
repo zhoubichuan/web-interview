@@ -4,7 +4,7 @@ module.exports = {
   locales: {
     // 默认标题
     '/': {
-      title: '前端面试题精选',
+      title: 'web面试题精选',
       description: ''
     }
   },
@@ -59,136 +59,164 @@ module.exports = {
         editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [{
-          text: '基础面试题',
+          text: '前端面试题',
           items: [
             {
-              text: '一.HTML',
-              link: '/base/html/1.index',
+              text: '一.HTML部分',
+              link: '/1.front-end/1.html/1.index',
             },
             {
-              text: '二.CSS',
-              link: '/base/css/1.index',
+              text: '二.CSS部分',
+              link: '/1.front-end/2.css/1.index',
             },
             {
-              text: '三.JavaScript',
-              link: '/base/javascript/1.index',
+              text: '三.JavaScript部分',
+              link: '/1.front-end/3.javascript/1.index',
             },
             {
-              text: '四.Vue基础',
-              link: '/base/vue/1.index',
+              text: '四.浏览器部分',
+              link: '/1.front-end/4.browser/1.index',
             },
             {
-              text: '五.React基础',
-              link: '/base/react/1.index',
+              text: '五.vue部分',
+              link: '/1.front-end/5.vue/1.index',
             },
             {
-              text: '六.浏览器基础',
-              link: '/base/browser/1.base',
-            }
+              text: '六.react部分',
+              link: '/1.front-end/6.react/1.index',
+            },
           ],
         },
         {
           text: '高级面试题',
-          items: [{
-            text: '一.JavaScript',
-            link: '/senior/javascript/1.advanc',
-          }, {
-            text: '二.网络',
-            link: '/senior/network/1.UDP',
-          }, {
-            text: '三.浏览器',
-            link: '/senior/browser/1.cache',
-          }, {
-            text: '四.Vue原理',
-            link: '/senior/vue/1.advanc',
-          }, {
-            text: '五.React原理',
-            link: '/senior/react/1.advanc',
-          },
-         {
-            text: '四、小程序',
-            link: '/frame/4.小程序',
-          }
+          items: [
+            {
+              text: '一.JavaScript',
+              link: '/senior/javascript/1.advanc',
+            },
+            {
+              text: '二.网络',
+              link: '/senior/network/1.UDP',
+            },
+            {
+              text: '三.浏览器',
+              link: '/senior/browser/1.cache',
+            },
+            {
+              text: '四.Vue原理',
+              link: '/senior/vue/1.advanc',
+            },
+            {
+              text: '五.React原理',
+              link: '/senior/react/1.advanc',
+            },
+            {
+              text: '四、小程序',
+              link: '/frame/4.小程序',
+            }
           ],
         },
         {
-          text: '后端知识点',
+          text: '后端面试题',
           link: '/backEnd/node',
-          items: [{
-            text: '一、Node',
-            link: '/backEnd/1.node',
-          }, {
-            text: '二、Express',
-            link: '/backEnd/2.express',
-          }, {
-            text: '三、Koa',
-            link: '/backEnd/3.koa',
-          }, {
-            text: '四、Egg',
-            link: '/backEnd/4.egg',
-          }]
+          items: [
+            {
+              text: '一、Node',
+              link: '/backEnd/1.node',
+            },
+            {
+              text: '二、Express',
+              link: '/backEnd/2.express',
+            },
+            {
+              text: '三、Koa',
+              link: '/backEnd/3.koa',
+            },
+            {
+              text: '四、Egg',
+              link: '/backEnd/4.egg',
+            }]
         },
         {
           text: '大厂面试题',
           link: '/largeFactories/',
-          items: [{
-            text: '阿里巴巴',
-            link: '/largeFactories/阿里巴巴',
-          }, {
-            text: '饿了么',
-            link: '/largeFactories/饿了么',
-          }, {
-            text: '百分点',
-            link: '/largeFactories/百分点',
-          }, {
-            text: '宝宝树',
-            link: '/largeFactories/宝宝树',
-          }, {
-            text: '滴滴',
-            link: '/largeFactories/滴滴',
-          }, {
-            text: '兑吧',
-            link: '/largeFactories/兑吧',
-          }, {
-            text: '海风教育',
-            link: '/largeFactories/宝海风教育',
-          }, {
-            text: '海康威视',
-            link: '/largeFactories/海康威视',
-          }, {
-            text: '沪江',
-            link: '/largeFactories/沪江',
-          }, {
-            text: '今日头条',
-            link: '/largeFactories/今日头条',
-          }, {
-            text: '酷家乐',
-            link: '/largeFactories/酷家乐',
-          }, {
-            text: '蘑菇街',
-            link: '/largeFactories/蘑菇街',
-          }, {
-            text: '寺库',
-            link: '/largeFactories/寺库',
-          }, {
-            text: '挖财',
-            link: '/largeFactories/挖财',
-          }, {
-            text: '网易',
-            link: '/largeFactories/网易',
-          }, {
-            text: '微医',
-            link: '/largeFactories/微医',
-          }, {
-            text: '喜马拉雅',
-            link: '/largeFactories/喜马拉雅',
-          }, {
-            text: '携程',
-            link: '/largeFactories/携程',
-          }, {
-            text: '有赞',
-            link: '/largeFactories/有赞',
-          }]
+          items: [
+            {
+              text: '阿里巴巴',
+              link: '/largeFactories/阿里巴巴',
+            },
+            {
+              text: '饿了么',
+              link: '/largeFactories/饿了么',
+            },
+            {
+              text: '百分点',
+              link: '/largeFactories/百分点',
+            },
+            {
+              text: '宝宝树',
+              link: '/largeFactories/宝宝树',
+            },
+            {
+              text: '滴滴',
+              link: '/largeFactories/滴滴',
+            },
+            {
+              text: '兑吧',
+              link: '/largeFactories/兑吧',
+            },
+            {
+              text: '海风教育',
+              link: '/largeFactories/宝海风教育',
+            },
+            {
+              text: '海康威视',
+              link: '/largeFactories/海康威视',
+            },
+            {
+              text: '沪江',
+              link: '/largeFactories/沪江',
+            },
+            {
+              text: '今日头条',
+              link: '/largeFactories/今日头条',
+            },
+            {
+              text: '酷家乐',
+              link: '/largeFactories/酷家乐',
+            },
+            {
+              text: '蘑菇街',
+              link: '/largeFactories/蘑菇街',
+            },
+            {
+              text: '寺库',
+              link: '/largeFactories/寺库',
+            },
+            {
+              text: '挖财',
+              link: '/largeFactories/挖财',
+            },
+            {
+              text: '网易',
+              link: '/largeFactories/网易',
+            },
+            {
+              text: '微医',
+              link: '/largeFactories/微医',
+            },
+            {
+              text: '喜马拉雅',
+              link: '/largeFactories/喜马拉雅',
+            },
+            {
+              text: '携程',
+              link: '/largeFactories/携程',
+            },
+            {
+              text: '有赞',
+              link: '/largeFactories/有赞',
+            }]
         },
         {
           text: '面试题',
@@ -196,13 +224,13 @@ module.exports = {
         }
         ],
         sidebar: {
-          '/base/html/': ['1.index'],
-          '/base/css/': ['1.index'],
-          '/base/javascript/': ['1.index', '2.es6', '3.async', '4.eventLoop', '5.safe', '6.performance', '7.monitor'],
-          '/base/vue/': ['1.index'],
-          '/base/react/': ['1.index'],
-          '/base/browser/': ['1.base'],
-          '/base/': ['1.htm', '2.css', '3.js', '4.obj', '5.v8', '6.render', '7.cache', '8.calc', '9.design', '10.safe', '11.network'],
+          '/1.front-end/1.html/': ['1.index', '2.htmI', '3.html5'],
+          '/1.front-end/2.css/': ['1.index', '2.css', '3.css3'],
+          '/1.front-end/3.javascript/': ['1.index', '2.es6', '3.async', '4.eventLoop', '5.safe', '6.performance', '7.monitor'],
+          '/1.front-end/4.browser/': ['1.index'],
+          '/1.front-end/5.vue/': ['1.index'],
+          '/1.front-end/6.react/': ['1.index'],
+          '/1.front-end/': ['1.htm', '2.css', '3.js', '4.obj', '5.v8', '6.render', '7.cache', '8.calc', '9.design', '10.safe', '11.network'],
           '/senior/javascript/': ['1.advanc', '2.design', '3.dataStructure', '4.algorithm'],
           '/senior/network/': ['1.UDP', '2.TCP', '3.HTTPandTLS', '4.HTTP2andHTTP3'],
           '/senior/browser/': ['1.cache', '2.render'],
