@@ -78,12 +78,16 @@ module.exports = {
               link: '/1.front-end/4.browser/1.index',
             },
             {
-              text: '五.vue部分',
+              text: '五.框架【vue】部分',
               link: '/1.front-end/5.vue/1.index',
             },
             {
-              text: '六.react部分',
+              text: '六.框架【react】部分',
               link: '/1.front-end/6.react/1.index',
+            },
+            {
+              text: '七.框架【小程序】部分',
+              link: '/1.front-end/7.小程序/1.index',
             },
           ],
         },
@@ -102,18 +106,6 @@ module.exports = {
               text: '三.浏览器',
               link: '/senior/browser/1.cache',
             },
-            {
-              text: '四.Vue原理',
-              link: '/senior/vue/1.advanc',
-            },
-            {
-              text: '五.React原理',
-              link: '/senior/react/1.advanc',
-            },
-            {
-              text: '四、小程序',
-              link: '/frame/4.小程序',
-            }
           ],
         },
         {
@@ -234,8 +226,6 @@ module.exports = {
           '/senior/javascript/': ['1.advanc', '2.design', '3.dataStructure', '4.algorithm'],
           '/senior/network/': ['1.UDP', '2.TCP', '3.HTTPandTLS', '4.HTTP2andHTTP3'],
           '/senior/browser/': ['1.cache', '2.render'],
-          '/senior/vue/': ['1.advanc'],
-          '/senior/react/': ['1.advanc'],
           '/frame/': ['1.Vue', '2.React', '3.Angular', '4.小程序'],
           '/backEnd/': ['1.node', '2.express', '3.koa', '4.egg'],
           '/largeFactories/': ['阿里巴巴', '蘑菇街', '饿了么', '今日头条', '滴滴', '兑吧', '百分点', '海风教育', '海康威视', '沪江', '酷家乐', '寺库', '挖财', '网易', '微医', '携程', '喜马拉雅', '有赞'],
