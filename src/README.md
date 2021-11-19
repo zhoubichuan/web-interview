@@ -5,10 +5,10 @@ heroImage: ""
 actionText: 先睹为快 →
 actionLink: /base/html/1.index.html
 pageClass: page_index
-footer: 前端面试题
+footer: web面试题
 meta:
   - name: keywords
-    content: 前端面试题,前端学习,前端笔记
+    content: web面试题
 ---
 
 <template>
