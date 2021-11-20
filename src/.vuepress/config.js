@@ -1,6 +1,6 @@
 module.exports = {
   // 基础配置
-  base: '/Web-Interview/', // 部署站点的基础路径
+  base: '/web-interview/', // 部署站点的基础路径
   locales: {
     // 默认标题
     '/': {
