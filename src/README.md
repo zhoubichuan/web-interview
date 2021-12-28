@@ -1,9 +1,9 @@
 ---
 lang: zh-CN
 home: true
-heroImage: ""
+heroImage: ./home.png
 actionText: 先睹为快 →
-actionLink: /base/html/1.index.html
+actionLink: /1.front-end/1.html/1.index.html
 pageClass: page_index
 footer: web面试题
 meta:

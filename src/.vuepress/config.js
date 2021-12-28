@@ -1,50 +1,8 @@
 module.exports = {
   // 基础配置
+  title: 'web面试题精选',
+  description: '种一棵树最好的时间是十年前 其次是现在',
   base: '/web-interview/', // 部署站点的基础路径
-  locales: {
-    // 默认标题
-    '/': {
-      title: 'web面试题精选',
-      description: ''
-    }
-  },
-  head: [
-    [
-      'link',
-      {
-        rel: 'icon',
-        href: ''
-      }
-    ],
-    [
-      'link',
-      {
-        rel: 'manifest',
-        href: '/manifest.json'
-      }
-    ],
-    [
-      'meta',
-      {
-        name: 'apple-mobile-web-app-capable',
-        content: 'yes'
-      }
-    ],
-    [
-      'meta',
-      {
-        name: 'apple-mobile-web-app-status-bar-style',
-        content: 'black'
-      }
-    ],
-    [
-      'meta',
-      {
-        name: 'msapplication-TileColor',
-        content: '#000000'
-      }
-    ]
-  ],
   port: 3009,
   dest: 'dist', // 指定 vuepress build 的输出目录
   serviceWorker: true, // pwa
@@ -102,31 +60,27 @@ module.exports = {
               text: '二.网络',
               link: '/senior/network/1.UDP',
             },
-            {
-              text: '三.浏览器',
-              link: '/senior/browser/1.cache',
-            },
           ],
         },
         {
           text: '后端面试题',
-          link: '/backEnd/node',
+          link: '/2.back-end/node',
           items: [
             {
               text: '一、Node',
-              link: '/backEnd/1.node',
+              link: '/2.back-end/1.node',
             },
             {
               text: '二、Express',
-              link: '/backEnd/2.express',
+              link: '/2.back-end/2.express',
             },
             {
               text: '三、Koa',
-              link: '/backEnd/3.koa',
+              link: '/2.back-end/3.koa',
             },
             {
               text: '四、Egg',
-              link: '/backEnd/4.egg',
+              link: '/2.back-end/4.egg',
             }]
         },
         {
@@ -216,20 +170,109 @@ module.exports = {
         }
         ],
         sidebar: {
-          '/1.front-end/1.html/': ['1.index', '2.htmI', '3.html5'],
-          '/1.front-end/2.css/': ['1.index', '2.css', '3.css3'],
-          '/1.front-end/3.javascript/': ['1.index', '2.es6', '3.async', '4.eventLoop', '5.safe', '6.performance', '7.monitor'],
-          '/1.front-end/4.browser/': ['1.index','2.render','3.cache'],
-          '/1.front-end/5.vue/': ['1.index','2.advanc'],
-          '/1.front-end/6.react/': ['1.index','2.advanc'],
-          '/1.front-end/': ['1.htm', '2.css', '3.js', '4.obj', '5.v8', '6.render', '7.cache', '8.calc', '9.design', '10.safe', '11.network'],
-          '/senior/javascript/': ['1.advanc', '2.design', '3.dataStructure', '4.algorithm'],
-          '/senior/network/': ['1.UDP', '2.TCP', '3.HTTPandTLS', '4.HTTP2andHTTP3'],
-          '/senior/browser/': ['1.cache', '2.render'],
-          '/frame/': ['1.Vue', '2.React', '3.Angular', '4.小程序'],
-          '/backEnd/': ['1.node', '2.express', '3.koa', '4.egg'],
-          '/largeFactories/': ['阿里巴巴', '蘑菇街', '饿了么', '今日头条', '滴滴', '兑吧', '百分点', '海风教育', '海康威视', '沪江', '酷家乐', '寺库', '挖财', '网易', '微医', '携程', '喜马拉雅', '有赞'],
-          '/myInterview/': ['20210131']
+          '/1.front-end/1.html/': [
+            '1.index',
+            '2.htmI',
+            '3.html5'
+          ],
+          '/1.front-end/2.css/': [
+            '1.index',
+            '2.css',
+            '3.css3'
+          ],
+          '/1.front-end/3.javascript/': [
+            '1.index',
+            '1.base',
+            '2.senior',
+            '3.es6',
+            '4.safe',
+            '5.performance',
+            '6.design',
+            '7.monitor',
+            '8.cal',
+            '9.handle'
+          ],
+          '/1.front-end/4.browser/': [
+            '1.index',
+            '2.render',
+            '3.cache',
+            '5.v8',
+            '6.render',
+            '7.cache',
+            '11.network'
+          ],
+          '/1.front-end/5.vue/': [
+            '1.index',
+            '2.advanc'
+          ],
+          '/1.front-end/6.react/': [
+            '1.index',
+            '2.advanc'
+          ],
+          '/1.front-end/': [
+            '1.htm',
+            '2.css',
+            '3.js',
+            '4.obj',
+            '5.v8',
+            '6.render',
+            '7.cache',
+            '8.calc',
+            '9.design',
+            '10.safe',
+            '11.network'
+          ],
+          '/senior/javascript/': [
+            '1.advanc',
+            '2.design',
+            '3.dataStructure',
+            '4.algorithm'
+          ],
+          '/senior/network/': [
+            '1.UDP',
+            '2.TCP',
+            '3.HTTPandTLS',
+            '4.HTTP2andHTTP3'
+          ],
+          '/senior/browser/': [
+            '1.cache',
+            '2.render'
+          ],
+          '/frame/': [
+            '1.Vue',
+            '2.React',
+            '3.Angular',
+            '4.小程序'
+          ],
+          '/2.back-end/': [
+            '1.node',
+            '2.express',
+            '3.koa',
+            '4.egg'
+          ],
+          '/largeFactories/': [
+            '阿里巴巴',
+            '蘑菇街',
+            '饿了么',
+            '今日头条',
+            '滴滴',
+            '兑吧',
+            '百分点',
+            '海风教育',
+            '海康威视',
+            '沪江',
+            '酷家乐',
+            '寺库',
+            '挖财',
+            '网易',
+            '微医',
+            '携程',
+            '喜马拉雅',
+            '有赞'
+          ],
+          '/myInterview/': [
+            '20210131'
+          ]
         }
       }
     }
