@@ -209,19 +209,6 @@ module.exports = {
             '1.index',
             '2.advanc'
           ],
-          '/1.front-end/': [
-            '1.htm',
-            '2.css',
-            '3.js',
-            '4.obj',
-            '5.v8',
-            '6.render',
-            '7.cache',
-            '8.calc',
-            '9.design',
-            '10.safe',
-            '11.network'
-          ],
           '/senior/javascript/': [
             '1.advanc',
             '2.design',
@@ -237,12 +224,6 @@ module.exports = {
           '/senior/browser/': [
             '1.cache',
             '2.render'
-          ],
-          '/frame/': [
-            '1.Vue',
-            '2.React',
-            '3.Angular',
-            '4.小程序'
           ],
           '/2.back-end/': [
             '1.node',
