@@ -18,7 +18,7 @@ const sidebar = {
       '5.performance',
       '6.design',
       '7.monitor',
-      '8.cal',
+      '8.algorithm',
       '9.handle'
     ],
     '/1.front-end/4.browser/': [
@@ -38,21 +38,8 @@ const sidebar = {
       '1.index',
       '2.advanc'
     ],
-    '/senior/javascript/': [
-      '1.advanc',
-      '2.design',
-      '3.dataStructure',
-      '4.algorithm'
-    ],
-    '/senior/network/': [
-      '1.UDP',
-      '2.TCP',
-      '3.HTTPandTLS',
-      '4.HTTP2andHTTP3'
-    ],
-    '/senior/browser/': [
-      '1.cache',
-      '2.render'
+    '/1.front-end/7.webpack/': [
+      '1.index',
     ],
     '/2.back-end/': [
       '1.node',
