@@ -1,5 +1,8 @@
 # 自动化打包同时将打包后的代码发布到gh-pages分支
-
+git add -A
+git commit -m 'master'
+git pull gitee master
+git push gitee master
 # 1.打包
 npm run src:build
 
