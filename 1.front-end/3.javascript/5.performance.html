@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>五.性能优化 | web面试题精选</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="个人总结的vuepress学习技术文档-语法">
+    <meta name="keywords" content="vuepress,最新技术文档,vuepress语法,markdown语法">
+    
+    <link rel="preload" href="/web-interview/assets/css/0.styles.884e11ce.css" as="style"><link rel="preload" href="/web-interview/assets/js/app.7e1cd45a.js" as="script"><link rel="preload" href="/web-interview/assets/js/2.e1d7530f.js" as="script"><link rel="preload" href="/web-interview/assets/js/20.95d96844.js" as="script"><link rel="preload" href="/web-interview/assets/js/4.2abc1bb0.js" as="script"><link rel="prefetch" href="/web-interview/assets/js/10.56017cec.js"><link rel="prefetch" href="/web-interview/assets/js/11.1b6f017b.js"><link rel="prefetch" href="/web-interview/assets/js/12.941a8d45.js"><link rel="prefetch" href="/web-interview/assets/js/13.fe0a5713.js"><link rel="prefetch" href="/web-interview/assets/js/14.5f59b4d0.js"><link rel="prefetch" href="/web-interview/assets/js/15.2267941d.js"><link rel="prefetch" href="/web-interview/assets/js/16.828a3f57.js"><link rel="prefetch" href="/web-interview/assets/js/17.ee3fe08e.js"><link rel="prefetch" href="/web-interview/assets/js/18.903cebf9.js"><link rel="prefetch" href="/web-interview/assets/js/19.8df8bad8.js"><link rel="prefetch" href="/web-interview/assets/js/21.90b2597d.js"><link rel="prefetch" href="/web-interview/assets/js/22.71893005.js"><link rel="prefetch" href="/web-interview/assets/js/23.cfb13783.js"><link rel="prefetch" href="/web-interview/assets/js/24.d1a013b5.js"><link rel="prefetch" href="/web-interview/assets/js/25.5f7ebf65.js"><link rel="prefetch" href="/web-interview/assets/js/26.50044f2c.js"><link rel="prefetch" href="/web-interview/assets/js/27.5e557589.js"><link rel="prefetch" href="/web-interview/assets/js/28.24a14952.js"><link rel="prefetch" href="/web-interview/assets/js/29.54cbaafe.js"><link rel="prefetch" href="/web-interview/assets/js/3.04649557.js"><link rel="prefetch" href="/web-interview/assets/js/30.2f876fbf.js"><link rel="prefetch" href="/web-interview/assets/js/31.40c046c4.js"><link rel="prefetch" href="/web-interview/assets/js/32.ca1e44b5.js"><link rel="prefetch" href="/web-interview/assets/js/33.d7502a7c.js"><link rel="prefetch" href="/web-interview/assets/js/34.f2ed1a32.js"><link rel="prefetch" href="/web-interview/assets/js/35.55b2e31b.js"><link rel="prefetch" href="/web-interview/assets/js/36.a756f4b7.js"><link rel="prefetch" href="/web-interview/assets/js/37.958c0dcf.js"><link rel="prefetch" href="/web-interview/assets/js/38.c2bfc766.js"><link rel="prefetch" href="/web-interview/assets/js/39.b1f968ef.js"><link rel="prefetch" href="/web-interview/assets/js/40.c33559b1.js"><link rel="prefetch" href="/web-interview/assets/js/41.4b7bd7cb.js"><link rel="prefetch" href="/web-interview/assets/js/42.4f0104bf.js"><link rel="prefetch" href="/web-interview/assets/js/43.6b8a3e60.js"><link rel="prefetch" href="/web-interview/assets/js/44.e3d67935.js"><link rel="prefetch" href="/web-interview/assets/js/45.6826cc0b.js"><link rel="prefetch" href="/web-interview/assets/js/46.db7cb988.js"><link rel="prefetch" href="/web-interview/assets/js/47.31889365.js"><link rel="prefetch" href="/web-interview/assets/js/48.38914b82.js"><link rel="prefetch" href="/web-interview/assets/js/49.c6e03944.js"><link rel="prefetch" href="/web-interview/assets/js/5.3f86d238.js"><link rel="prefetch" href="/web-interview/assets/js/50.e4ab1e4e.js"><link rel="prefetch" href="/web-interview/assets/js/51.c3940fad.js"><link rel="prefetch" href="/web-interview/assets/js/52.3f7cb4cf.js"><link rel="prefetch" href="/web-interview/assets/js/53.a046a94b.js"><link rel="prefetch" href="/web-interview/assets/js/54.179968ab.js"><link rel="prefetch" href="/web-interview/assets/js/55.407806bd.js"><link rel="prefetch" href="/web-interview/assets/js/56.8bf00853.js"><link rel="prefetch" href="/web-interview/assets/js/57.670c6f7f.js"><link rel="prefetch" href="/web-interview/assets/js/58.0bc2edd1.js"><link rel="prefetch" href="/web-interview/assets/js/59.2941cb80.js"><link rel="prefetch" href="/web-interview/assets/js/6.aab8a02b.js"><link rel="prefetch" href="/web-interview/assets/js/60.a42c8811.js"><link rel="prefetch" href="/web-interview/assets/js/61.1c610aea.js"><link rel="prefetch" href="/web-interview/assets/js/7.6af95a3f.js"><link rel="prefetch" href="/web-interview/assets/js/8.151df366.js"><link rel="prefetch" href="/web-interview/assets/js/9.63a2b1aa.js">
+    <link rel="stylesheet" href="/web-interview/assets/css/0.styles.884e11ce.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web-interview/" class="home-link router-link-active"><!----> <span class="site-name">web面试题精选</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试题" class="dropdown-title"><span class="title">前端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试题" class="mobile-dropdown-title"><span class="title">前端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/1.html/1.index.html" class="nav-link">
+  一.HTML
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/2.css/1.index.html" class="nav-link">
+  二.CSS
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/3.javascript/1.index.html" class="nav-link">
+  三.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/4.browser/1.index.html" class="nav-link">
+  四.浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/5.vue/1.index.html" class="nav-link">
+  五.Vue
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/6.react/1.index.html" class="nav-link">
+  六.React
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/7.webpack/1.index.html" class="nav-link">
+  七.Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端面试题" class="dropdown-title"><span class="title">后端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端面试题" class="mobile-dropdown-title"><span class="title">后端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/1.node.html" class="nav-link">
+  一.Node
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/2.express.html" class="nav-link">
+  二.Express
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/3.koa.html" class="nav-link">
+  三.Koa
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/4.egg.html" class="nav-link">
+  四.Egg
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大厂面试题" class="dropdown-title"><span class="title">大厂面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="大厂面试题" class="mobile-dropdown-title"><span class="title">大厂面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/阿里巴巴.html" class="nav-link">
+  阿里巴巴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/饿了么.html" class="nav-link">
+  饿了么
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/百分点.html" class="nav-link">
+  百分点
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝宝树.html" class="nav-link">
+  宝宝树
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/滴滴.html" class="nav-link">
+  滴滴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/兑吧.html" class="nav-link">
+  兑吧
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝海风教育.html" class="nav-link">
+  海风教育
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/海康威视.html" class="nav-link">
+  海康威视
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/沪江.html" class="nav-link">
+  沪江
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/今日头条.html" class="nav-link">
+  今日头条
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/酷家乐.html" class="nav-link">
+  酷家乐
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/蘑菇街.html" class="nav-link">
+  蘑菇街
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/寺库.html" class="nav-link">
+  寺库
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/挖财.html" class="nav-link">
+  挖财
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/网易.html" class="nav-link">
+  网易
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/微医.html" class="nav-link">
+  微医
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/喜马拉雅.html" class="nav-link">
+  喜马拉雅
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/携程.html" class="nav-link">
+  携程
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/有赞.html" class="nav-link">
+  有赞
+</a></li></ul></div></div><div class="nav-item"><a href="/web-interview/myInterview/20210131.html" class="nav-link">
+  面试题
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试题" class="dropdown-title"><span class="title">前端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试题" class="mobile-dropdown-title"><span class="title">前端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/1.html/1.index.html" class="nav-link">
+  一.HTML
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/2.css/1.index.html" class="nav-link">
+  二.CSS
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/3.javascript/1.index.html" class="nav-link">
+  三.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/4.browser/1.index.html" class="nav-link">
+  四.浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/5.vue/1.index.html" class="nav-link">
+  五.Vue
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/6.react/1.index.html" class="nav-link">
+  六.React
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/7.webpack/1.index.html" class="nav-link">
+  七.Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端面试题" class="dropdown-title"><span class="title">后端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端面试题" class="mobile-dropdown-title"><span class="title">后端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/1.node.html" class="nav-link">
+  一.Node
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/2.express.html" class="nav-link">
+  二.Express
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/3.koa.html" class="nav-link">
+  三.Koa
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/4.egg.html" class="nav-link">
+  四.Egg
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大厂面试题" class="dropdown-title"><span class="title">大厂面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="大厂面试题" class="mobile-dropdown-title"><span class="title">大厂面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/阿里巴巴.html" class="nav-link">
+  阿里巴巴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/饿了么.html" class="nav-link">
+  饿了么
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/百分点.html" class="nav-link">
+  百分点
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝宝树.html" class="nav-link">
+  宝宝树
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/滴滴.html" class="nav-link">
+  滴滴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/兑吧.html" class="nav-link">
+  兑吧
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝海风教育.html" class="nav-link">
+  海风教育
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/海康威视.html" class="nav-link">
+  海康威视
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/沪江.html" class="nav-link">
+  沪江
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/今日头条.html" class="nav-link">
+  今日头条
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/酷家乐.html" class="nav-link">
+  酷家乐
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/蘑菇街.html" class="nav-link">
+  蘑菇街
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/寺库.html" class="nav-link">
+  寺库
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/挖财.html" class="nav-link">
+  挖财
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/网易.html" class="nav-link">
+  网易
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/微医.html" class="nav-link">
+  微医
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/喜马拉雅.html" class="nav-link">
+  喜马拉雅
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/携程.html" class="nav-link">
+  携程
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/有赞.html" class="nav-link">
+  有赞
+</a></li></ul></div></div><div class="nav-item"><a href="/web-interview/myInterview/20210131.html" class="nav-link">
+  面试题
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/web-interview/1.front-end/3.javascript/1.index.html" class="sidebar-link">JavaScript</a></li><li><a href="/web-interview/1.front-end/3.javascript/1.base.html" class="sidebar-link">一.JS 基础</a></li><li><a href="/web-interview/1.front-end/3.javascript/2.senior.html" class="sidebar-link">二.JS 高级</a></li><li><a href="/web-interview/1.front-end/3.javascript/3.es6.html" class="sidebar-link">三.ES6 知识点</a></li><li><a href="/web-interview/1.front-end/3.javascript/4.safe.html" class="sidebar-link">四.前端安全</a></li><li><a href="/web-interview/1.front-end/3.javascript/5.performance.html" aria-current="page" class="active sidebar-link">五.性能优化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_1-图片优化" class="sidebar-link">1.图片优化</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_2-dns-预解析" class="sidebar-link">2.DNS 预解析</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_3-节流" class="sidebar-link">3.节流</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_4-防抖" class="sidebar-link">4.防抖</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_5-预加载" class="sidebar-link">5.预加载</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_6-预渲染" class="sidebar-link">6.预渲染</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_7-懒执行" class="sidebar-link">7.懒执行</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_8-懒加载" class="sidebar-link">8.懒加载</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_9-cdn" class="sidebar-link">9.CDN</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_10-减少打包时间" class="sidebar-link">10.减少打包时间</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_11-减少文件体积" class="sidebar-link">11.减少文件体积</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_12-移动端的性能优化" class="sidebar-link">12.移动端的性能优化</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_13-网站性能优化" class="sidebar-link">13.网站性能优化</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_14-vue-的-spa-如何优化加载速度" class="sidebar-link">14. vue 的 spa 如何优化加载速度</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#_15-图片的懒加载和预加载" class="sidebar-link">15.图片的懒加载和预加载</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#预加载" class="sidebar-link">预加载：</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/5.performance.html#懒加载" class="sidebar-link">懒加载：</a></li></ul></li></ul></li><li><a href="/web-interview/1.front-end/3.javascript/6.design.html" class="sidebar-link">六.设计模式</a></li><li><a href="/web-interview/1.front-end/3.javascript/7.monitor.html" class="sidebar-link">七.前端监控</a></li><li><a href="/web-interview/1.front-end/3.javascript/8.algorithm.html" class="sidebar-link">八.前端算法</a></li><li><a href="/web-interview/1.front-end/3.javascript/9.handle.html" class="sidebar-link">九.前端手写</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="五-性能优化"><a href="#五-性能优化" class="header-anchor">#</a> 五.性能优化</h1> <h2 id="_1-图片优化"><a href="#_1-图片优化" class="header-anchor">#</a> 1.图片优化</h2> <ul><li>能用 css 代替的用 css 代替</li> <li>使用 cdn</li> <li>小图用 base64</li> <li>雪碧图</li> <li>能够显示 webP 格式的浏览器尽量使用 webP 格式</li> <li>小图可以用 svg</li> <li>照片使用 jpeg</li></ul> <p><strong>计算图片大小</strong></p> <p>对于一张 100<em>100 像素的图片来说，图像上有 10000 个像素点，如果每个像素的值时<strong>RGBA</strong>存储的话，那么也就是说每个像素有 4 个通道，每个通道 1 个字节（8 位=1 个字节），所以该图片大小大概为 39KB（10000</em>1*4/1024）</p> <p>但是在实际项目中，一张图片可能并不需要使用那么多颜色去显示，我们可以通过减少每个像素的调色板来相应缩小图片的大小。</p> <p>了解了如何计算图片大小的知识，那么对于如何优化图片，相比大家已经有了 2 个思路了：</p> <ul><li>减少像素点</li> <li>减少每个像素点能够显示的颜色</li></ul> <p><strong>图片加载优化</strong></p> <p>1.不用图片。很多时候会使用到很多修饰类图片，其实这类修饰图片完全可以用 CSS 去代替。</p> <p>2.对于移动端来说，屏幕宽度那么点，完全没有必要去加载原图浪费带宽。一般图片都用 CDN 加载，可以计算出适配屏幕的宽度，然后去请求相应剪裁好的图片。</p> <p>3.小图使用 base64 格式。</p> <p>4.将多个图标文件整合到一张图片中（雪碧图）</p> <p>5.选择正确的图片格式</p> <ul><li>对于能够显示 WebP 格式的浏览器尽量使用 WebP 格式。因为 WebP 格式具有更好的图像数据压缩算法，能带来更小的图片体积，而且拥有肉眼识别无差异的图像质量，缺点就是兼容性并不好。</li> <li>小图使用 PNG，其实对于大部分图标这类图片，完全可以使用 SVG 代替</li> <li>照片使用 JPEG</li></ul> <h2 id="_2-dns-预解析"><a href="#_2-dns-预解析" class="header-anchor">#</a> 2.DNS 预解析</h2> <p>DNS 解析也是需要时间的，可以通过与解析的方式来预先获得域名所对应的 IP</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">&quot;dns-perfetch&quot;</span> href<span class="token operator">=</span><span class="token string">&quot;//yuchengkai.cn&quot;</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_3-节流"><a href="#_3-节流" class="header-anchor">#</a> 3.节流</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">let</span> throttle <span class="token operator">=</span> <span class="token punctuation">(</span>fn<span class="token punctuation">,</span>wait<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">let</span> lastTime <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> now <span class="token operator">=</span> <span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>now <span class="token operator">-</span> lastTime <span class="token operator">&gt;</span> wait<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      lastTime <span class="token operator">=</span> now
+      <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span>args<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">setInterval</span><span class="token punctuation">(</span>
+  <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    conosle<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="_4-防抖"><a href="#_4-防抖" class="header-anchor">#</a> 4.防抖</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">let</span> <span class="token function-variable function">debounce</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> wait</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+    timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="_5-预加载"><a href="#_5-预加载" class="header-anchor">#</a> 5.预加载</h2> <p>在开发中，可能会遇到这样的情况。有些资源不需要马上用到，但是希望尽早获取，这时候就可以使用预加载。</p> <p>预加载其实是声明式的<code>fetch</code>，强制浏览器请求资源，并且不会阻塞<code>onload</code>事件，可以使用以下代码开启预加载</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">&quot;preload&quot;</span> href<span class="token operator">=</span><span class="token string">&quot;http://example.com&quot;</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>预加载可以一定程度上降低首屏的加载时间，因为可以将一些不影响首屏但重要的文件延后加载，唯一缺点就是兼容性不好。</p> <h2 id="_6-预渲染"><a href="#_6-预渲染" class="header-anchor">#</a> 6.预渲染</h2> <p>可以通过预渲染将下载的文件预选在后台渲染，可以使用以下代码开启预渲染</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">&quot;prerender&quot;</span> href<span class="token operator">=</span><span class="token string">&quot;http://example.com&quot;</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>预渲染虽然可以提高页面的加载速度，但是要确保该页面大概率被用户在之后打开，否则就是白白浪费资源去渲染。</p> <h2 id="_7-懒执行"><a href="#_7-懒执行" class="header-anchor">#</a> 7.懒执行</h2> <p>懒执行即使将某些逻辑延迟到使用时在计算。该技术可以用首屏优化，对于磨削耗时逻辑并不需要在首屏就使用的，就可以使用懒执行。懒执行需要唤醒，一般可以通过定时器或者时间的调用来唤醒。</p> <h2 id="_8-懒加载"><a href="#_8-懒加载" class="header-anchor">#</a> 8.懒加载</h2> <p>懒加载就是将不关键的资源延后加载。</p> <p>懒加载的原理就是只加载自定义区域（通常是可视区域，但也可以是即将进入可视区域）内需要加载的东西。对于图片来说，先设置图片标签的<code>src</code>属性为一张占位图，将真实的图片资源放入一个自定义属性中，当年进入自定义区域是，就将自定义属性替换为<code>src</code>属性，这样图片就会去下载资源，实现了图片懒加载。</p> <p>懒加载不仅可以用于图片，也可以使用在别的资源上。比如进入可视区域才开始播放视屏等。</p> <h2 id="_9-cdn"><a href="#_9-cdn" class="header-anchor">#</a> 9.CDN</h2> <p>CDN 的原理是尽可能的在各个地方分布机房缓存数据，这样即使我们的根服务器远在国外，在国内的用户也可以通过国内的机房迅速加载资源。</p> <p>因此，我们可以将静态资源尽量使用 CDN 加载，由于浏览器对于单个域名有并发请求上限，可以考虑使用多个 CDN 域名。并且对于 CDN 加载静态资源需要注意 CDN 域名要与主站不同，否则每次请求都会带上主站的 Cookie，平白消耗流量。</p> <h2 id="_10-减少打包时间"><a href="#_10-减少打包时间" class="header-anchor">#</a> 10.减少打包时间</h2> <ul><li>优化 loader：babel-loader</li> <li>并行打包：HappyPack</li> <li>减少打包次数：DllPlugin</li> <li><code>resolve.extensions</code>:用来表明文件后缀列表，默认查找顺序是<code>['.js',''.json]</code>,如果你的导入文件没有添加后缀就会按照这个顺序查找五年级。我们应该尽可能减少后缀列表长度，然后将出现频率高的后缀排在前面。</li> <li><code>resolve.alias</code>:可以通过别名的方式来映射一个路径，能让 Webpack 更快遭到路径。</li> <li><code>module.noParse</code>:如果你确定一个文件没有其他依赖，就可以使用该属性让 Webpack 不扫描该文件，这种方式对于大型的类库很有帮助。</li></ul> <h2 id="_11-减少文件体积"><a href="#_11-减少文件体积" class="header-anchor">#</a> 11.减少文件体积</h2> <ul><li>代码压缩：UglifyJS</li> <li>Scope Hoisting 会分析出模块之间的依赖关系，尽可能的把打包出来的模块合并到一个函数中去</li> <li>Tree Shaking 可以实现删除项目中未被引用的代码</li></ul> <h2 id="_12-移动端的性能优化"><a href="#_12-移动端的性能优化" class="header-anchor">#</a> 12.移动端的性能优化</h2> <ul><li>1.首屏加载和按需加载，懒加载</li> <li>2.资源预加载</li> <li>3.图片压缩处理，使用 base64 内嵌图片</li> <li>4.合理缓存 dom 对象</li> <li>5.使用 touchstart 代替 click（click 300 毫秒延迟）</li> <li>6.利用 transform：translateZ(0)，开启硬件 GPU 加速</li> <li>7.不滥用 web 字体，不滥用 float(布局计算消耗性能)，减少 font-size 声明</li> <li>8.使用 viewport 固定屏幕渲染，加速首页渲染内容</li> <li>9.尽量使用事件代理，避免直接事件绑定</li></ul> <h2 id="_13-网站性能优化"><a href="#_13-网站性能优化" class="header-anchor">#</a> 13.网站性能优化</h2> <ul><li>http 请求方面：减少请求数量和体积
+<ul><li>压缩资源，减小请求头</li> <li>懒加载</li> <li>dns 预解析预先获取域名对应的 ip</li> <li>控制资源的 dns 解析在 2 到 4 个域名</li> <li>提取公共样式和组件</li> <li>使用雪碧图，字体图表</li> <li>缓存资源</li> <li>减少 iframe 使用</li> <li>避免重定向</li> <li>减少 DNS 查询</li> <li>使用 CDN</li></ul></li> <li>代码层优化
+<ul><li>节流和防抖</li> <li>提取公共方法</li> <li>减少对字符串计算</li> <li>合理使用闭包</li> <li>按需加载</li> <li>首屏的 js 资源加载放在最底部</li> <li>少用全局变量、缓存 DOM 节点查找的结果</li></ul></li> <li>减少重排重绘
+<ul><li>css 属性读写分离</li> <li>减少 js 修改样式</li> <li>dom 离线更新</li> <li>渲染前指定图片的大小</li> <li>减少 DOM 元素数量</li> <li>减少 DOM 操作</li></ul></li></ul> <h2 id="_14-vue-的-spa-如何优化加载速度"><a href="#_14-vue-的-spa-如何优化加载速度" class="header-anchor">#</a> 14. vue 的 spa 如何优化加载速度</h2> <ul><li>1.减少入口文件的体积</li> <li>2.静态资源本地缓存</li> <li>3.开启 Gzip 压缩</li> <li>4.使用 ssr,nuxt.js</li></ul> <h2 id="_15-图片的懒加载和预加载"><a href="#_15-图片的懒加载和预加载" class="header-anchor">#</a> 15.图片的懒加载和预加载</h2> <h3 id="预加载"><a href="#预加载" class="header-anchor">#</a> 预加载：</h3> <p>提前加载图片，当用户需要查看时可以直接从本地缓存中渲染</p> <p>为什么要使用预加载：在网页加载之前，对一些主要内容进行加载，减少等待时间，给用户提供更好的体验；否则，如歌一个页面的内容过于庞大，会出现留白。</p> <ul><li>解决留白的方法：
+<ul><li><ol><li>预加载</li></ol></li> <li><ol start="2"><li>使用 svg 占位图片，将一些结构快速搭建起来，等请求的数据来了之后，替换当前的占位符</li></ol></li></ul></li> <li>实现预加载的方法：
+<ul><li><ol><li>使用 html 标签</li></ol></li> <li><ol start="2"><li>使用 Image 标签</li></ol></li> <li><ol start="3"><li>使用 XMLHTTPRequest 对象，但会精细控制预加载过程；</li></ol></li></ul></li></ul> <h3 id="懒加载"><a href="#懒加载" class="header-anchor">#</a> 懒加载：</h3> <p>客户端优化，减少 http 请求和延迟请求数量</p> <ul><li>提升用户体验</li> <li>减少无效资源的加载</li> <li>防止并发加载资源过多会阻塞 js 的加载，影响网站的正常使用</li> <li>原理：首先将页面上的图片的 src 属性设置为空字符串，而图片的真路径则设置带 data-original 属性中；当页面滚动的时候去监听 scroll 事件，在 scroll 事件的回调中，判断我们的懒加载的图片是否进入可视区域；如果图片在可视区域将图片的 src 属性设置为 data-original 的值，这样就可以实现延迟加载。</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/6/29 上午12:09:44</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web-interview/1.front-end/3.javascript/4.safe.html" class="prev">
+        四.前端安全
+      </a></span> <span class="next"><a href="/web-interview/1.front-end/3.javascript/6.design.html">
+        六.设计模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/web-interview/assets/js/app.7e1cd45a.js" defer></script><script src="/web-interview/assets/js/2.e1d7530f.js" defer></script><script src="/web-interview/assets/js/20.95d96844.js" defer></script><script src="/web-interview/assets/js/4.2abc1bb0.js" defer></script>
+  </body>
+</html>

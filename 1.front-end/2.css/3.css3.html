@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>二.css3 常见面试题 | web面试题精选</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="个人总结的vuepress学习技术文档-语法">
+    <meta name="keywords" content="vuepress,最新技术文档,vuepress语法,markdown语法">
+    
+    <link rel="preload" href="/web-interview/assets/css/0.styles.884e11ce.css" as="style"><link rel="preload" href="/web-interview/assets/js/app.7e1cd45a.js" as="script"><link rel="preload" href="/web-interview/assets/js/2.e1d7530f.js" as="script"><link rel="preload" href="/web-interview/assets/js/14.5f59b4d0.js" as="script"><link rel="preload" href="/web-interview/assets/js/4.2abc1bb0.js" as="script"><link rel="prefetch" href="/web-interview/assets/js/10.56017cec.js"><link rel="prefetch" href="/web-interview/assets/js/11.1b6f017b.js"><link rel="prefetch" href="/web-interview/assets/js/12.941a8d45.js"><link rel="prefetch" href="/web-interview/assets/js/13.fe0a5713.js"><link rel="prefetch" href="/web-interview/assets/js/15.2267941d.js"><link rel="prefetch" href="/web-interview/assets/js/16.828a3f57.js"><link rel="prefetch" href="/web-interview/assets/js/17.ee3fe08e.js"><link rel="prefetch" href="/web-interview/assets/js/18.903cebf9.js"><link rel="prefetch" href="/web-interview/assets/js/19.8df8bad8.js"><link rel="prefetch" href="/web-interview/assets/js/20.95d96844.js"><link rel="prefetch" href="/web-interview/assets/js/21.90b2597d.js"><link rel="prefetch" href="/web-interview/assets/js/22.71893005.js"><link rel="prefetch" href="/web-interview/assets/js/23.cfb13783.js"><link rel="prefetch" href="/web-interview/assets/js/24.d1a013b5.js"><link rel="prefetch" href="/web-interview/assets/js/25.5f7ebf65.js"><link rel="prefetch" href="/web-interview/assets/js/26.50044f2c.js"><link rel="prefetch" href="/web-interview/assets/js/27.5e557589.js"><link rel="prefetch" href="/web-interview/assets/js/28.24a14952.js"><link rel="prefetch" href="/web-interview/assets/js/29.54cbaafe.js"><link rel="prefetch" href="/web-interview/assets/js/3.04649557.js"><link rel="prefetch" href="/web-interview/assets/js/30.2f876fbf.js"><link rel="prefetch" href="/web-interview/assets/js/31.40c046c4.js"><link rel="prefetch" href="/web-interview/assets/js/32.ca1e44b5.js"><link rel="prefetch" href="/web-interview/assets/js/33.d7502a7c.js"><link rel="prefetch" href="/web-interview/assets/js/34.f2ed1a32.js"><link rel="prefetch" href="/web-interview/assets/js/35.55b2e31b.js"><link rel="prefetch" href="/web-interview/assets/js/36.a756f4b7.js"><link rel="prefetch" href="/web-interview/assets/js/37.958c0dcf.js"><link rel="prefetch" href="/web-interview/assets/js/38.c2bfc766.js"><link rel="prefetch" href="/web-interview/assets/js/39.b1f968ef.js"><link rel="prefetch" href="/web-interview/assets/js/40.c33559b1.js"><link rel="prefetch" href="/web-interview/assets/js/41.4b7bd7cb.js"><link rel="prefetch" href="/web-interview/assets/js/42.4f0104bf.js"><link rel="prefetch" href="/web-interview/assets/js/43.6b8a3e60.js"><link rel="prefetch" href="/web-interview/assets/js/44.e3d67935.js"><link rel="prefetch" href="/web-interview/assets/js/45.6826cc0b.js"><link rel="prefetch" href="/web-interview/assets/js/46.db7cb988.js"><link rel="prefetch" href="/web-interview/assets/js/47.31889365.js"><link rel="prefetch" href="/web-interview/assets/js/48.38914b82.js"><link rel="prefetch" href="/web-interview/assets/js/49.c6e03944.js"><link rel="prefetch" href="/web-interview/assets/js/5.3f86d238.js"><link rel="prefetch" href="/web-interview/assets/js/50.e4ab1e4e.js"><link rel="prefetch" href="/web-interview/assets/js/51.c3940fad.js"><link rel="prefetch" href="/web-interview/assets/js/52.3f7cb4cf.js"><link rel="prefetch" href="/web-interview/assets/js/53.a046a94b.js"><link rel="prefetch" href="/web-interview/assets/js/54.179968ab.js"><link rel="prefetch" href="/web-interview/assets/js/55.407806bd.js"><link rel="prefetch" href="/web-interview/assets/js/56.8bf00853.js"><link rel="prefetch" href="/web-interview/assets/js/57.670c6f7f.js"><link rel="prefetch" href="/web-interview/assets/js/58.0bc2edd1.js"><link rel="prefetch" href="/web-interview/assets/js/59.2941cb80.js"><link rel="prefetch" href="/web-interview/assets/js/6.aab8a02b.js"><link rel="prefetch" href="/web-interview/assets/js/60.a42c8811.js"><link rel="prefetch" href="/web-interview/assets/js/61.1c610aea.js"><link rel="prefetch" href="/web-interview/assets/js/7.6af95a3f.js"><link rel="prefetch" href="/web-interview/assets/js/8.151df366.js"><link rel="prefetch" href="/web-interview/assets/js/9.63a2b1aa.js">
+    <link rel="stylesheet" href="/web-interview/assets/css/0.styles.884e11ce.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web-interview/" class="home-link router-link-active"><!----> <span class="site-name">web面试题精选</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试题" class="dropdown-title"><span class="title">前端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试题" class="mobile-dropdown-title"><span class="title">前端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/1.html/1.index.html" class="nav-link">
+  一.HTML
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/2.css/1.index.html" class="nav-link">
+  二.CSS
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/3.javascript/1.index.html" class="nav-link">
+  三.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/4.browser/1.index.html" class="nav-link">
+  四.浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/5.vue/1.index.html" class="nav-link">
+  五.Vue
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/6.react/1.index.html" class="nav-link">
+  六.React
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/7.webpack/1.index.html" class="nav-link">
+  七.Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端面试题" class="dropdown-title"><span class="title">后端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端面试题" class="mobile-dropdown-title"><span class="title">后端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/1.node.html" class="nav-link">
+  一.Node
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/2.express.html" class="nav-link">
+  二.Express
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/3.koa.html" class="nav-link">
+  三.Koa
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/4.egg.html" class="nav-link">
+  四.Egg
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大厂面试题" class="dropdown-title"><span class="title">大厂面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="大厂面试题" class="mobile-dropdown-title"><span class="title">大厂面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/阿里巴巴.html" class="nav-link">
+  阿里巴巴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/饿了么.html" class="nav-link">
+  饿了么
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/百分点.html" class="nav-link">
+  百分点
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝宝树.html" class="nav-link">
+  宝宝树
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/滴滴.html" class="nav-link">
+  滴滴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/兑吧.html" class="nav-link">
+  兑吧
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝海风教育.html" class="nav-link">
+  海风教育
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/海康威视.html" class="nav-link">
+  海康威视
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/沪江.html" class="nav-link">
+  沪江
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/今日头条.html" class="nav-link">
+  今日头条
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/酷家乐.html" class="nav-link">
+  酷家乐
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/蘑菇街.html" class="nav-link">
+  蘑菇街
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/寺库.html" class="nav-link">
+  寺库
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/挖财.html" class="nav-link">
+  挖财
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/网易.html" class="nav-link">
+  网易
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/微医.html" class="nav-link">
+  微医
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/喜马拉雅.html" class="nav-link">
+  喜马拉雅
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/携程.html" class="nav-link">
+  携程
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/有赞.html" class="nav-link">
+  有赞
+</a></li></ul></div></div><div class="nav-item"><a href="/web-interview/myInterview/20210131.html" class="nav-link">
+  面试题
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试题" class="dropdown-title"><span class="title">前端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试题" class="mobile-dropdown-title"><span class="title">前端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/1.html/1.index.html" class="nav-link">
+  一.HTML
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/2.css/1.index.html" class="nav-link">
+  二.CSS
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/3.javascript/1.index.html" class="nav-link">
+  三.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/4.browser/1.index.html" class="nav-link">
+  四.浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/5.vue/1.index.html" class="nav-link">
+  五.Vue
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/6.react/1.index.html" class="nav-link">
+  六.React
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/7.webpack/1.index.html" class="nav-link">
+  七.Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端面试题" class="dropdown-title"><span class="title">后端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端面试题" class="mobile-dropdown-title"><span class="title">后端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/1.node.html" class="nav-link">
+  一.Node
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/2.express.html" class="nav-link">
+  二.Express
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/3.koa.html" class="nav-link">
+  三.Koa
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/4.egg.html" class="nav-link">
+  四.Egg
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大厂面试题" class="dropdown-title"><span class="title">大厂面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="大厂面试题" class="mobile-dropdown-title"><span class="title">大厂面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/阿里巴巴.html" class="nav-link">
+  阿里巴巴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/饿了么.html" class="nav-link">
+  饿了么
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/百分点.html" class="nav-link">
+  百分点
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝宝树.html" class="nav-link">
+  宝宝树
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/滴滴.html" class="nav-link">
+  滴滴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/兑吧.html" class="nav-link">
+  兑吧
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝海风教育.html" class="nav-link">
+  海风教育
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/海康威视.html" class="nav-link">
+  海康威视
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/沪江.html" class="nav-link">
+  沪江
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/今日头条.html" class="nav-link">
+  今日头条
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/酷家乐.html" class="nav-link">
+  酷家乐
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/蘑菇街.html" class="nav-link">
+  蘑菇街
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/寺库.html" class="nav-link">
+  寺库
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/挖财.html" class="nav-link">
+  挖财
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/网易.html" class="nav-link">
+  网易
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/微医.html" class="nav-link">
+  微医
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/喜马拉雅.html" class="nav-link">
+  喜马拉雅
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/携程.html" class="nav-link">
+  携程
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/有赞.html" class="nav-link">
+  有赞
+</a></li></ul></div></div><div class="nav-item"><a href="/web-interview/myInterview/20210131.html" class="nav-link">
+  面试题
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/web-interview/1.front-end/2.css/1.index.html" class="sidebar-link">css 面试题</a></li><li><a href="/web-interview/1.front-end/2.css/2.css.html" class="sidebar-link">CSS 常考面试题资料</a></li><li><a href="/web-interview/1.front-end/2.css/3.css3.html" aria-current="page" class="active sidebar-link">二.css3 常见面试题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/2.css/3.css3.html#_1-css3-有哪些新特性" class="sidebar-link">1 CSS3 有哪些新特性？</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/2.css/3.css3.html#_2-请解释一下-css3-的-flexbox-弹性盒布局模型-以及适用场景" class="sidebar-link">2 请解释一下 CSS3 的 flexbox（弹性盒布局模型）,以及适用场景？</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/2.css/3.css3.html#_3-视差滚动效果" class="sidebar-link">3 视差滚动效果？</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/2.css/3.css3.html#_4-before-和-after-中双冒号和单冒号有什么区别-解释一下这-2-个伪元素的作用" class="sidebar-link">4 ::before 和 :after 中双冒号和单冒号有什么区别？解释一下这 2 个伪元素的作用</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="二-css3-常见面试题"><a href="#二-css3-常见面试题" class="header-anchor">#</a> 二.css3 常见面试题</h1> <h2 id="_1-css3-有哪些新特性"><a href="#_1-css3-有哪些新特性" class="header-anchor">#</a> 1 CSS3 有哪些新特性？</h2> <ul><li>RGBA 和透明度</li> <li>background-image background-origin(content-box/padding-box/border-box) background-size background-repeat</li> <li>word-wrap（对长的不可分割单词换行）word-wrap：break-word</li> <li>文字阴影：text-shadow： 5px 5px 5px #FF0000;（水平阴影，垂直阴影，模糊距离，阴影颜色）</li> <li>font-face 属性：定义自己的字体</li> <li>圆角（边框半径）：border-radius 属性用于创建圆角</li> <li>边框图片：border-image: url(border.png) 30 30 round</li> <li>盒阴影：box-shadow: 10px 10px 5px #888888</li> <li>媒体查询：定义两套 css，当浏览器的尺寸变化时会采用不同的属性</li></ul> <h2 id="_2-请解释一下-css3-的-flexbox-弹性盒布局模型-以及适用场景"><a href="#_2-请解释一下-css3-的-flexbox-弹性盒布局模型-以及适用场景" class="header-anchor">#</a> 2 请解释一下 CSS3 的 flexbox（弹性盒布局模型）,以及适用场景？</h2> <p>该布局模型的目的是提供一种更加高效的方式来对容器中的条目进行布局、对齐和分配空间。在传统的布局方式中，block 布局是把块在垂直方向从上到下依次排列的；而 inline 布局则是在水平方向来排列。弹性盒布局并没有这样内在的方向限制，可以由开发人员自由操作。</p> <h2 id="_3-视差滚动效果"><a href="#_3-视差滚动效果" class="header-anchor">#</a> 3 视差滚动效果？</h2> <ul><li>视差滚动（Parallax Scrolling）通过在网页向下滚动的时候，控制背景的移动速度比前景的移动速度慢来创建出令人惊叹的 3D 效果。</li> <li>CSS3 实现
+<ul><li>优点：开发时间短、性能和开发效率比较好，缺点是不能兼容到低版本的浏览器</li></ul></li> <li>jQuery 实现
+<ul><li>通过控制不同层滚动速度，计算每一层的时间，控制滚动效果。</li> <li>优点：能兼容到各个版本的，效果可控性好</li> <li>缺点：开发起来对制作者要求高</li></ul></li> <li>插件实现方式
+<ul><li>例如：parallax-scrolling，兼容性十分好</li></ul></li></ul> <h2 id="_4-before-和-after-中双冒号和单冒号有什么区别-解释一下这-2-个伪元素的作用"><a href="#_4-before-和-after-中双冒号和单冒号有什么区别-解释一下这-2-个伪元素的作用" class="header-anchor">#</a> 4 ::before 和 :after 中双冒号和单冒号有什么区别？解释一下这 2 个伪元素的作用</h2> <ul><li>单冒号(:)用于 CSS3 伪类，双冒号(::)用于 CSS3 伪元素。</li> <li>::before 就是以一个子元素的存在，定义在元素主体内容之前的一个伪元素。并不存在于 dom 之中，只存在在页面之中。</li> <li>:before 和 :after 这两个伪元素，是在 CSS2.1 里新出现的。起初，伪元素的前缀使用的是单冒号语法，但随着 Web 的进化，在 CSS3 的规范里，伪元素的语法被修改成使用双冒号，成为::before ::after</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/6/29 上午12:09:44</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web-interview/1.front-end/2.css/2.css.html" class="prev">
+        CSS 常考面试题资料
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/web-interview/assets/js/app.7e1cd45a.js" defer></script><script src="/web-interview/assets/js/2.e1d7530f.js" defer></script><script src="/web-interview/assets/js/14.5f59b4d0.js" defer></script><script src="/web-interview/assets/js/4.2abc1bb0.js" defer></script>
+  </body>
+</html>

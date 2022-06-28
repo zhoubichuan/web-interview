@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>五.缓存策略 | web面试题精选</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="个人总结的vuepress学习技术文档-语法">
+    <meta name="keywords" content="vuepress,最新技术文档,vuepress语法,markdown语法">
+    
+    <link rel="preload" href="/web-interview/assets/css/0.styles.884e11ce.css" as="style"><link rel="preload" href="/web-interview/assets/js/app.7e1cd45a.js" as="script"><link rel="preload" href="/web-interview/assets/js/2.e1d7530f.js" as="script"><link rel="preload" href="/web-interview/assets/js/31.40c046c4.js" as="script"><link rel="preload" href="/web-interview/assets/js/4.2abc1bb0.js" as="script"><link rel="prefetch" href="/web-interview/assets/js/10.56017cec.js"><link rel="prefetch" href="/web-interview/assets/js/11.1b6f017b.js"><link rel="prefetch" href="/web-interview/assets/js/12.941a8d45.js"><link rel="prefetch" href="/web-interview/assets/js/13.fe0a5713.js"><link rel="prefetch" href="/web-interview/assets/js/14.5f59b4d0.js"><link rel="prefetch" href="/web-interview/assets/js/15.2267941d.js"><link rel="prefetch" href="/web-interview/assets/js/16.828a3f57.js"><link rel="prefetch" href="/web-interview/assets/js/17.ee3fe08e.js"><link rel="prefetch" href="/web-interview/assets/js/18.903cebf9.js"><link rel="prefetch" href="/web-interview/assets/js/19.8df8bad8.js"><link rel="prefetch" href="/web-interview/assets/js/20.95d96844.js"><link rel="prefetch" href="/web-interview/assets/js/21.90b2597d.js"><link rel="prefetch" href="/web-interview/assets/js/22.71893005.js"><link rel="prefetch" href="/web-interview/assets/js/23.cfb13783.js"><link rel="prefetch" href="/web-interview/assets/js/24.d1a013b5.js"><link rel="prefetch" href="/web-interview/assets/js/25.5f7ebf65.js"><link rel="prefetch" href="/web-interview/assets/js/26.50044f2c.js"><link rel="prefetch" href="/web-interview/assets/js/27.5e557589.js"><link rel="prefetch" href="/web-interview/assets/js/28.24a14952.js"><link rel="prefetch" href="/web-interview/assets/js/29.54cbaafe.js"><link rel="prefetch" href="/web-interview/assets/js/3.04649557.js"><link rel="prefetch" href="/web-interview/assets/js/30.2f876fbf.js"><link rel="prefetch" href="/web-interview/assets/js/32.ca1e44b5.js"><link rel="prefetch" href="/web-interview/assets/js/33.d7502a7c.js"><link rel="prefetch" href="/web-interview/assets/js/34.f2ed1a32.js"><link rel="prefetch" href="/web-interview/assets/js/35.55b2e31b.js"><link rel="prefetch" href="/web-interview/assets/js/36.a756f4b7.js"><link rel="prefetch" href="/web-interview/assets/js/37.958c0dcf.js"><link rel="prefetch" href="/web-interview/assets/js/38.c2bfc766.js"><link rel="prefetch" href="/web-interview/assets/js/39.b1f968ef.js"><link rel="prefetch" href="/web-interview/assets/js/40.c33559b1.js"><link rel="prefetch" href="/web-interview/assets/js/41.4b7bd7cb.js"><link rel="prefetch" href="/web-interview/assets/js/42.4f0104bf.js"><link rel="prefetch" href="/web-interview/assets/js/43.6b8a3e60.js"><link rel="prefetch" href="/web-interview/assets/js/44.e3d67935.js"><link rel="prefetch" href="/web-interview/assets/js/45.6826cc0b.js"><link rel="prefetch" href="/web-interview/assets/js/46.db7cb988.js"><link rel="prefetch" href="/web-interview/assets/js/47.31889365.js"><link rel="prefetch" href="/web-interview/assets/js/48.38914b82.js"><link rel="prefetch" href="/web-interview/assets/js/49.c6e03944.js"><link rel="prefetch" href="/web-interview/assets/js/5.3f86d238.js"><link rel="prefetch" href="/web-interview/assets/js/50.e4ab1e4e.js"><link rel="prefetch" href="/web-interview/assets/js/51.c3940fad.js"><link rel="prefetch" href="/web-interview/assets/js/52.3f7cb4cf.js"><link rel="prefetch" href="/web-interview/assets/js/53.a046a94b.js"><link rel="prefetch" href="/web-interview/assets/js/54.179968ab.js"><link rel="prefetch" href="/web-interview/assets/js/55.407806bd.js"><link rel="prefetch" href="/web-interview/assets/js/56.8bf00853.js"><link rel="prefetch" href="/web-interview/assets/js/57.670c6f7f.js"><link rel="prefetch" href="/web-interview/assets/js/58.0bc2edd1.js"><link rel="prefetch" href="/web-interview/assets/js/59.2941cb80.js"><link rel="prefetch" href="/web-interview/assets/js/6.aab8a02b.js"><link rel="prefetch" href="/web-interview/assets/js/60.a42c8811.js"><link rel="prefetch" href="/web-interview/assets/js/61.1c610aea.js"><link rel="prefetch" href="/web-interview/assets/js/7.6af95a3f.js"><link rel="prefetch" href="/web-interview/assets/js/8.151df366.js"><link rel="prefetch" href="/web-interview/assets/js/9.63a2b1aa.js">
+    <link rel="stylesheet" href="/web-interview/assets/css/0.styles.884e11ce.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web-interview/" class="home-link router-link-active"><!----> <span class="site-name">web面试题精选</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试题" class="dropdown-title"><span class="title">前端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试题" class="mobile-dropdown-title"><span class="title">前端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/1.html/1.index.html" class="nav-link">
+  一.HTML
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/2.css/1.index.html" class="nav-link">
+  二.CSS
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/3.javascript/1.index.html" class="nav-link">
+  三.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/4.browser/1.index.html" class="nav-link">
+  四.浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/5.vue/1.index.html" class="nav-link">
+  五.Vue
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/6.react/1.index.html" class="nav-link">
+  六.React
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/7.webpack/1.index.html" class="nav-link">
+  七.Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端面试题" class="dropdown-title"><span class="title">后端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端面试题" class="mobile-dropdown-title"><span class="title">后端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/1.node.html" class="nav-link">
+  一.Node
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/2.express.html" class="nav-link">
+  二.Express
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/3.koa.html" class="nav-link">
+  三.Koa
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/4.egg.html" class="nav-link">
+  四.Egg
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大厂面试题" class="dropdown-title"><span class="title">大厂面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="大厂面试题" class="mobile-dropdown-title"><span class="title">大厂面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/阿里巴巴.html" class="nav-link">
+  阿里巴巴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/饿了么.html" class="nav-link">
+  饿了么
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/百分点.html" class="nav-link">
+  百分点
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝宝树.html" class="nav-link">
+  宝宝树
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/滴滴.html" class="nav-link">
+  滴滴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/兑吧.html" class="nav-link">
+  兑吧
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝海风教育.html" class="nav-link">
+  海风教育
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/海康威视.html" class="nav-link">
+  海康威视
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/沪江.html" class="nav-link">
+  沪江
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/今日头条.html" class="nav-link">
+  今日头条
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/酷家乐.html" class="nav-link">
+  酷家乐
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/蘑菇街.html" class="nav-link">
+  蘑菇街
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/寺库.html" class="nav-link">
+  寺库
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/挖财.html" class="nav-link">
+  挖财
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/网易.html" class="nav-link">
+  网易
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/微医.html" class="nav-link">
+  微医
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/喜马拉雅.html" class="nav-link">
+  喜马拉雅
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/携程.html" class="nav-link">
+  携程
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/有赞.html" class="nav-link">
+  有赞
+</a></li></ul></div></div><div class="nav-item"><a href="/web-interview/myInterview/20210131.html" class="nav-link">
+  面试题
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试题" class="dropdown-title"><span class="title">前端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试题" class="mobile-dropdown-title"><span class="title">前端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/1.html/1.index.html" class="nav-link">
+  一.HTML
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/2.css/1.index.html" class="nav-link">
+  二.CSS
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/3.javascript/1.index.html" class="nav-link">
+  三.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/4.browser/1.index.html" class="nav-link">
+  四.浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/5.vue/1.index.html" class="nav-link">
+  五.Vue
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/6.react/1.index.html" class="nav-link">
+  六.React
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/7.webpack/1.index.html" class="nav-link">
+  七.Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端面试题" class="dropdown-title"><span class="title">后端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端面试题" class="mobile-dropdown-title"><span class="title">后端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/1.node.html" class="nav-link">
+  一.Node
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/2.express.html" class="nav-link">
+  二.Express
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/3.koa.html" class="nav-link">
+  三.Koa
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/4.egg.html" class="nav-link">
+  四.Egg
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大厂面试题" class="dropdown-title"><span class="title">大厂面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="大厂面试题" class="mobile-dropdown-title"><span class="title">大厂面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/阿里巴巴.html" class="nav-link">
+  阿里巴巴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/饿了么.html" class="nav-link">
+  饿了么
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/百分点.html" class="nav-link">
+  百分点
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝宝树.html" class="nav-link">
+  宝宝树
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/滴滴.html" class="nav-link">
+  滴滴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/兑吧.html" class="nav-link">
+  兑吧
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝海风教育.html" class="nav-link">
+  海风教育
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/海康威视.html" class="nav-link">
+  海康威视
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/沪江.html" class="nav-link">
+  沪江
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/今日头条.html" class="nav-link">
+  今日头条
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/酷家乐.html" class="nav-link">
+  酷家乐
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/蘑菇街.html" class="nav-link">
+  蘑菇街
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/寺库.html" class="nav-link">
+  寺库
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/挖财.html" class="nav-link">
+  挖财
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/网易.html" class="nav-link">
+  网易
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/微医.html" class="nav-link">
+  微医
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/喜马拉雅.html" class="nav-link">
+  喜马拉雅
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/携程.html" class="nav-link">
+  携程
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/有赞.html" class="nav-link">
+  有赞
+</a></li></ul></div></div><div class="nav-item"><a href="/web-interview/myInterview/20210131.html" class="nav-link">
+  面试题
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/web-interview/1.front-end/4.browser/1.index.html" class="sidebar-link">浏览器基础知识点</a></li><li><a href="/web-interview/1.front-end/4.browser/2.render.html" class="sidebar-link">一.浏览器渲染原理</a></li><li><a href="/web-interview/1.front-end/4.browser/3.cache.html" class="sidebar-link">二.浏览器缓存机制</a></li><li><a href="/web-interview/1.front-end/4.browser/5.v8.html" class="sidebar-link">三.v8 引擎机制</a></li><li><a href="/web-interview/1.front-end/4.browser/6.render.html" class="sidebar-link">四.渲染机制</a></li><li><a href="/web-interview/1.front-end/4.browser/7.cache.html" aria-current="page" class="active sidebar-link">五.缓存策略</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/4.browser/7.cache.html#_1-浏览器缓存位置和优先级" class="sidebar-link">1.浏览器缓存位置和优先级</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/4.browser/7.cache.html#_2-不同缓存间的差别" class="sidebar-link">2.不同缓存间的差别</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/4.browser/7.cache.html#_3-介绍一下浏览器缓存策略" class="sidebar-link">3.介绍一下浏览器缓存策略</a></li></ul></li><li><a href="/web-interview/1.front-end/4.browser/11.network.html" class="sidebar-link">六.网络相关</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="五-缓存策略"><a href="#五-缓存策略" class="header-anchor">#</a> 五.缓存策略</h1> <h2 id="_1-浏览器缓存位置和优先级"><a href="#_1-浏览器缓存位置和优先级" class="header-anchor">#</a> 1.浏览器缓存位置和优先级</h2> <ul><li>Service Worker</li> <li>Memory Cache(内存缓存)</li> <li>Disk Cache(硬盘缓存)</li> <li>Push Cache(推送缓存)</li> <li>以上缓存都没有命中就会进行网络请求</li></ul> <h2 id="_2-不同缓存间的差别"><a href="#_2-不同缓存间的差别" class="header-anchor">#</a> 2.不同缓存间的差别</h2> <blockquote><p>Service Worker</p></blockquote> <p>和 Web Worker 类似，是独立的线程，我们可以在这个线程中缓存文件，在主线程需要的时候读取这里的文件，Service Wroker 使我们可以自由选择缓存哪些文件以及文件的匹配、读取规则，并且缓存是持续性的</p> <blockquote><p>Memroy Cache</p></blockquote> <p>即内存缓存，内存缓存不是持续性的，缓存会随着进程释放而释放</p> <blockquote><p>Disk Cache</p></blockquote> <p>即硬盘缓存，相较于内存缓存，硬盘缓存的持续性和容量更优，它会根据 HTTP header 的字段判断哪些资源需要缓存</p> <blockquote><p>Push Cache</p></blockquote> <p>即推送缓存，是 HTTP/2 的内容，目前应用较少</p> <h2 id="_3-介绍一下浏览器缓存策略"><a href="#_3-介绍一下浏览器缓存策略" class="header-anchor">#</a> 3.介绍一下浏览器缓存策略</h2> <blockquote><p>强缓存（不向服务器询问的缓存）</p></blockquote> <ul><li><p>设置 Expires</p> <ul><li>即过期时间，例如<code>Expires:Thu,26 Dec 2019 10:30:42 GMT</code>表示缓存会在这个时间后失效，这个过期日期是绝对日期，如果修改了本地日期，或者本地日期与服务器日期不一致，那么将导致缓存过期时间错误。</li></ul></li> <li><p>设置 Cache-Control</p> <ul><li>HTTP/1.1 新增字段，Cache-Control 可以通过<code>max-age</code>字段来设置过期时间，例如<code>Cache-Control:max-age=3600</code>除此之外 Cache-Control 还能设置<code>private/no-cache</code>等多种字段</li></ul></li></ul> <blockquote><p>协商缓存（需要向服务器询问缓存释放已经过期）</p></blockquote> <ul><li><p>Last-Modified</p> <ul><li>即最后修改时间，浏览器第一次请求资源时，服务器会在响应头上加上<code>Last-Modified</code>,当浏览器再次请求该资源时，浏览器会在请求头中带上<code>If-Modified-Since</code>字段，字段的值就是之前服务器返回的最后修改时间，服务器对比这两个时间，若相同则返回 304，否则返回新资源，并更新<code>Last-Modified</code></li></ul></li> <li><p>ETag</p> <ul><li>HTTP/1.1 新增字段，表示文件唯一标识，只要文件内容改动，ETag 就会重新计算。缓存流程和 Last-Modified 一样：服务器发送 ETag 字段--&gt;浏览器再次请求时发送 If-None-Match--&gt;如果 ETag 值不匹配，说明文件已经改变，返回新资源并更新 ETag，若匹配则返回 304</li></ul></li></ul> <blockquote><p>两者对比</p></blockquote> <ul><li>ETag 比 Last-Modified 更准确：如果我们打开文件但并没有修改，Last-Modified 也会改变，并且 Last-Modified 的单位时间为一秒，如果一秒内修改完了文件，那么还是会命中缓存</li> <li>如果什么缓存策略都没有设置，那么浏览器会取响应头中的 Date 减去 Last-Modified 值得 10%作为缓存时间</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/6/29 上午12:09:44</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web-interview/1.front-end/4.browser/6.render.html" class="prev">
+        四.渲染机制
+      </a></span> <span class="next"><a href="/web-interview/1.front-end/4.browser/11.network.html">
+        六.网络相关
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/web-interview/assets/js/app.7e1cd45a.js" defer></script><script src="/web-interview/assets/js/2.e1d7530f.js" defer></script><script src="/web-interview/assets/js/31.40c046c4.js" defer></script><script src="/web-interview/assets/js/4.2abc1bb0.js" defer></script>
+  </body>
+</html>

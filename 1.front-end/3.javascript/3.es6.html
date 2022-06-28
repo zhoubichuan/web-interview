@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>三.ES6 知识点 | web面试题精选</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="个人总结的vuepress学习技术文档-语法">
+    <meta name="keywords" content="vuepress,最新技术文档,vuepress语法,markdown语法">
+    
+    <link rel="preload" href="/web-interview/assets/css/0.styles.884e11ce.css" as="style"><link rel="preload" href="/web-interview/assets/js/app.7e1cd45a.js" as="script"><link rel="preload" href="/web-interview/assets/js/2.e1d7530f.js" as="script"><link rel="preload" href="/web-interview/assets/js/18.903cebf9.js" as="script"><link rel="preload" href="/web-interview/assets/js/4.2abc1bb0.js" as="script"><link rel="prefetch" href="/web-interview/assets/js/10.56017cec.js"><link rel="prefetch" href="/web-interview/assets/js/11.1b6f017b.js"><link rel="prefetch" href="/web-interview/assets/js/12.941a8d45.js"><link rel="prefetch" href="/web-interview/assets/js/13.fe0a5713.js"><link rel="prefetch" href="/web-interview/assets/js/14.5f59b4d0.js"><link rel="prefetch" href="/web-interview/assets/js/15.2267941d.js"><link rel="prefetch" href="/web-interview/assets/js/16.828a3f57.js"><link rel="prefetch" href="/web-interview/assets/js/17.ee3fe08e.js"><link rel="prefetch" href="/web-interview/assets/js/19.8df8bad8.js"><link rel="prefetch" href="/web-interview/assets/js/20.95d96844.js"><link rel="prefetch" href="/web-interview/assets/js/21.90b2597d.js"><link rel="prefetch" href="/web-interview/assets/js/22.71893005.js"><link rel="prefetch" href="/web-interview/assets/js/23.cfb13783.js"><link rel="prefetch" href="/web-interview/assets/js/24.d1a013b5.js"><link rel="prefetch" href="/web-interview/assets/js/25.5f7ebf65.js"><link rel="prefetch" href="/web-interview/assets/js/26.50044f2c.js"><link rel="prefetch" href="/web-interview/assets/js/27.5e557589.js"><link rel="prefetch" href="/web-interview/assets/js/28.24a14952.js"><link rel="prefetch" href="/web-interview/assets/js/29.54cbaafe.js"><link rel="prefetch" href="/web-interview/assets/js/3.04649557.js"><link rel="prefetch" href="/web-interview/assets/js/30.2f876fbf.js"><link rel="prefetch" href="/web-interview/assets/js/31.40c046c4.js"><link rel="prefetch" href="/web-interview/assets/js/32.ca1e44b5.js"><link rel="prefetch" href="/web-interview/assets/js/33.d7502a7c.js"><link rel="prefetch" href="/web-interview/assets/js/34.f2ed1a32.js"><link rel="prefetch" href="/web-interview/assets/js/35.55b2e31b.js"><link rel="prefetch" href="/web-interview/assets/js/36.a756f4b7.js"><link rel="prefetch" href="/web-interview/assets/js/37.958c0dcf.js"><link rel="prefetch" href="/web-interview/assets/js/38.c2bfc766.js"><link rel="prefetch" href="/web-interview/assets/js/39.b1f968ef.js"><link rel="prefetch" href="/web-interview/assets/js/40.c33559b1.js"><link rel="prefetch" href="/web-interview/assets/js/41.4b7bd7cb.js"><link rel="prefetch" href="/web-interview/assets/js/42.4f0104bf.js"><link rel="prefetch" href="/web-interview/assets/js/43.6b8a3e60.js"><link rel="prefetch" href="/web-interview/assets/js/44.e3d67935.js"><link rel="prefetch" href="/web-interview/assets/js/45.6826cc0b.js"><link rel="prefetch" href="/web-interview/assets/js/46.db7cb988.js"><link rel="prefetch" href="/web-interview/assets/js/47.31889365.js"><link rel="prefetch" href="/web-interview/assets/js/48.38914b82.js"><link rel="prefetch" href="/web-interview/assets/js/49.c6e03944.js"><link rel="prefetch" href="/web-interview/assets/js/5.3f86d238.js"><link rel="prefetch" href="/web-interview/assets/js/50.e4ab1e4e.js"><link rel="prefetch" href="/web-interview/assets/js/51.c3940fad.js"><link rel="prefetch" href="/web-interview/assets/js/52.3f7cb4cf.js"><link rel="prefetch" href="/web-interview/assets/js/53.a046a94b.js"><link rel="prefetch" href="/web-interview/assets/js/54.179968ab.js"><link rel="prefetch" href="/web-interview/assets/js/55.407806bd.js"><link rel="prefetch" href="/web-interview/assets/js/56.8bf00853.js"><link rel="prefetch" href="/web-interview/assets/js/57.670c6f7f.js"><link rel="prefetch" href="/web-interview/assets/js/58.0bc2edd1.js"><link rel="prefetch" href="/web-interview/assets/js/59.2941cb80.js"><link rel="prefetch" href="/web-interview/assets/js/6.aab8a02b.js"><link rel="prefetch" href="/web-interview/assets/js/60.a42c8811.js"><link rel="prefetch" href="/web-interview/assets/js/61.1c610aea.js"><link rel="prefetch" href="/web-interview/assets/js/7.6af95a3f.js"><link rel="prefetch" href="/web-interview/assets/js/8.151df366.js"><link rel="prefetch" href="/web-interview/assets/js/9.63a2b1aa.js">
+    <link rel="stylesheet" href="/web-interview/assets/css/0.styles.884e11ce.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web-interview/" class="home-link router-link-active"><!----> <span class="site-name">web面试题精选</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试题" class="dropdown-title"><span class="title">前端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试题" class="mobile-dropdown-title"><span class="title">前端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/1.html/1.index.html" class="nav-link">
+  一.HTML
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/2.css/1.index.html" class="nav-link">
+  二.CSS
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/3.javascript/1.index.html" class="nav-link">
+  三.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/4.browser/1.index.html" class="nav-link">
+  四.浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/5.vue/1.index.html" class="nav-link">
+  五.Vue
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/6.react/1.index.html" class="nav-link">
+  六.React
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/7.webpack/1.index.html" class="nav-link">
+  七.Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端面试题" class="dropdown-title"><span class="title">后端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端面试题" class="mobile-dropdown-title"><span class="title">后端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/1.node.html" class="nav-link">
+  一.Node
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/2.express.html" class="nav-link">
+  二.Express
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/3.koa.html" class="nav-link">
+  三.Koa
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/4.egg.html" class="nav-link">
+  四.Egg
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大厂面试题" class="dropdown-title"><span class="title">大厂面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="大厂面试题" class="mobile-dropdown-title"><span class="title">大厂面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/阿里巴巴.html" class="nav-link">
+  阿里巴巴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/饿了么.html" class="nav-link">
+  饿了么
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/百分点.html" class="nav-link">
+  百分点
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝宝树.html" class="nav-link">
+  宝宝树
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/滴滴.html" class="nav-link">
+  滴滴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/兑吧.html" class="nav-link">
+  兑吧
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝海风教育.html" class="nav-link">
+  海风教育
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/海康威视.html" class="nav-link">
+  海康威视
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/沪江.html" class="nav-link">
+  沪江
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/今日头条.html" class="nav-link">
+  今日头条
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/酷家乐.html" class="nav-link">
+  酷家乐
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/蘑菇街.html" class="nav-link">
+  蘑菇街
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/寺库.html" class="nav-link">
+  寺库
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/挖财.html" class="nav-link">
+  挖财
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/网易.html" class="nav-link">
+  网易
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/微医.html" class="nav-link">
+  微医
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/喜马拉雅.html" class="nav-link">
+  喜马拉雅
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/携程.html" class="nav-link">
+  携程
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/有赞.html" class="nav-link">
+  有赞
+</a></li></ul></div></div><div class="nav-item"><a href="/web-interview/myInterview/20210131.html" class="nav-link">
+  面试题
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试题" class="dropdown-title"><span class="title">前端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试题" class="mobile-dropdown-title"><span class="title">前端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/1.html/1.index.html" class="nav-link">
+  一.HTML
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/2.css/1.index.html" class="nav-link">
+  二.CSS
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/3.javascript/1.index.html" class="nav-link">
+  三.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/4.browser/1.index.html" class="nav-link">
+  四.浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/5.vue/1.index.html" class="nav-link">
+  五.Vue
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/6.react/1.index.html" class="nav-link">
+  六.React
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/7.webpack/1.index.html" class="nav-link">
+  七.Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端面试题" class="dropdown-title"><span class="title">后端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端面试题" class="mobile-dropdown-title"><span class="title">后端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/1.node.html" class="nav-link">
+  一.Node
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/2.express.html" class="nav-link">
+  二.Express
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/3.koa.html" class="nav-link">
+  三.Koa
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/4.egg.html" class="nav-link">
+  四.Egg
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大厂面试题" class="dropdown-title"><span class="title">大厂面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="大厂面试题" class="mobile-dropdown-title"><span class="title">大厂面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/阿里巴巴.html" class="nav-link">
+  阿里巴巴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/饿了么.html" class="nav-link">
+  饿了么
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/百分点.html" class="nav-link">
+  百分点
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝宝树.html" class="nav-link">
+  宝宝树
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/滴滴.html" class="nav-link">
+  滴滴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/兑吧.html" class="nav-link">
+  兑吧
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝海风教育.html" class="nav-link">
+  海风教育
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/海康威视.html" class="nav-link">
+  海康威视
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/沪江.html" class="nav-link">
+  沪江
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/今日头条.html" class="nav-link">
+  今日头条
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/酷家乐.html" class="nav-link">
+  酷家乐
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/蘑菇街.html" class="nav-link">
+  蘑菇街
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/寺库.html" class="nav-link">
+  寺库
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/挖财.html" class="nav-link">
+  挖财
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/网易.html" class="nav-link">
+  网易
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/微医.html" class="nav-link">
+  微医
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/喜马拉雅.html" class="nav-link">
+  喜马拉雅
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/携程.html" class="nav-link">
+  携程
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/有赞.html" class="nav-link">
+  有赞
+</a></li></ul></div></div><div class="nav-item"><a href="/web-interview/myInterview/20210131.html" class="nav-link">
+  面试题
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/web-interview/1.front-end/3.javascript/1.index.html" class="sidebar-link">JavaScript</a></li><li><a href="/web-interview/1.front-end/3.javascript/1.base.html" class="sidebar-link">一.JS 基础</a></li><li><a href="/web-interview/1.front-end/3.javascript/2.senior.html" class="sidebar-link">二.JS 高级</a></li><li><a href="/web-interview/1.front-end/3.javascript/3.es6.html" aria-current="page" class="active sidebar-link">三.ES6 知识点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_1-var、let-及-const-区别" class="sidebar-link">1.var、let 及 const 区别</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_2-原型继承和-class-继承" class="sidebar-link">2.原型继承和 Class 继承</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_1-组合继承" class="sidebar-link">1.组合继承</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_2-寄生组合继承" class="sidebar-link">2.寄生组合继承</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_3-class-继承" class="sidebar-link">3.Class 继承</a></li></ul></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_3-模块化" class="sidebar-link">3.模块化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_1-立即执行函数" class="sidebar-link">1.立即执行函数</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_2-amd-和-cmd" class="sidebar-link">2.AMD 和 CMD</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_3-commonjs" class="sidebar-link">3.CommonJS</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_4-es-module" class="sidebar-link">4.ES Module</a></li></ul></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_4-proxy" class="sidebar-link">4.Proxy</a></li><li class="sidebar-sub-header"><a href="/web-interview/1.front-end/3.javascript/3.es6.html#_5-map-filter-reduce" class="sidebar-link">5.map,filter,reduce</a></li></ul></li><li><a href="/web-interview/1.front-end/3.javascript/4.safe.html" class="sidebar-link">四.前端安全</a></li><li><a href="/web-interview/1.front-end/3.javascript/5.performance.html" class="sidebar-link">五.性能优化</a></li><li><a href="/web-interview/1.front-end/3.javascript/6.design.html" class="sidebar-link">六.设计模式</a></li><li><a href="/web-interview/1.front-end/3.javascript/7.monitor.html" class="sidebar-link">七.前端监控</a></li><li><a href="/web-interview/1.front-end/3.javascript/8.algorithm.html" class="sidebar-link">八.前端算法</a></li><li><a href="/web-interview/1.front-end/3.javascript/9.handle.html" class="sidebar-link">九.前端手写</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="三-es6-知识点"><a href="#三-es6-知识点" class="header-anchor">#</a> 三.ES6 知识点</h1> <h2 id="_1-var、let-及-const-区别"><a href="#_1-var、let-及-const-区别" class="header-anchor">#</a> 1.var、let 及 const 区别</h2> <blockquote><p>什么是提升？什么是暂时性死区？var、let 及 const 区别？</p></blockquote> <p>变量声明在函数之后，函数会被提升，并且优于变量提升</p> <p>在全局作用域下<code>let</code>和<code>const</code>声明变量，变量不会被挂载到<code>window</code>上，再次声明之前声明的变量会报错，在声明之前使用变量也会报错（报错的原因就是暂时性死区）</p> <h2 id="_2-原型继承和-class-继承"><a href="#_2-原型继承和-class-继承" class="header-anchor">#</a> 2.原型继承和 Class 继承</h2> <blockquote><p>原型如何实现继承？Class 如何实现继承？Class 本质是什么？</p></blockquote> <p>其实在 JS 中并不存在类，<code>class</code>只是语法糖，本质还是函数</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>calss Person<span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+Person <span class="token keyword">instanceof</span> <span class="token class-name">Function</span> <span class="token comment">// true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="_1-组合继承"><a href="#_1-组合继承" class="header-anchor">#</a> 1.组合继承</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Parent</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> value
+<span class="token punctuation">}</span>
+<span class="token class-name">Parent</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getValue</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">Child</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">Parent</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Child</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> child <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+child<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 1</span>
+child <span class="token keyword">instanceof</span> <span class="token class-name">Parent</span> <span class="token comment">// true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>以上继承的方式核心是在子类的构造函数中通过<code>Parent.call(this)</code>继承父类的属性，然后改变了子类的原型为<code>new Parent()</code>来继承父类的函数。</p> <p>这种继承方式的优点在于构造函数可以传参，不会与父类引用属性共享，可以复用父类的函数，但是也存在一个缺点就是在继承父类函数的时候调用了父类的构造函数，导致子类的原型上多了不需要的父类的属性，存在内存上的浪费。</p> <h3 id="_2-寄生组合继承"><a href="#_2-寄生组合继承" class="header-anchor">#</a> 2.寄生组合继承</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Parent</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> value
+<span class="token punctuation">}</span>
+<span class="token class-name">Parent</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getValue</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">Child</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">Parent</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Child</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Parent</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">constructor</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">value</span><span class="token operator">:</span> Child<span class="token punctuation">,</span>
+    <span class="token literal-property property">enumerable</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">writable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">configurable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> child <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+child<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 1</span>
+child <span class="token keyword">instanceof</span> <span class="token class-name">Parent</span> <span class="token comment">//true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>以上继承实现的核心就是将父类的原型赋值给了子类，并且将构造函数设置为子类，这样既解决了无用的父类属性问题，还能正确的找到子类的构造函数。</p> <h3 id="_3-class-继承"><a href="#_3-class-继承" class="header-anchor">#</a> 3.Class 继承</h3> <p>以上两种继承方式都是通过原型去解决的，在 ES6 中，我们可以使用<code>class</code>去实现继承，并且实现起来很简单</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Parent</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value
+  <span class="token punctuation">}</span>
+  <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Child</span> <span class="token keyword">extends</span> <span class="token class-name">Parent</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> value
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> child <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+child<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//1</span>
+child <span class="token keyword">instanceof</span> <span class="token class-name">Parent</span> <span class="token comment">// true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p><code>calss</code>实现继承的核心在于使用<code>extends</code>表明继承来自哪个类，并且在子类构造函数中必须调用<code>super</code>，因为这段代码可以看成<code>Parent.call(this,value)</code></p> <p>当然了，之前也说了在 JS 中并不存在类，<code>class</code>的本质就是函数。</p> <h2 id="_3-模块化"><a href="#_3-模块化" class="header-anchor">#</a> 3.模块化</h2> <blockquote><p>为什么要使用模块化？都有哪几种方式可以实现模块化，各有什么特点？</p></blockquote> <ul><li>解决命名冲突</li> <li>提供复用性</li> <li>提高代码可维护性</li></ul> <h3 id="_1-立即执行函数"><a href="#_1-立即执行函数" class="header-anchor">#</a> 1.立即执行函数</h3> <p>在早期，使用立即执行函数实现模块化是常见的手段，通过函数作用域解决了命名冲突、污染全局作用域的问题</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token punctuation">;</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">global</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  global<span class="token punctuation">.</span><span class="token function-variable function">test</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>gloabl<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="_2-amd-和-cmd"><a href="#_2-amd-和-cmd" class="header-anchor">#</a> 2.AMD 和 CMD</h3> <h3 id="_3-commonjs"><a href="#_3-commonjs" class="header-anchor">#</a> 3.CommonJS</h3> <h3 id="_4-es-module"><a href="#_4-es-module" class="header-anchor">#</a> 4.ES Module</h3> <p>ES Module 是原生实现的模块化方案，与 CommonJS 有以下几个区别</p> <ul><li>CommonJS 支持动态导入，也就是<code>require(${path}/x.js)</code>，后者目前不支持，但是已有提案</li> <li>CommonJS 是同步导入，因为用于服务器，文件都在本地，同步导入即使卡主主线程影响也不大。后者是异步导入，因为用于浏览器，需要下载文件，如果也采用同步导入会对渲染有很大影响。</li> <li>CommonJS 在导出时都是值拷贝，就算导出的值变了，导入的值也不会改变，所以如果想要更新值，必须重新导入一次。但是 ES Modlues 采用实时绑定的方式，导入导出的值都指向同一个内存地址，所以导入值会跟随导出值变化</li> <li>ES Modules 会编译成<code>require/exports</code>来执行</li></ul> <h2 id="_4-proxy"><a href="#_4-proxy" class="header-anchor">#</a> 4.Proxy</h2> <blockquote><p>Proxy 可以实现什么功能？</p></blockquote> <h2 id="_5-map-filter-reduce"><a href="#_5-map-filter-reduce" class="header-anchor">#</a> 5.map,filter,reduce</h2> <blockquote><p>map, filter, reduce 各自有什么作用？</p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/6/29 上午12:09:44</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web-interview/1.front-end/3.javascript/2.senior.html" class="prev">
+        二.JS 高级
+      </a></span> <span class="next"><a href="/web-interview/1.front-end/3.javascript/4.safe.html">
+        四.前端安全
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/web-interview/assets/js/app.7e1cd45a.js" defer></script><script src="/web-interview/assets/js/2.e1d7530f.js" defer></script><script src="/web-interview/assets/js/18.903cebf9.js" defer></script><script src="/web-interview/assets/js/4.2abc1bb0.js" defer></script>
+  </body>
+</html>

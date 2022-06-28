@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>三、饿了么 | web面试题精选</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="个人总结的vuepress学习技术文档-语法">
+    <meta name="keywords" content="vuepress,最新技术文档,vuepress语法,markdown语法">
+    
+    <link rel="preload" href="/web-interview/assets/css/0.styles.884e11ce.css" as="style"><link rel="preload" href="/web-interview/assets/js/app.7e1cd45a.js" as="script"><link rel="preload" href="/web-interview/assets/js/2.e1d7530f.js" as="script"><link rel="preload" href="/web-interview/assets/js/59.2941cb80.js" as="script"><link rel="preload" href="/web-interview/assets/js/4.2abc1bb0.js" as="script"><link rel="prefetch" href="/web-interview/assets/js/10.56017cec.js"><link rel="prefetch" href="/web-interview/assets/js/11.1b6f017b.js"><link rel="prefetch" href="/web-interview/assets/js/12.941a8d45.js"><link rel="prefetch" href="/web-interview/assets/js/13.fe0a5713.js"><link rel="prefetch" href="/web-interview/assets/js/14.5f59b4d0.js"><link rel="prefetch" href="/web-interview/assets/js/15.2267941d.js"><link rel="prefetch" href="/web-interview/assets/js/16.828a3f57.js"><link rel="prefetch" href="/web-interview/assets/js/17.ee3fe08e.js"><link rel="prefetch" href="/web-interview/assets/js/18.903cebf9.js"><link rel="prefetch" href="/web-interview/assets/js/19.8df8bad8.js"><link rel="prefetch" href="/web-interview/assets/js/20.95d96844.js"><link rel="prefetch" href="/web-interview/assets/js/21.90b2597d.js"><link rel="prefetch" href="/web-interview/assets/js/22.71893005.js"><link rel="prefetch" href="/web-interview/assets/js/23.cfb13783.js"><link rel="prefetch" href="/web-interview/assets/js/24.d1a013b5.js"><link rel="prefetch" href="/web-interview/assets/js/25.5f7ebf65.js"><link rel="prefetch" href="/web-interview/assets/js/26.50044f2c.js"><link rel="prefetch" href="/web-interview/assets/js/27.5e557589.js"><link rel="prefetch" href="/web-interview/assets/js/28.24a14952.js"><link rel="prefetch" href="/web-interview/assets/js/29.54cbaafe.js"><link rel="prefetch" href="/web-interview/assets/js/3.04649557.js"><link rel="prefetch" href="/web-interview/assets/js/30.2f876fbf.js"><link rel="prefetch" href="/web-interview/assets/js/31.40c046c4.js"><link rel="prefetch" href="/web-interview/assets/js/32.ca1e44b5.js"><link rel="prefetch" href="/web-interview/assets/js/33.d7502a7c.js"><link rel="prefetch" href="/web-interview/assets/js/34.f2ed1a32.js"><link rel="prefetch" href="/web-interview/assets/js/35.55b2e31b.js"><link rel="prefetch" href="/web-interview/assets/js/36.a756f4b7.js"><link rel="prefetch" href="/web-interview/assets/js/37.958c0dcf.js"><link rel="prefetch" href="/web-interview/assets/js/38.c2bfc766.js"><link rel="prefetch" href="/web-interview/assets/js/39.b1f968ef.js"><link rel="prefetch" href="/web-interview/assets/js/40.c33559b1.js"><link rel="prefetch" href="/web-interview/assets/js/41.4b7bd7cb.js"><link rel="prefetch" href="/web-interview/assets/js/42.4f0104bf.js"><link rel="prefetch" href="/web-interview/assets/js/43.6b8a3e60.js"><link rel="prefetch" href="/web-interview/assets/js/44.e3d67935.js"><link rel="prefetch" href="/web-interview/assets/js/45.6826cc0b.js"><link rel="prefetch" href="/web-interview/assets/js/46.db7cb988.js"><link rel="prefetch" href="/web-interview/assets/js/47.31889365.js"><link rel="prefetch" href="/web-interview/assets/js/48.38914b82.js"><link rel="prefetch" href="/web-interview/assets/js/49.c6e03944.js"><link rel="prefetch" href="/web-interview/assets/js/5.3f86d238.js"><link rel="prefetch" href="/web-interview/assets/js/50.e4ab1e4e.js"><link rel="prefetch" href="/web-interview/assets/js/51.c3940fad.js"><link rel="prefetch" href="/web-interview/assets/js/52.3f7cb4cf.js"><link rel="prefetch" href="/web-interview/assets/js/53.a046a94b.js"><link rel="prefetch" href="/web-interview/assets/js/54.179968ab.js"><link rel="prefetch" href="/web-interview/assets/js/55.407806bd.js"><link rel="prefetch" href="/web-interview/assets/js/56.8bf00853.js"><link rel="prefetch" href="/web-interview/assets/js/57.670c6f7f.js"><link rel="prefetch" href="/web-interview/assets/js/58.0bc2edd1.js"><link rel="prefetch" href="/web-interview/assets/js/6.aab8a02b.js"><link rel="prefetch" href="/web-interview/assets/js/60.a42c8811.js"><link rel="prefetch" href="/web-interview/assets/js/61.1c610aea.js"><link rel="prefetch" href="/web-interview/assets/js/7.6af95a3f.js"><link rel="prefetch" href="/web-interview/assets/js/8.151df366.js"><link rel="prefetch" href="/web-interview/assets/js/9.63a2b1aa.js">
+    <link rel="stylesheet" href="/web-interview/assets/css/0.styles.884e11ce.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web-interview/" class="home-link router-link-active"><!----> <span class="site-name">web面试题精选</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试题" class="dropdown-title"><span class="title">前端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试题" class="mobile-dropdown-title"><span class="title">前端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/1.html/1.index.html" class="nav-link">
+  一.HTML
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/2.css/1.index.html" class="nav-link">
+  二.CSS
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/3.javascript/1.index.html" class="nav-link">
+  三.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/4.browser/1.index.html" class="nav-link">
+  四.浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/5.vue/1.index.html" class="nav-link">
+  五.Vue
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/6.react/1.index.html" class="nav-link">
+  六.React
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/7.webpack/1.index.html" class="nav-link">
+  七.Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端面试题" class="dropdown-title"><span class="title">后端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端面试题" class="mobile-dropdown-title"><span class="title">后端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/1.node.html" class="nav-link">
+  一.Node
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/2.express.html" class="nav-link">
+  二.Express
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/3.koa.html" class="nav-link">
+  三.Koa
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/4.egg.html" class="nav-link">
+  四.Egg
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大厂面试题" class="dropdown-title"><span class="title">大厂面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="大厂面试题" class="mobile-dropdown-title"><span class="title">大厂面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/阿里巴巴.html" class="nav-link">
+  阿里巴巴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/饿了么.html" class="nav-link">
+  饿了么
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/百分点.html" class="nav-link">
+  百分点
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝宝树.html" class="nav-link">
+  宝宝树
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/滴滴.html" class="nav-link">
+  滴滴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/兑吧.html" class="nav-link">
+  兑吧
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝海风教育.html" class="nav-link">
+  海风教育
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/海康威视.html" class="nav-link">
+  海康威视
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/沪江.html" class="nav-link">
+  沪江
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/今日头条.html" class="nav-link">
+  今日头条
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/酷家乐.html" class="nav-link">
+  酷家乐
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/蘑菇街.html" class="nav-link">
+  蘑菇街
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/寺库.html" class="nav-link">
+  寺库
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/挖财.html" class="nav-link">
+  挖财
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/网易.html" class="nav-link">
+  网易
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/微医.html" class="nav-link">
+  微医
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/喜马拉雅.html" class="nav-link">
+  喜马拉雅
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/携程.html" class="nav-link">
+  携程
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/有赞.html" class="nav-link">
+  有赞
+</a></li></ul></div></div><div class="nav-item"><a href="/web-interview/myInterview/20210131.html" class="nav-link">
+  面试题
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试题" class="dropdown-title"><span class="title">前端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试题" class="mobile-dropdown-title"><span class="title">前端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/1.html/1.index.html" class="nav-link">
+  一.HTML
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/2.css/1.index.html" class="nav-link">
+  二.CSS
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/3.javascript/1.index.html" class="nav-link">
+  三.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/4.browser/1.index.html" class="nav-link">
+  四.浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/5.vue/1.index.html" class="nav-link">
+  五.Vue
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/6.react/1.index.html" class="nav-link">
+  六.React
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/1.front-end/7.webpack/1.index.html" class="nav-link">
+  七.Webpack
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端面试题" class="dropdown-title"><span class="title">后端面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端面试题" class="mobile-dropdown-title"><span class="title">后端面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/1.node.html" class="nav-link">
+  一.Node
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/2.express.html" class="nav-link">
+  二.Express
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/3.koa.html" class="nav-link">
+  三.Koa
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/2.back-end/4.egg.html" class="nav-link">
+  四.Egg
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大厂面试题" class="dropdown-title"><span class="title">大厂面试题</span> <span class="arrow down"></span></button> <button type="button" aria-label="大厂面试题" class="mobile-dropdown-title"><span class="title">大厂面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/阿里巴巴.html" class="nav-link">
+  阿里巴巴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/饿了么.html" class="nav-link">
+  饿了么
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/百分点.html" class="nav-link">
+  百分点
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝宝树.html" class="nav-link">
+  宝宝树
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/滴滴.html" class="nav-link">
+  滴滴
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/兑吧.html" class="nav-link">
+  兑吧
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/宝海风教育.html" class="nav-link">
+  海风教育
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/海康威视.html" class="nav-link">
+  海康威视
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/沪江.html" class="nav-link">
+  沪江
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/今日头条.html" class="nav-link">
+  今日头条
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/酷家乐.html" class="nav-link">
+  酷家乐
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/蘑菇街.html" class="nav-link">
+  蘑菇街
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/寺库.html" class="nav-link">
+  寺库
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/挖财.html" class="nav-link">
+  挖财
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/网易.html" class="nav-link">
+  网易
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/微医.html" class="nav-link">
+  微医
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/喜马拉雅.html" class="nav-link">
+  喜马拉雅
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/携程.html" class="nav-link">
+  携程
+</a></li><li class="dropdown-item"><!----> <a href="/web-interview/largeFactories/有赞.html" class="nav-link">
+  有赞
+</a></li></ul></div></div><div class="nav-item"><a href="/web-interview/myInterview/20210131.html" class="nav-link">
+  面试题
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/web-interview/largeFactories/阿里巴巴.html" class="sidebar-link">一、阿里面试题</a></li><li><a href="/web-interview/largeFactories/蘑菇街.html" class="sidebar-link">二、蘑菇街</a></li><li><a href="/web-interview/largeFactories/饿了么.html" class="active sidebar-link">三、饿了么</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_1-小程序里面开页面最多多少" class="sidebar-link">1.小程序里面开页面最多多少</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_2-react-子父组件之间如何传值" class="sidebar-link">2.React 子父组件之间如何传值</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_3-emit-事件怎么发-需要引入什么" class="sidebar-link">3.Emit 事件怎么发，需要引入什么</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_4-介绍下-react-高阶组件-和普通组件有什么区别" class="sidebar-link">4.介绍下 React 高阶组件，和普通组件有什么区别</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_5-一个对象数组-每个子对象包含一个-id-和-name-react-如何渲染出全部的-name" class="sidebar-link">5.一个对象数组，每个子对象包含一个 id 和 name，React 如何渲染出全部的 name</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_6-在哪个生命周期里写" class="sidebar-link">6.在哪个生命周期里写</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_7-其中有几个-name-不存在-通过异步接口获取-如何做" class="sidebar-link">7.其中有几个 name 不存在，通过异步接口获取，如何做</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_8-渲染的时候-key-给什么值-可以使用-index-吗-用-id-好还是-index-好" class="sidebar-link">8.渲染的时候 key 给什么值，可以使用 index 吗，用 id 好还是 index 好</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_9-webpack-如何配-sass-需要配哪些-loader" class="sidebar-link">9.webpack 如何配 sass，需要配哪些 loader</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_10-配-css-需要哪些-loader" class="sidebar-link">10.配 css 需要哪些 loader</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_11-如何配置把-js、css、html-单独打包成一个文件" class="sidebar-link">11.如何配置把 js、css、html 单独打包成一个文件</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_12-div-垂直水平居中-flex、绝对定位" class="sidebar-link">12.div 垂直水平居中（flex、绝对定位）</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_13-两个元素块-一左一右-中间相距-10-像素" class="sidebar-link">13.两个元素块，一左一右，中间相距 10 像素</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_14-上下固定-中间滚动布局如何实现" class="sidebar-link">14.上下固定，中间滚动布局如何实现</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_15-1-2-3-4-5-变成-1-2-3-a-b-5" class="sidebar-link">15.[1, 2, 3, 4, 5]变成[1, 2, 3, a, b, 5]</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_16-取数组的最大值-es5、es6" class="sidebar-link">16.取数组的最大值（ES5、ES6）</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_17-apply-和-call-的区别" class="sidebar-link">17.apply 和 call 的区别</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_18-es5-和-es6-有什么区别" class="sidebar-link">18.ES5 和 ES6 有什么区别</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_19-some、every、find、filter、map、foreach-有什么区别" class="sidebar-link">19.some、every、find、filter、map、forEach 有什么区别</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_20-上述数组随机取数-每次返回的值都不一样" class="sidebar-link">20.上述数组随机取数，每次返回的值都不一样</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_21-如何找-0-5-的随机数-95-99-呢" class="sidebar-link">21.如何找 0-5 的随机数，95-99 呢</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_22-页面上有-1-万个-button-如何绑定事件" class="sidebar-link">22.页面上有 1 万个 button 如何绑定事件</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_23-如何判断是-button" class="sidebar-link">23.如何判断是 button</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_24-页面上生成一万个-button-并且绑定事件-如何做-js-原生操作-dom" class="sidebar-link">24.页面上生成一万个 button，并且绑定事件，如何做（JS 原生操作 DOM）</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_25-循环绑定时的-index-是多少-为什么-怎么解决" class="sidebar-link">25.循环绑定时的 index 是多少，为什么，怎么解决</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_26-页面上有一个-input-还有一个-p-标签-改变-input-后-p-标签就跟着变化-如何处理" class="sidebar-link">26.页面上有一个 input，还有一个 p 标签，改变 input 后 p 标签就跟着变化，如何处理</a></li><li class="sidebar-sub-header"><a href="/web-interview/largeFactories/饿了么.html#_27-监听-input-的哪个事件-在什么时候触发" class="sidebar-link">27.监听 input 的哪个事件，在什么时候触发</a></li></ul></li><li><a href="/web-interview/largeFactories/今日头条.html" class="sidebar-link">四、今日头条</a></li><li><a href="/web-interview/largeFactories/滴滴.html" class="sidebar-link">五、滴滴</a></li><li><a href="/web-interview/largeFactories/兑吧.html" class="sidebar-link">六、兑吧</a></li><li><a href="/web-interview/largeFactories/百分点.html" class="sidebar-link">七、百分点</a></li><li><a href="/web-interview/largeFactories/海风教育.html" class="sidebar-link">八、海风教育</a></li><li><a href="/web-interview/largeFactories/海康威视.html" class="sidebar-link">九、海康威视</a></li><li><a href="/web-interview/largeFactories/沪江.html" class="sidebar-link">十、沪江</a></li><li><a href="/web-interview/largeFactories/酷家乐.html" class="sidebar-link">十一、酷家乐</a></li><li><a href="/web-interview/largeFactories/寺库.html" class="sidebar-link">十二、寺库</a></li><li><a href="/web-interview/largeFactories/挖财.html" class="sidebar-link">十三、挖财</a></li><li><a href="/web-interview/largeFactories/网易.html" class="sidebar-link">十四、网易</a></li><li><a href="/web-interview/largeFactories/微医.html" class="sidebar-link">十五、微医</a></li><li><a href="/web-interview/largeFactories/携程.html" class="sidebar-link">十六、携程</a></li><li><a href="/web-interview/largeFactories/喜马拉雅.html" class="sidebar-link">十七、喜马拉雅</a></li><li><a href="/web-interview/largeFactories/有赞.html" class="sidebar-link">十八、有赞</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="三、饿了么"><a href="#三、饿了么" class="header-anchor">#</a> 三、饿了么</h1> <h2 id="_1-小程序里面开页面最多多少"><a href="#_1-小程序里面开页面最多多少" class="header-anchor">#</a> 1.小程序里面开页面最多多少</h2> <h2 id="_2-react-子父组件之间如何传值"><a href="#_2-react-子父组件之间如何传值" class="header-anchor">#</a> 2.React 子父组件之间如何传值</h2> <h2 id="_3-emit-事件怎么发-需要引入什么"><a href="#_3-emit-事件怎么发-需要引入什么" class="header-anchor">#</a> 3.Emit 事件怎么发，需要引入什么</h2> <h2 id="_4-介绍下-react-高阶组件-和普通组件有什么区别"><a href="#_4-介绍下-react-高阶组件-和普通组件有什么区别" class="header-anchor">#</a> 4.介绍下 React 高阶组件，和普通组件有什么区别</h2> <ul><li>高阶组件就是一个函数，且该函数接受一个组件作为参数，并返回一个新的组件，它只是一种模式，这种模式是由 react 自身的组合性质必然产生的。</li> <li>我们将它们称为纯组件，因为它们可以接受任何动态提供的子组件，但它们不会修改或复制其输入组件中的任何行为。</li></ul> <h2 id="_5-一个对象数组-每个子对象包含一个-id-和-name-react-如何渲染出全部的-name"><a href="#_5-一个对象数组-每个子对象包含一个-id-和-name-react-如何渲染出全部的-name" class="header-anchor">#</a> 5.一个对象数组，每个子对象包含一个 id 和 name，React 如何渲染出全部的 name</h2> <h2 id="_6-在哪个生命周期里写"><a href="#_6-在哪个生命周期里写" class="header-anchor">#</a> 6.在哪个生命周期里写</h2> <h2 id="_7-其中有几个-name-不存在-通过异步接口获取-如何做"><a href="#_7-其中有几个-name-不存在-通过异步接口获取-如何做" class="header-anchor">#</a> 7.其中有几个 name 不存在，通过异步接口获取，如何做</h2> <h2 id="_8-渲染的时候-key-给什么值-可以使用-index-吗-用-id-好还是-index-好"><a href="#_8-渲染的时候-key-给什么值-可以使用-index-吗-用-id-好还是-index-好" class="header-anchor">#</a> 8.渲染的时候 key 给什么值，可以使用 index 吗，用 id 好还是 index 好</h2> <h2 id="_9-webpack-如何配-sass-需要配哪些-loader"><a href="#_9-webpack-如何配-sass-需要配哪些-loader" class="header-anchor">#</a> 9.webpack 如何配 sass，需要配哪些 loader</h2> <h2 id="_10-配-css-需要哪些-loader"><a href="#_10-配-css-需要哪些-loader" class="header-anchor">#</a> 10.配 css 需要哪些 loader</h2> <ul><li>css-loader</li> <li>style-loader</li></ul> <h2 id="_11-如何配置把-js、css、html-单独打包成一个文件"><a href="#_11-如何配置把-js、css、html-单独打包成一个文件" class="header-anchor">#</a> 11.如何配置把 js、css、html 单独打包成一个文件</h2> <h2 id="_12-div-垂直水平居中-flex、绝对定位"><a href="#_12-div-垂直水平居中-flex、绝对定位" class="header-anchor">#</a> 12.div 垂直水平居中（flex、绝对定位）</h2> <h2 id="_13-两个元素块-一左一右-中间相距-10-像素"><a href="#_13-两个元素块-一左一右-中间相距-10-像素" class="header-anchor">#</a> 13.两个元素块，一左一右，中间相距 10 像素</h2> <h2 id="_14-上下固定-中间滚动布局如何实现"><a href="#_14-上下固定-中间滚动布局如何实现" class="header-anchor">#</a> 14.上下固定，中间滚动布局如何实现</h2> <h2 id="_15-1-2-3-4-5-变成-1-2-3-a-b-5"><a href="#_15-1-2-3-4-5-变成-1-2-3-a-b-5" class="header-anchor">#</a> 15.[1, 2, 3, 4, 5]变成[1, 2, 3, a, b, 5]</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_16-取数组的最大值-es5、es6"><a href="#_16-取数组的最大值-es5、es6" class="header-anchor">#</a> 16.取数组的最大值（ES5、ES6）</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code>Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span>
+Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token operator">...</span>arr<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="_17-apply-和-call-的区别"><a href="#_17-apply-和-call-的区别" class="header-anchor">#</a> 17.apply 和 call 的区别</h2> <p>apply 第二个参数为数组
+call 第二个参数及以后为 arg1,arg2...等形式</p> <h2 id="_18-es5-和-es6-有什么区别"><a href="#_18-es5-和-es6-有什么区别" class="header-anchor">#</a> 18.ES5 和 ES6 有什么区别</h2> <p>es6 中添加了很多新功能，其实大部分是 es5 的语法糖</p> <h2 id="_19-some、every、find、filter、map、foreach-有什么区别"><a href="#_19-some、every、find、filter、map、foreach-有什么区别" class="header-anchor">#</a> 19.some、every、find、filter、map、forEach 有什么区别</h2> <ul><li>some 只要有一项符合条件就返回 true</li> <li>every 每一项符合条件才返回 true</li> <li>find 查找符合要求的某一项并返回</li> <li>filter 筛选出符合条件的数组项，返回一个新数组，对原数组不会造成影响</li> <li>map 修改符合要求的数组项并返回整个数组</li> <li>forEach 循环遍历整个数组</li></ul> <h2 id="_20-上述数组随机取数-每次返回的值都不一样"><a href="#_20-上述数组随机取数-每次返回的值都不一样" class="header-anchor">#</a> 20.上述数组随机取数，每次返回的值都不一样</h2> <h2 id="_21-如何找-0-5-的随机数-95-99-呢"><a href="#_21-如何找-0-5-的随机数-95-99-呢" class="header-anchor">#</a> 21.如何找 0-5 的随机数，95-99 呢</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">5</span>
+Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">5</span> <span class="token operator">+</span> <span class="token number">95</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="_22-页面上有-1-万个-button-如何绑定事件"><a href="#_22-页面上有-1-万个-button-如何绑定事件" class="header-anchor">#</a> 22.页面上有 1 万个 button 如何绑定事件</h2> <p>使用事件委托的方式绑定</p> <h2 id="_23-如何判断是-button"><a href="#_23-如何判断是-button" class="header-anchor">#</a> 23.如何判断是 button</h2> <h2 id="_24-页面上生成一万个-button-并且绑定事件-如何做-js-原生操作-dom"><a href="#_24-页面上生成一万个-button-并且绑定事件-如何做-js-原生操作-dom" class="header-anchor">#</a> 24.页面上生成一万个 button，并且绑定事件，如何做（JS 原生操作 DOM）</h2> <p>使用事件委托和节流处理</p> <h2 id="_25-循环绑定时的-index-是多少-为什么-怎么解决"><a href="#_25-循环绑定时的-index-是多少-为什么-怎么解决" class="header-anchor">#</a> 25.循环绑定时的 index 是多少，为什么，怎么解决</h2> <h2 id="_26-页面上有一个-input-还有一个-p-标签-改变-input-后-p-标签就跟着变化-如何处理"><a href="#_26-页面上有一个-input-还有一个-p-标签-改变-input-后-p-标签就跟着变化-如何处理" class="header-anchor">#</a> 26.页面上有一个 input，还有一个 p 标签，改变 input 后 p 标签就跟着变化，如何处理</h2> <h2 id="_27-监听-input-的哪个事件-在什么时候触发"><a href="#_27-监听-input-的哪个事件-在什么时候触发" class="header-anchor">#</a> 27.监听 input 的哪个事件，在什么时候触发</h2></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/6/29 上午12:09:44</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web-interview/largeFactories/蘑菇街.html" class="prev">
+        二、蘑菇街
+      </a></span> <span class="next"><a href="/web-interview/largeFactories/今日头条.html">
+        四、今日头条
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/web-interview/assets/js/app.7e1cd45a.js" defer></script><script src="/web-interview/assets/js/2.e1d7530f.js" defer></script><script src="/web-interview/assets/js/59.2941cb80.js" defer></script><script src="/web-interview/assets/js/4.2abc1bb0.js" defer></script>
+  </body>
+</html>
