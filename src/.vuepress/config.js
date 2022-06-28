@@ -3,7 +3,7 @@ module.exports = {
   description: '种一棵树最好的时间是十年前 其次是现在',
   base: '/web-interview/', // 部署站点的基础路径
   port: 3009,
-  dest: 'dist', // 指定 vuepress 的输出目录
+  dest: 'web-interview', // 指定 vuepress 的输出目录
   markdown: {
     lineNumbers: true // 代码块显示行号
   },

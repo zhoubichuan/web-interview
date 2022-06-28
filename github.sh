@@ -7,7 +7,7 @@ git push gitee master
 npm run src:build
 
 # 2.进入打包目录
-cd dist
+cd web-interview
 
 # 3.发布到gh-pages分支
 git init
