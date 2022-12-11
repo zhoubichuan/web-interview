@@ -1,14 +1,14 @@
 ---
 lang: zh-CN
 home: true
-heroImage: ""
+heroImage: ./home.png
 actionText: 先睹为快 →
-actionLink: /base/static/1.base.html
+actionLink: /1.front-end/1.html/1.index.html
 pageClass: page_index
-footer: 前端面试题
+footer: web面试题
 meta:
   - name: keywords
-    content: 前端面试题,前端学习,前端笔记
+    content: web面试题
 ---
 
 <template>
