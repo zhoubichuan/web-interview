@@ -1,15 +1,9 @@
 const sidebar = {
-    '/1.front-end/1.html/': [
-      '1.index',
-      '2.htmI',
-      '3.html5'
-    ],
-    '/1.front-end/2.css/': [
+    '/1.front-end/1.css/': [
       '1.index',
       '2.css',
-      '3.css3'
     ],
-    '/1.front-end/3.javascript/': [
+    '/1.front-end/2.javascript/': [
       '1.index',
       '1.base',
       '2.senior',
@@ -21,7 +15,7 @@ const sidebar = {
       '8.algorithm',
       '9.handle'
     ],
-    '/1.front-end/4.browser/': [
+    '/1.front-end/3.browser/': [
       '1.index',
       '2.render',
       '3.cache',
@@ -30,15 +24,15 @@ const sidebar = {
       '7.cache',
       '11.network'
     ],
-    '/1.front-end/5.vue/': [
+    '/1.front-end/4.vue/': [
       '1.index',
       '2.advanc'
     ],
-    '/1.front-end/6.react/': [
+    '/1.front-end/5.react/': [
       '1.index',
       '2.advanc'
     ],
-    '/1.front-end/7.webpack/': [
+    '/1.front-end/6.webpack/': [
       '1.index',
     ],
     '/2.back-end/': [

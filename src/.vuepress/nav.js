@@ -2,32 +2,28 @@ const nav = [{
   text: '前端面试题',
   items: [
     {
-      text: '一.HTML',
-      link: '/1.front-end/1.html/1.index',
+      text: '一.静态页面',
+      link: '/1.front-end/1.css/1.index',
     },
     {
-      text: '二.CSS',
-      link: '/1.front-end/2.css/1.index',
+      text: '二.JavaScript',
+      link: '/1.front-end/2.javascript/1.index',
     },
     {
-      text: '三.JavaScript',
-      link: '/1.front-end/3.javascript/1.index',
+      text: '三.浏览器',
+      link: '/1.front-end/3.browser/1.index',
     },
     {
-      text: '四.浏览器',
-      link: '/1.front-end/4.browser/1.index',
+      text: '四.Vue',
+      link: '/1.front-end/4.vue/1.index',
     },
     {
-      text: '五.Vue',
-      link: '/1.front-end/5.vue/1.index',
+      text: '五.React',
+      link: '/1.front-end/5.react/1.index',
     },
     {
-      text: '六.React',
-      link: '/1.front-end/6.react/1.index',
-    },
-    {
-      text: '七.Webpack',
-      link: '/1.front-end/7.webpack/1.index',
+      text: '六.Webpack',
+      link: '/1.front-end/6.webpack/1.index',
     },
   ],
 },
