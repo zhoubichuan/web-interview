@@ -18,7 +18,7 @@ const sidebar = {
     '/1.front-end/3.browser/': [
       '1.index',
       '2.render',
-      '3.cache',
+      '4.cache',
       '5.v8',
       '6.render',
       '7.cache',
