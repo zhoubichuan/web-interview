@@ -29,7 +29,7 @@ const nav = [{
 },
 {
   text: '后端面试题',
-  link: '/2.back-end/node',
+  link: '/2.back-end/1.node',
   items: [
     {
       text: '一.Node',
@@ -51,7 +51,7 @@ const nav = [{
 },
 {
   text: '大厂面试题',
-  link: '/largeFactories/',
+  link: '/largeFactories/阿里巴巴',
   items: [
     {
       text: '阿里巴巴',
@@ -79,7 +79,7 @@ const nav = [{
     },
     {
       text: '海风教育',
-      link: '/largeFactories/宝海风教育',
+      link: '/largeFactories/海风教育',
     },
     {
       text: '海康威视',

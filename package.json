@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "author": "zhoubichaun@icloud.com",
-  "hommepage": "https://github.com/zhoubichuan/web-interview/",
+  "author": "zhoubichuan@icloud.com",
+  "homepage": "https://github.com/zhoubichuan/web-interview/",
   "private": true,
   "license": "MIT",
   "scripts": {
